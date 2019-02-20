@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from 'lime/Button'
 import Select from 'lime/Select'
+import Scroll from 'lime/Scroll'
+import List from 'lime/List'
 import 'lime/lime.css'
 
 const options = [
@@ -31,6 +33,14 @@ export default class App extends React.Component {
             </div>
             <div>
                 <Select options={optionsII} />
+            </div>
+            <div>
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
             </div>
         </div>
     }
