@@ -31,6 +31,10 @@ const optionsII = [
 ]
 
 class S extends React.Component {
+    static defaultProps = {
+        lineHeight: 30
+    }
+    
     constructor(props) {
         super(props)
         this.state = {}
@@ -56,6 +60,7 @@ class S extends React.Component {
 
     render() {
         let { left, top, width, show, value } = this.state
+        let { lineHeight } = this.props
         return <div className='sd-select-input'>
             <input onClick={this.onClick} value={value} />
             <Layer
@@ -66,10 +71,11 @@ class S extends React.Component {
                 width={width}
             >
                 <List
+                    itemHeight={lineHeight}
                     items={options}
                     renderItem={it => {
                         return (
-                            <div className='test' style={{ padding: 5 }} onClickCapture={this.onClickItem}>{it.text}</div>
+                            <div onClick={this.onClickItem}>{it.text}</div>
                         )
                     }}
                 />
@@ -128,6 +134,7 @@ export default class App extends React.Component {
                     <List items={options.map(i => i.text)} />
                 </Layer>
             </div> */}
+            <button className="test tt">test</button>
         </div>
     }
 }
