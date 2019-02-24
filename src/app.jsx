@@ -8,6 +8,7 @@ import S from './S'
 import Sl from './Sl'
 import 'lime/lime.css'
 import './app.less'
+import debounce from 'debounce'
 
 const options = []
 for (let i = 0; i < 20; i++) {
@@ -37,15 +38,49 @@ export default class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            options
+            options: null,
+            loading: false
         }
+        this.debouncedHandleSelectChange = debounce(this.handleSelectChange, 300)
     }
+
+    handleSelectChange = evt => {
+        this.setState({ loading: true })
+        setTimeout(() => {
+            this.setState({
+                options,
+                loading: false
+            })
+        }, 1000);
+    }
+
     render() {
-        return <div style={{}}>
+        return <div style={{ padding: 10 }}>
 
             <div><Button>Lime</Button></div>
             <br />
             <br />
+            <Sl
+                name='user'
+                loading={this.state.loading}
+                options={this.state.options}
+                onChange={this.debouncedHandleSelectChange}
+                onLoadMore={options => {
+
+                    this.setState({
+                        loading: true
+                    })
+
+                    setTimeout(() => {
+                        this.setState({
+                            options: options.concat(optionsII),
+                            loading: false
+                        })
+                    }, 2000)
+                }}
+            />
+            <br></br>
+            <br></br>
             <div>
                 <Select options={options} />
             </div>
@@ -62,14 +97,7 @@ export default class App extends React.Component {
             <br />
             <br />
             <div>
-                <Sl 
-                    options={this.state.options}
-                    onLoadMore={options => {
-                        this.setState({
-                            options: options.concat(optionsII)
-                        })
-                    }}
-                />
+
             </div>
             <br />
             <br />
@@ -83,9 +111,9 @@ export default class App extends React.Component {
             </div>
             <br />
             <br />
-            <div>
+            {/* <div>
                 <List items={options.map(i => i.text)} />
-            </div>
+            </div> */}
             {/* <div className='sd-layer-mask' onMouseLeave={()=>console.log(`leave`,)}></div>
             <div className='sd-layer'>
                 <List items={options.map(i => i.text)} />
@@ -102,6 +130,9 @@ export default class App extends React.Component {
                 </Layer>
             </div> */}
             <button className="test tt">test</button>
+            <div style={{ width: 15, height: 15 }}>
+                <div className="sd-spin"></div>
+            </div>
         </div>
     }
 }
