@@ -2,18 +2,9 @@ import React from 'react';
 import List from 'lime/List'
 import Layer from 'lime/Layer'
 
-const options = []
-for (let i = 0; i < 20; i++) {
-    options.push({
-        key: i,
-        text: 'Lorem ipsum dolor sit amet.' + i
-    })
-}
-
-export default class Sl extends React.Component {
+export default class Select extends React.Component {
     static defaultProps = {
         lineHeight: 30,
-        options,
         loading: false
     }
 
@@ -32,7 +23,6 @@ export default class Sl extends React.Component {
     }
 
     onBlurLayer = () => {
-        console.log(`blur layer`)
         this.setState({ show: false })
     }
 
@@ -125,6 +115,7 @@ export default class Sl extends React.Component {
                 onClick={this.onClick}
                 value={this.value}
                 onChange={this.onChange}
+                onBlur={this.onBlur}
             />
             {loading && <i className='sd-spin'></i>}
             {

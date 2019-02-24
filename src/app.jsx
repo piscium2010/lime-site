@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from 'lime/Button'
-import Select from 'lime/Select'
 import Scroll from 'lime/Scroll'
 import List from 'lime/List'
 import Layer from 'lime/Layer'
 import S from './S'
-import Sl from './Sl'
+import Select from './Select'
+import MultiSelect from './MultiSelect'
 import 'lime/lime.css'
 import './app.less'
 import debounce from 'debounce'
@@ -18,27 +18,13 @@ for (let i = 0; i < 20; i++) {
     })
 }
 
-const optionsII = [
-    { key: '1', text: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, totam!' },
-    { key: '2', text: 'a' },
-    { key: '3', text: 'a' },
-    { key: '4', text: 'a' },
-    { key: '5', text: 'a' },
-    { key: 'a', text: 'a' },
-    { key: 'a', text: 'a' },
-    { key: 'a', text: 'a' },
-    { key: 'a', text: 'a' },
-    { key: 'a', text: 'a' },
-    { key: 'a', text: 'a' },
-    { key: 'a', text: 'a' }
-]
-
-
 export default class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             options: null,
+            optionsII: options,
+            optionsIII: options,
             loading: false
         }
         this.debouncedHandleSelectChange = debounce(this.handleSelectChange, 300)
@@ -54,18 +40,31 @@ export default class App extends React.Component {
         }, 1000);
     }
 
+    handleMultiSelectChange = evt => {
+
+    }
+
     render() {
         return <div style={{ padding: 10 }}>
 
             <div><Button>Lime</Button></div>
             <br />
             <br />
-            <Sl
+            <MultiSelect
+                placeholder='multi'
+                name='multiUser'
+                options={this.state.optionsIII}
+                onChange={this.handleMultiSelectChange}
+            />
+            <br />
+            <br />
+
+            <Select
                 name='user'
                 loading={this.state.loading}
                 options={this.state.options}
                 onChange={this.debouncedHandleSelectChange}
-                onLoadMore={options => {
+                onLoadMore={ops => {
 
                     this.setState({
                         loading: true
@@ -73,24 +72,36 @@ export default class App extends React.Component {
 
                     setTimeout(() => {
                         this.setState({
-                            options: options.concat(optionsII),
+                            options: ops.concat(options),
                             loading: false
                         })
                     }, 2000)
                 }}
             />
             <br></br>
+            <Select
+                name='user'
+                loading={this.state.loading}
+                options={this.state.optionsII}
+                onChange={this.debouncedHandleSelectChange}
+                onLoadMore={ops => {
+
+                    this.setState({
+                        loading: true
+                    })
+
+                    setTimeout(() => {
+                        this.setState({
+                            optionsII: ops.concat(options),
+                            loading: false
+                        })
+                    }, 2000)
+                }}
+            />
             <br></br>
             <div>
                 <Select options={options} />
             </div>
-            <br />
-            <br />
-            <div>
-                <Select options={optionsII} />
-            </div>
-            <br />
-            <br />
             <div>
                 <S />
             </div>
