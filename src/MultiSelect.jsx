@@ -4,14 +4,13 @@ import Layer from 'lime/Layer'
 
 export default class Select extends React.Component {
     static defaultProps = {
-        lineHeight: 30,
-        loading: false
+        lineHeight: 30
     }
 
     constructor(props) {
         super(props)
         this.state = {
-            value: props.defaultValue || '',
+            value: props.defaultValue || [],
             show: false
         }
     }
@@ -31,16 +30,18 @@ export default class Select extends React.Component {
         onClick(evt)
     }
 
-    onChange = evt => {
-        let { onChange = () => { } } = this.props
-        this.setState({
-            value: evt.target.value
-        })
-        onChange(evt)
-    }
-
     onClickItem = evt => {
-        //this.setState({ value: evt.target.textContent, show: false })
+        let text = evt.target.value
+        let i = this.value.indexOf(text)
+        let value = Array.from(this.value)
+
+        if(i >= 0) {
+            value.splice(i, 1)
+        } else {
+            value.push(text)
+        }
+
+        this.setState({ value })
     }
 
     onFocus = evt => {
@@ -50,17 +51,10 @@ export default class Select extends React.Component {
         onFocus(evt)
     }
 
-    onLoadMore = () => {
-        let { loading, onLoadMore, options } = this.props
-        !loading && onLoadMore(options)
-    }
-
     triggerDropdownIfNeeded = () => {
-        console.log(`trigger multi`,)
         let show = this.isFocus
         if (show && this.state.show === false) {
             let { left, top, width, height } = this.c.getBoundingClientRect()
-            console.log(`width`, width)
             this.setState({
                 left,
                 top: top + height + 5,
@@ -70,31 +64,25 @@ export default class Select extends React.Component {
         }
     }
 
-    set clientRect(value) {
-        this._clientRect = value
-    }
-
-    get clientRect() {
-        return this._clientRect
-    }
-
     get value() {
         return this.props.value || this.state.value
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.triggerDropdownIfNeeded()
-    }
-
     render() {
-        
-        let { left, top, width, show, value } = this.state
+        let { left, top, width, show } = this.state
         let { lineHeight, options, ...rest } = this.props
 
         const renderItem = it => (
             <div style={{height: 'inherit'}}>
-                <input type='checkbox' style={{width:'100%', height:'100%', margin: 0}} onClick={this.onClickItem}/>
-                <span style={{position:'absolute', top: 0, left: 28}}>{it.text}</span>
+                <input
+                    name={it.key}
+                    type='checkbox'
+                    style={{width:'100%', height:'100%', margin: 0}}
+                    onChange={this.onClickItem}
+                    value={it.text}
+                    checked={this.value.includes(it.text)}
+                />
+                <span style={{position:'absolute', top: 0, left: 30}}>{it.text}</span>
             </div>
         )
 

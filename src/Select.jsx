@@ -59,7 +59,6 @@ export default class Select extends React.Component {
         let show = this.isFocus
         if (show && this.state.show === false) {
             let { left, top, width, height } = this.c.getBoundingClientRect()
-            console.log(`width`, width)
             this.setState({
                 left,
                 top: top + height + 5,
@@ -69,14 +68,6 @@ export default class Select extends React.Component {
         }
         //console.log(`this.isFocus`,this.isFocus, this.value, this.options ? this.options.length : 'no option')
         //return show
-    }
-
-    set clientRect(value) {
-        this._clientRect = value
-    }
-
-    get clientRect() {
-        return this._clientRect
     }
 
     get value() {

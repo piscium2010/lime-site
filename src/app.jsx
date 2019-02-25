@@ -45,8 +45,10 @@ export default class App extends React.Component {
     }
 
     render() {
-        return <div style={{ padding: 10 }}>
-
+        return <div style={{ padding: 50 }}>
+            <Scroll height={500}>
+                <Select options={options} />
+            </Scroll>
             <div><Button>Lime</Button></div>
             <br />
             <br />
@@ -55,6 +57,7 @@ export default class App extends React.Component {
                 name='multiUser'
                 options={this.state.optionsIII}
                 onChange={this.handleMultiSelectChange}
+                value={['Lorem ipsum dolor sit amet.1']}
             />
             <br />
             <br />
