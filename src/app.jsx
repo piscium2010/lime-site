@@ -47,7 +47,10 @@ export default class App extends React.Component {
     render() {
         return <div style={{ padding: 50 }}>
             <Scroll height={500}>
-                <Select options={options} />
+                <div style={{padding: 20, height:800}}>
+                    <Select options={options} />
+
+                </div>
             </Scroll>
             <div><Button>Lime</Button></div>
             <br />
