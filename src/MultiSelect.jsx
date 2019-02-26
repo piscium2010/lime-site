@@ -27,6 +27,7 @@ export default class Select extends React.Component {
 
     onClick = evt => {
         let { onClick = () => { } } = this.props
+        this.triggerDropdownIfNeeded()
         onClick(evt)
     }
 
@@ -47,7 +48,7 @@ export default class Select extends React.Component {
     onFocus = evt => {
         let { onFocus = () => { } } = this.props
         this.isFocus = true
-        this.triggerDropdownIfNeeded()
+        //this.triggerDropdownIfNeeded()
         onFocus(evt)
     }
 
@@ -66,6 +67,18 @@ export default class Select extends React.Component {
 
     get value() {
         return this.props.value || this.state.value
+    }
+
+    onWindowScroll = evt => {
+        this.state.show && this.setState({ show: false })
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.onWindowScroll)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onWindowScroll)
     }
 
     render() {
