@@ -47,6 +47,7 @@ export default class App extends React.Component {
 
     render() {
         return <div style={{ padding: 50 }}>
+            <div className="sd-shimmer" style={{height:30}}></div>
             <div>
                 <Loading />
             </div>
