@@ -5,6 +5,7 @@ import List from 'lime/List'
 import Layer from 'lime/Layer'
 import S from './S'
 import Select from './Select'
+import Shimmer from './Shimmer'
 import MultiSelect from './MultiSelect'
 import Loading from './Loading'
 import 'lime/lime.css'
@@ -47,7 +48,7 @@ export default class App extends React.Component {
 
     render() {
         return <div style={{ padding: 50 }}>
-            <div className="sd-shimmer" style={{height:30}}></div>
+            <Shimmer />
             <div>
                 <Loading />
             </div>
