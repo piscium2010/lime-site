@@ -48,7 +48,7 @@ export default class App extends React.Component {
 
     render() {
         //document.body.style.overflow = 'hidden'
-        return <div style={{ padding: 50, height: '90vh', overflow: 'hidden' }}>
+        return <div style={{ padding: 50 }}>
             <Scroll height={500}>
                 <div style={{ padding: 20, height: 800, backgroundColor: 'aliceblue' }}>
                     {/* <input style={{position: 'relative'}}/> */}
