@@ -6,6 +6,7 @@ import Layer from 'lime/Layer'
 import S from './S'
 import Select from './Select'
 import MultiSelect from './MultiSelect'
+import Loading from './Loading'
 import 'lime/lime.css'
 import './app.less'
 import debounce from 'debounce'
@@ -46,6 +47,17 @@ export default class App extends React.Component {
 
     render() {
         return <div style={{ padding: 50 }}>
+            <div className="sd-shimmer" style={{height:30}}></div>
+            <div>
+                <Loading />
+            </div>
+            <br />
+            <br />
+            <div>
+                <Loading text='loading' />
+            </div>
+            <br />
+            <br />
             <Scroll height={500}>
                 <div style={{padding: 20, height:800}}>
                     <Select options={options} />
