@@ -47,7 +47,16 @@ export default class App extends React.Component {
     }
 
     render() {
-        return <div style={{ padding: 50 }}>
+        //document.body.style.overflow = 'hidden'
+        return <div style={{ padding: 50, height: '90vh', overflow: 'hidden' }}>
+            <Scroll height={500}>
+                <div style={{ padding: 20, height: 800, backgroundColor: 'aliceblue' }}>
+                    {/* <input style={{position: 'relative'}}/> */}
+                <Select options={options} />
+                </div>
+            </Scroll>
+            <br />
+            <br />
             <Shimmer />
             <div>
                 <Loading />
@@ -59,12 +68,8 @@ export default class App extends React.Component {
             </div>
             <br />
             <br />
-            <Scroll height={500}>
-                <div style={{padding: 20, height:800}}>
-                    <Select options={options} />
 
-                </div>
-            </Scroll>
+            
             <div><Button>Lime</Button></div>
             <br />
             <br />

@@ -131,6 +131,7 @@ export default class Select extends React.Component {
                     onBlur={this.onBlurLayer}
                 >
                     <List
+                        className={'test'}
                         itemHeight={lineHeight}
                         items={options}
                         renderItem={renderItem}
