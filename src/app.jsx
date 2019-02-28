@@ -8,6 +8,7 @@ import Select from './Select'
 import Shimmer from './Shimmer'
 import MultiSelect from './MultiSelect'
 import Loading from './Loading'
+import Menu from './Menu'
 import 'lime/lime.css'
 import './app.less'
 import debounce from 'debounce'
@@ -49,6 +50,9 @@ export default class App extends React.Component {
     render() {
         //document.body.style.overflow = 'hidden'
         return <div style={{ padding: 50 }}>
+            <Menu />
+            <br></br>
+            <br></br>
             <Scroll height={500}>
                 <div style={{ padding: 20, height: 800, backgroundColor: 'aliceblue' }}>
                     {/* <input style={{position: 'relative'}}/> */}
