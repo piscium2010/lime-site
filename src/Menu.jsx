@@ -1,10 +1,43 @@
 import React from 'react';
 import Layer from 'lime/Layer'
 
-let Li = props => {
-    return (
-        <li {...props}>{props.children}</li>
-    )
+class Li extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { show: false }
+    }
+
+    onClick = evt => {
+        let { children } = this.props
+        let { left, top, width, height } = evt.target.getBoundingClientRect()
+        this.setState({
+            show: children ? true : false,
+            left: left + width,
+            top
+        })
+    }
+
+    onBlurLayer = evt => {
+        this.setState({
+            show: false
+        })
+    }
+
+    render() {
+        let style = { background: 'aliceblue', width: 100 }
+        let { show, left, top } = this.state
+        let { children, title } = this.props
+        return (
+            <React.Fragment>
+                <li style={style} onClick={this.onClick}>{title}</li>
+                <Layer show={show} left={left} top={top} onBlur={this.onBlurLayer}>
+                    {
+                        children
+                    }
+                </Layer>
+            </React.Fragment>
+        )
+    }
 }
 
 export default class Menu extends React.Component {
@@ -20,50 +53,25 @@ export default class Menu extends React.Component {
         }
     }
 
-    onClick = evt => {
-        console.log(`click`,)
-        let { left, top, width, height } = evt.target.getBoundingClientRect()
-        this.setState({
-            show: true,
-            left: left + width,
-            top
-        })
-    }
-
-    onBlurLayer = evt => {
-        this.setState({
-            show: false
-        })
-    }
-
     render() {
-
-        let { left, top, width, show } = this.state
-        let { lineHeight, options, ...rest } = this.props
-        let style ={background: 'aliceblue', width:100}
-        // let Li = props => {
-        //     return (
-        //         <li {...props} onClick={this.onClick}>{props.children}</li>
-        //     )
-        // }
         return (
             <div>
                 <ul>
-                    <Li onClick={this.onClick} style={style}>Coffee</Li>
-                    <Li onClick={this.onClick} style={style}>Tea</Li>
-                    <Li onClick={this.onClick} style={style}>
+                    <Li title={'Coffee'}></Li>
+                    <Li title={'Tea'}></Li>
+                    <Li title={'Team'}>
                         <ul>
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
+                            <Li title={'Coffee II'}></Li>
+                            <Li title={'Tea II'}></Li>
+                            <Li title={'Team II'}>
+                                <ul>
+                                    <Li title={'Coffee III'}></Li>
+                                    <Li title={'Tea III'}></Li>
+                                </ul>
+                            </Li>
                         </ul>
                     </Li>
                 </ul>
-                <Layer show={show} left={left} top={top} onBlur={this.onBlurLayer}> 
-                    <div>
-                        test
-                    </div>
-                </Layer>
             </div>
         )
     }

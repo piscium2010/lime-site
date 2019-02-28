@@ -8,7 +8,8 @@ import Select from './Select'
 import Shimmer from './Shimmer'
 import MultiSelect from './MultiSelect'
 import Loading from './Loading'
-import Menu from './Menu'
+import Li from './Li'
+import Lii from './Lii'
 import 'lime/lime.css'
 import './app.less'
 import debounce from 'debounce'
@@ -50,7 +51,44 @@ export default class App extends React.Component {
     render() {
         //document.body.style.overflow = 'hidden'
         return <div style={{ padding: 50 }}>
-            <Menu />
+            <div>
+                <ul>
+                    <Li title={'Coffee'}></Li>
+                    <Li title={'Tea'}></Li>
+                    <Li title={'Team'}>
+                        <ul>
+                            <Li title={'Coffee II'}></Li>
+                            <Li title={'Tea II'}></Li>
+                            <Li title={'Team II'}>
+                                <ul>
+                                    <Li title={'Coffee III'}></Li>
+                                    <Li title={'Tea III'}></Li>
+                                </ul>
+                            </Li>
+                        </ul>
+                    </Li>
+                </ul>
+            </div>
+            <br></br>
+
+            <div>
+                <ul>
+                    <Lii title={'Coffee'}></Lii>
+                    <Lii title={'Tea'}></Lii>
+                    <Lii title={'Team'}>
+                        <ul>
+                            <Lii title={'Coffee II'}></Lii>
+                            <Lii title={'Tea II'}></Lii>
+                            <Lii title={'Team II'}>
+                                <ul>
+                                    <Lii title={'Coffee III'}></Lii>
+                                    <Lii title={'Tea III'}></Lii>
+                                </ul>
+                            </Lii>
+                        </ul>
+                    </Lii>
+                </ul>
+            </div>
             <br></br>
             <br></br>
             <Scroll height={500}>
