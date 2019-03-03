@@ -40,7 +40,7 @@ export default class Li extends React.Component {
         let { show, left, top } = this.state
         let { children, title } = this.props
         return (
-            <li style={style} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
+            <li className={`sd-menu-item`} style={style} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
                 {title}
                 <Layer show={show} left={left} top={top} onBlur={this.onBlurLayer}>
                     {
