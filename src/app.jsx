@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Button from 'lime/Button'
 import Scroll from 'lime/Scroll'
 import List from 'lime/List'
@@ -10,6 +11,7 @@ import MultiSelect from './MultiSelect'
 import Loading from './Loading'
 import Li from './Li'
 import Lii from './Lii'
+import Menu from './Menu'
 import 'lime/lime.css'
 import './app.less'
 import debounce from 'debounce'
@@ -48,9 +50,28 @@ export default class App extends React.Component {
 
     }
 
+    Index = () => {
+        return <h2>Home</h2>;
+    }
+
+    About = () => {
+        return <h2>About</h2>;
+    }
+
+    Users = () => {
+        return <h2>Users</h2>;
+    }
+
     render() {
+
+        // return (
+        //     <Router>
+        //         <Menu />
+        //   </Router >
+        // )
         //document.body.style.overflow = 'hidden'
-        return <div style={{ padding: 50 }}>
+        return <div style={{ padding: 0 }}>
+        <Menu />
             <div>
                 <ul style={{width:200}}>
                     <Li title={'Coffee'}></Li>
@@ -111,7 +132,7 @@ export default class App extends React.Component {
             <br />
             <br />
 
-            
+
             <div><Button>Lime</Button></div>
             <br />
             <br />

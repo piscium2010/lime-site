@@ -13,11 +13,12 @@ export default class Li extends React.Component {
 
     onClick = evt => {
         if (evt.target != evt.currentTarget) return
-        let { children } = this.props
+        let { children, onClick = () => { } } = this.props
         let { expand } = this.state
         this.setState({
             expand: children ? !expand : false,
         })
+        onClick(evt)
     }
 
     render() {
