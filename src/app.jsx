@@ -52,7 +52,7 @@ export default class App extends React.Component {
         //document.body.style.overflow = 'hidden'
         return <div style={{ padding: 50 }}>
             <div>
-                <ul>
+                <ul style={{width:200}}>
                     <Li title={'Coffee'}></Li>
                     <Li title={'Tea'}></Li>
                     <Li title={'Team'}>
@@ -75,7 +75,7 @@ export default class App extends React.Component {
                 <ul>
                     <Lii title={'Coffee'}></Lii>
                     <Lii title={'Tea'}></Lii>
-                    <Lii title={'Team'} defaultExpand={false}>
+                    <Lii title={'Team'} defaultExpand>
                         <ul>
                             <Lii title={'Coffee II'}></Lii>
                             <Lii title={'Tea II'}></Lii>

@@ -6,49 +6,55 @@ export default class Li extends React.Component {
     constructor(props) {
         super(props);
         this.state = { show: false }
-        this.debouncedOnMouseOver = debounce(this.onMouseOver, 200)
-        this.debouncedOnMouseLeave = debounce(this.onMouseLeave, 200)
+        this.debouncedShowOrHideLayer = debounce(this.showOrHideLayer, 300)
     }
 
     onMouseOver = evt => {
         if (evt.target !== evt.currentTarget) return
-        console.log(`over`, Math.random())
         let { children } = this.props
         let { left, top, width, height } = evt.target.getBoundingClientRect()
+        this.debouncedShowOrHideLayer(children ? true : false, left + width, top)
+    }
+
+    onMouseLeave = evt => {
+        this.debouncedShowOrHideLayer(false)
+    }
+
+    onBlurLayer = evt => {
+        this.debouncedShowOrHideLayer(false)
+    }
+
+    onClick = evt => {
+        let { onClick = () => {}} = this.props
+        this.debouncedShowOrHideLayer(false)
+        onClick(evt)
+    }
+
+    showOrHideLayer = (show, left, top) => {
         this.setState({
-            show: children ? true : false,
-            left: left + width,
+            show,
+            left,
             top
         })
     }
 
-    onMouseLeave = evt => {
-        console.log(`leave`)
-        this.setState({
-            show: false
-        })
-    }
-
-    onBlurLayer = evt => {
-        this.setState({
-            show: false
-        })
-    }
-
     render() {
-        let style = { background: 'aliceblue', width: 100 }
         let { show, left, top } = this.state
         let { children, title } = this.props
         return (
-            <li className={`sd-menu-item`} style={style} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave}>
+            <li className={`sd-menu-item`}
+                onMouseOver={this.onMouseOver}
+                onMouseLeave={this.onMouseLeave}
+                onClick={this.onClick}>
                 {title}
-                <Layer show={show} left={left} top={top} onBlur={this.onBlurLayer}>
-                    {
-                        children
-                    }
+                <Layer 
+                    show={show}
+                    left={left}
+                    top={top}
+                    onBlur={this.onBlurLayer}>
+                    {children}
                 </Layer>
             </li>
-
         )
     }
 }
