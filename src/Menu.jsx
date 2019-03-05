@@ -6,7 +6,7 @@ export default class Menu extends React.Component {
     render() {
         return (
             <div>
-                <Scroll style={{ height: '600px', width:300 }}>
+                <Scroll style={{ height: '300px', width:300 }}>
                     <ul>
                         <Li title={'Get Started'}></Li>
                         <Li title={'Collapsible'}></Li>
