@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import ButtonPage from './pages/ButtonPage'
+import LoadingPage from './pages/LoadingPage'
+import MultiSelectPage from './pages/select/MultiSelectPage'
+import SearchPage from './pages/select/SearchPage'
+import TestPage from './Test'
 import Button from 'lime/Button'
 import Scroll from 'lime/Scroll'
 import List from 'lime/List'
@@ -65,8 +70,18 @@ export default class App extends React.Component {
     render() {
         return (
             <Router>
-                <Menu />
-          </Router >
+                <div>
+                    <TestPage/>
+                    <Menu />
+                    <div className='main'>
+                        <Route path='/button' component={ButtonPage} />
+                        <Route path='/loading' component={LoadingPage} />
+                        <Route path='/multiselect' component={MultiSelectPage} />
+                        <Route path='/search' component={SearchPage} />
+                        <Route path='/test' component={TestPage} />
+                    </div>
+                </div>
+            </Router >
         )
     }
 }

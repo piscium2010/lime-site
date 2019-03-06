@@ -96,7 +96,7 @@ export default class App extends React.Component {
                 <ul>
                     <Lii title={'Coffee'}></Lii>
                     <Lii title={'Tea'}></Lii>
-                    <Lii title={'Team'} defaultExpand>
+                    <Lii title={'Team s'} defaultExpand>
                         <ul>
                             <Lii title={'Coffee II'}></Lii>
                             <Lii title={'Tea II'}></Lii>

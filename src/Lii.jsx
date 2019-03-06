@@ -8,16 +8,17 @@ export default class Li extends React.Component {
     }
 
     get expand() {
-        return this.props.expand || this.state.expand
+        return 'expand' in this.props ? this.props.expand : this.state.expand
     }
 
     onClick = evt => {
-        if (evt.target != evt.currentTarget) return
+        if (evt.target !== evt.currentTarget) return
         let { children, onClick = () => { } } = this.props
         let { expand } = this.state
         this.setState({
             expand: children ? !expand : false,
         })
+        
         onClick(evt)
     }
 
