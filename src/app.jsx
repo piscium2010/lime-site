@@ -71,7 +71,6 @@ export default class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <TestPage/>
                     <Menu />
                     <div className='main'>
                         <Route path='/button' component={ButtonPage} />

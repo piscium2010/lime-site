@@ -20,7 +20,11 @@ export default class ButtonPage extends React.Component {
     render() {
         console.log(`render`,)
         return (
-           <div><Button>Lime</Button></div>
+           <div>
+               <Button>Lime</Button>
+               <Button type='text'>Lime</Button>
+           </div>
+           
         )
     }
 }

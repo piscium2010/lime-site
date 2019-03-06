@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Button from 'lime/Button'
 import Scroll from 'lime/Scroll'
+import Checkbox from 'lime/Checkbox'
 import List from 'lime/List'
 import Layer from 'lime/Layer'
 import S from './S'
@@ -71,7 +72,7 @@ export default class App extends React.Component {
         // )
         //document.body.style.overflow = 'hidden'
         return <div style={{ padding: 0 }}>
-        <Menu />
+        <Checkbox/>
             <div>
                 <ul style={{width:200}}>
                     <Li title={'Coffee'}></Li>
