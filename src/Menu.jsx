@@ -3,9 +3,9 @@ import List from './Lii'
 import Scroll from 'lime/Scroll'
 import { Link } from "react-router-dom";
 
-const Li = ({title, to, children}) => {
+const Li = ({title, to, children, ...rest}) => {
     return (
-        to ? <Link to={to}><List title={title}>{children}</List></Link> : <List title={title}>{children}</List>
+        to ? <Link to={to}><List title={title} {...rest}>{children}</List></Link> : <List title={title} {...rest}>{children}</List>
     )
 }
 
@@ -18,7 +18,11 @@ export default class Menu extends React.Component {
                         <Li title={'Get Started'}></Li>
                         <Li title={'Button'} to='/button'></Li>
                         <Li title={'Card'} to='/card'></Li>
-                        <Li title={'Collapsible'} to='/collapsible'></Li>
+                        <Li title={'Collapsible'} defaultExpand>
+                            <ul>
+                                <Li title={'Accordian'} to='/collapsible/accordian'></Li>
+                            </ul>
+                        </Li>
                         <Li title={'Layer'} to='/layer'></Li>
                         <Li title={'Loading'} to='/loading'></Li>
                         <Li title={'Menu'}>
