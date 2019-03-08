@@ -6,7 +6,7 @@ class Panel extends React.Component {
         let { title, children, activeKey, eventKey, ...rest } = this.props
         return (
             <React.Fragment>
-                <h5 className='sd-card' eventkey={eventKey} {...rest}>{title}</h5>
+                <h5 eventkey={eventKey} {...rest}>{title}</h5>
                 <Collapsible expand={activeKey == eventKey}>
                     {children}
                 </Collapsible>
@@ -30,22 +30,22 @@ export default class Accordion extends React.Component {
     }
 
     onClick = evt => {
-        if (evt.target.hasAttribute('eventKey')) {
-            this.setState({
-                activeKey: evt.target.getAttribute('eventKey')
-            })
+        let eventKey = evt.target.getAttribute('eventKey')
+        if (eventKey) {
+            this.setState(preState => ({
+                activeKey: eventKey == preState.activeKey ? '' : eventKey
+            }))
         }
     }
 
     render() {
-        let { children, ...rest } = this.props
-        let prop = { activeKey: this.activeKey }
+        let { children, defaultActiveKey, ...rest } = this.props
 
         return (
             <div onClickCapture={this.onClick} {...rest}>
                 {
                     React.Children.toArray(children).map(el =>
-                        React.cloneElement(el, prop)
+                        React.cloneElement(el, { activeKey: this.activeKey })
                     )
                 }
             </div>

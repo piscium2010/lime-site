@@ -6,3 +6,4 @@ scroll
     horizontal
 react-router
     hot reload
+Search
