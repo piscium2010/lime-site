@@ -6,7 +6,7 @@ class Panel extends React.Component {
         let { title, children, activeKey, eventKey, ...rest } = this.props
         return (
             <React.Fragment>
-                <h5 eventkey={eventKey} {...rest}>{title}</h5>
+                <h5 className='sd-card' eventkey={eventKey} {...rest}>{title}</h5>
                 <Collapsible expand={activeKey == eventKey}>
                     {children}
                 </Collapsible>

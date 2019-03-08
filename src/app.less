@@ -13,6 +13,8 @@
     to {transform: rotate((360deg))}
 }
 
+@sideNavWidth: 240px;
+
 a {
     text-decoration: none;
     &:visited,&:active {
@@ -20,6 +22,14 @@ a {
     }
 }
 
-.main {
+.side-nav {
+    width: @sideNavWidth;
     float: left;
+}
+
+.main {
+    box-sizing: border-box;
+    width: calc(100% - @sideNavWidth);
+    float: left;
+    padding-left: 10px;
 }

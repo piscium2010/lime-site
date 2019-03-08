@@ -12,8 +12,8 @@ const Li = ({title, to, children, ...rest}) => {
 export default class Menu extends React.Component {
     render() {
         return (
-            <div>
-                <Scroll style={{ height: '99vh', width: 300, float: 'left' }}>
+            <div className='side-nav'>
+                <Scroll style={{ height: '99vh' }}>
                     <ul>
                         <Li title={'Get Started'}></Li>
                         <Li title={'Button'} to='/button'></Li>
