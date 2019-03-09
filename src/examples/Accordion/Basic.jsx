@@ -3,7 +3,7 @@ import Accordion from '../../components/Accordion'
 
 const titleStyle = { margin: 0, cursor: 'pointer', padding: 15, background: 'white' }
 
-export default class AccordiontPage extends React.Component {
+export default class Basic extends React.Component {
     render() {
         return (
             <div style={{ width: 300, margin: 'auto' }}>

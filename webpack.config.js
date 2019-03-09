@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const highlight = require('highlight.js')
 
 module.exports = {
     mode: 'development',
@@ -32,14 +33,29 @@ module.exports = {
           {
             test: /\.(css|less)$/,
             use: [ 'style-loader', 'css-loader','less-loader' ]
-          }
+          },
+          {
+            test: /\.(md|html)$/,
+            use: [
+              'html-loader',
+              {
+                loader: 'markdown-loader',
+                options: {
+                  highlight: (code, lang) => {
+                    const html = highlight.highlight('jsx', code).value;
+                    return `<span class="hljs">${html}</span>`;
+                  }
+                },
+              },
+            ],
+          },
         ]
       },
     devtool: 'inline-source-map',
     plugins: [
       new webpack.NamedModulesPlugin(),
       new HtmlWebpackPlugin({
-        title: 'My App',
+        title: 'Lime',
         filename: 'index.html'
       }),
       new webpack.HotModuleReplacementPlugin()

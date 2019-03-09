@@ -1,19 +1,5 @@
 import React from 'react'
-import Collapsible from 'lime/Collapsible'
-
-class Panel extends React.Component {
-    render() {
-        let { title, children, activeKey, eventKey, ...rest } = this.props
-        return (
-            <React.Fragment>
-                <h5 eventkey={eventKey} {...rest}>{title}</h5>
-                <Collapsible expand={activeKey == eventKey}>
-                    {children}
-                </Collapsible>
-            </React.Fragment>
-        )
-    }
-}
+import Panel from './Panel'
 
 export default class Accordion extends React.Component {
     static Panel = Panel

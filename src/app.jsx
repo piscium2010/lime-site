@@ -18,6 +18,9 @@ import Loading from './Loading'
 import Li from './Li'
 import Lii from './Lii'
 import Menu from './Menu'
+import Markdown from './components/Markdown'
+import content from './markdown/test.md'
+import './atom-one-dark.css'
 import 'lime/lime.css'
 import './app.less'
 import debounce from 'debounce'
@@ -72,6 +75,7 @@ export default class App extends React.Component {
         return (
             <Router>
                 <div>
+                    <Markdown html={content}/>
                     <Menu />
                     <div className='main'>
                         <Route path='/button' component={ButtonPage} />
