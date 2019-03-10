@@ -2,6 +2,6 @@ import React from 'react';
 
 export default class Markdown extends React.Component {
   render() {
-    return (<div dangerouslySetInnerHTML={{ __html: this.props.html }} />)
+    return (<div className='markdown' dangerouslySetInnerHTML={{ __html: this.props.html }} />)
   }
 }

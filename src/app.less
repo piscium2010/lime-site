@@ -23,7 +23,29 @@ a {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-family: Roboto,sans-serif;
+}
+
+.example {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px 0 0 15px;
+
+    &-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border: none;
+        height: 30px;
+        padding: 0 15px;
+
+        img {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+    }
 }
 
 .side-nav {
@@ -32,8 +54,16 @@ body {
 }
 
 .main {
+    background-color: #f4f5f5;
     box-sizing: border-box;
+    min-height: 1200px;
     width: calc(100% - @sideNavWidth);
     float: left;
     padding-left: 10px;
+}
+
+.markdown {
+    .hljs {
+        padding: 15px;
+    }
 }

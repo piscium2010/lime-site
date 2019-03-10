@@ -35,14 +35,14 @@ module.exports = {
             use: [ 'style-loader', 'css-loader','less-loader' ]
           },
           {
-            test: /\.(md|html)$/,
+            test: /\.(md)$/,
             use: [
               'html-loader',
               {
                 loader: 'markdown-loader',
                 options: {
                   highlight: (code, lang) => {
-                    const html = highlight.highlight('jsx', code).value;
+                    const html = highlight.highlight('js', code).value;
                     return `<span class="hljs">${html}</span>`;
                   }
                 },
