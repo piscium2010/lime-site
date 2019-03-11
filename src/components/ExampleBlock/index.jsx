@@ -38,7 +38,7 @@ export default class ExampleBlock extends React.Component {
                             onMouseOver={this.onMouseOver}
                         />
                     </div>
-                    {expand && <Markdown html={md} />}
+                    {expand && <div style={{marginBottom:15}}><Markdown html={md} /></div>}
                     {this.props.children}
                 </section>
             </div>

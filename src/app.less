@@ -13,7 +13,7 @@
     to {transform: rotate((360deg))}
 }
 
-@sideNavWidth: 240px;
+@sideNavWidth: 280px;
 @sectionMarginBottom: 15px;
 
 a {
@@ -26,27 +26,28 @@ a {
 body {
     font-weight: 300;
     font-family: Roboto,sans-serif;
+    margin: 0;
 }
 
-.example-block {
+.section(){
     background-color: #fff;
     border: 1px solid #e0e0e0;
     padding: 0 15px 15px;
+    margin-bottom: 15px;
+}
 
-    .example {
-        margin-top: 15px;
-        margin-bottom: @sectionMarginBottom;
-    }
+.example-block {
+    .section();
 
     &-header {
         align-items: center;
         background-color: #f2f2f2;
         display: flex;
         justify-content: flex-end;
-        margin: 0 -15px 0;
+        margin: 0 -15px @sectionMarginBottom;
         border: none;
         height: 30px;
-        padding: 10px 15px;
+        padding: 5px @sectionMarginBottom;
 
         img {
             border-radius: 50%;
@@ -64,7 +65,13 @@ body {
 }
 
 .implement {
-    background-color: #fff;
+    .section();
+    h4 {
+        font-weight: 300;
+    }
+    h3 {
+        font-weight: 400;
+    }
 }
 
 .side-nav {
@@ -75,14 +82,34 @@ body {
 .main {
     background-color: #f9f9f9;
     box-sizing: border-box;
-    min-height: 1200px;
+    height: 100vh;
+    overflow-y: auto;
     width: calc(100% - @sideNavWidth);
     float: left;
-    padding-left: 10px;
+    padding: 10px;
+
+    &-content{
+        margin: auto;
+        max-width: 900px;
+    }
 }
 
 .markdown {
     .hljs {
         padding: 15px;
+    }
+
+    pre {
+        margin: 0;
+    }
+
+    .copy {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        button {
+            padding: 5px 8px;
+        }
     }
 }

@@ -19,8 +19,8 @@ const Panel = ({ children, ...rest }) => (
 export default class Basic extends React.Component {
     render() {
         return (
-            <div className='example' style={{ width: 300 }}>
-                <Accordion defaultActiveKey='2'>
+            <div style={{ width: 300 }}>
+                <Accordion defaultActiveKey='3'>
                     <Panel eventKey='1' title='First Title'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit
                         Lorem ipsum dolor sit amet consectetur adipisicing elit

@@ -4,7 +4,7 @@ import ButtonPage from './pages/ButtonPage'
 import LoadingPage from './pages/LoadingPage'
 import MultiSelectPage from './pages/select/MultiSelectPage'
 import SearchPage from './pages/select/SearchPage'
-import AccordianPage from './pages/AccordianPage'
+import AccordionPage from './pages/AccordionPage'
 import TestPage from './Test'
 import Button from 'lime/Button'
 import Scroll from 'lime/Scroll'
@@ -75,12 +75,14 @@ export default class App extends React.Component {
                 <div>
                     <Menu />
                     <div className='main'>
-                        <Route path='/button' component={ButtonPage} />
-                        <Route path='/accordion' component={AccordianPage} />
-                        <Route path='/loading' component={LoadingPage} />
-                        <Route path='/multiselect' component={MultiSelectPage} />
-                        <Route path='/search' component={SearchPage} />
-                        <Route path='/test' component={TestPage} />
+                        <div className="main-content">
+                            <Route path='/button' component={ButtonPage} />
+                            <Route path='/accordion' component={AccordionPage} />
+                            <Route path='/loading' component={LoadingPage} />
+                            <Route path='/multiselect' component={MultiSelectPage} />
+                            <Route path='/search' component={SearchPage} />
+                            <Route path='/test' component={TestPage} />
+                        </div>
                     </div>
                 </div>
             </Router >

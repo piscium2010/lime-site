@@ -2,8 +2,6 @@
 import React from 'react'
 import Panel from './Panel'
 
-export { Panel }
-
 export default class Accordion extends React.Component {
     static Panel = Panel
 
