@@ -2,8 +2,8 @@
 import React from 'react'
 import Accordion from '../../components/Accordion'
 
-const titleStyle = { margin: 0, fontWeight: 400, cursor: 'pointer', padding: 15, background: 'white' }
-const contentStyle = { backgroundColor: 'rgb(250,237,208)', borderRadius: '0 0 5px 5px', margin: '0 5px 10px', padding: 10 }
+const titleStyle = { margin: 0, fontWeight: 400, cursor: 'pointer', padding: 15, background: '#fff' }
+const contentStyle = { margin: '0 5px 5px', padding: '15px 10px' }
 const Panel = ({ children, ...rest }) => (
     <Accordion.Panel
         className='sd-card'
@@ -19,7 +19,7 @@ const Panel = ({ children, ...rest }) => (
 export default class Basic extends React.Component {
     render() {
         return (
-            <div style={{ width: 300 }}>
+            <div className='example' style={{ width: 300 }}>
                 <Accordion defaultActiveKey='2'>
                     <Panel eventKey='1' title='First Title'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit

@@ -29,23 +29,18 @@ export default class ExampleBlock extends React.Component {
         let { expand } = this.state
         return (
             <div>
-                <section className="example">
-                    {this.props.children}
-                    <div className='example-footer'>
-                        <img 
-                            alt="expand code" 
-                            src={expand ? closeIcon : expandIcon} 
+                <section className="example-block">
+                    <div className='example-block-header sd-card'>
+                        <img
+                            alt="expand code"
+                            src={expand ? closeIcon : expandIcon}
                             onClick={this.onClick}
                             onMouseOver={this.onMouseOver}
                         />
                     </div>
+                    {expand && <Markdown html={md} />}
+                    {this.props.children}
                 </section>
-                {
-                    expand &&
-                    <section>
-                        <Markdown html={md} />
-                    </section>
-                }
             </div>
         )
     }

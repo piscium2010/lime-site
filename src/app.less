@@ -14,6 +14,7 @@
 }
 
 @sideNavWidth: 240px;
+@sectionMarginBottom: 15px;
 
 a {
     text-decoration: none;
@@ -27,25 +28,43 @@ body {
     font-family: Roboto,sans-serif;
 }
 
-.example {
+.example-block {
     background-color: #fff;
     border: 1px solid #e0e0e0;
-    padding: 20px 0 0 15px;
+    padding: 0 15px 15px;
 
-    &-footer {
+    .example {
+        margin-top: 15px;
+        margin-bottom: @sectionMarginBottom;
+    }
+
+    &-header {
+        align-items: center;
+        background-color: #f2f2f2;
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+        margin: 0 -15px 0;
         border: none;
         height: 30px;
-        padding: 0 15px;
+        padding: 10px 15px;
 
         img {
+            border-radius: 50%;
             cursor: pointer;
             width: 16px;
             height: 16px;
+            padding: 10px;
+            background-color: rgba(0,0,0,0);
+            transition: background-color .3s ease-out;
+            &:hover {
+                background-color: rgba(0,0,0,0.12);
+            }
         }
     }
+}
+
+.implement {
+    background-color: #fff;
 }
 
 .side-nav {
@@ -54,7 +73,7 @@ body {
 }
 
 .main {
-    background-color: #f4f5f5;
+    background-color: #f9f9f9;
     box-sizing: border-box;
     min-height: 1200px;
     width: calc(100% - @sideNavWidth);
