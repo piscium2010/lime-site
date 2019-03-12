@@ -11,6 +11,8 @@ Search
 button
     ripple
 
+Dialog
+
 menu 
     responsive?
     inidcator

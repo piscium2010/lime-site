@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Button from 'lime/Button'
+import Ripple from 'lime/Ripple'
 
 const options = []
 for (let i = 0; i < 20; i++) {
@@ -21,8 +22,9 @@ export default class ButtonPage extends React.Component {
         console.log(`render`,)
         return (
            <div>
-               <Button>Lime</Button>
-               <Button type='text'>Lime</Button>
+               <Button>Lime<Ripple></Ripple></Button>
+               <Button type='text'>Lime
+               </Button>
            </div>
            
         )
