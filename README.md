@@ -40,7 +40,7 @@ select
 
 	tooltip
 
-Menu - style
+Menu - style    
 
 Collapsible 
 	- collapsible inside collapsible
