@@ -31,10 +31,13 @@ body {
 }
 
 h4 {
-    font-weight: 300;
-}
-h3 {
     font-weight: 400;
+}
+h2 {
+    font-weight: 400;
+    &:not(:first-child) {
+        margin-top: 100px;
+    }
 }
 
 .section(){
@@ -70,6 +73,10 @@ h3 {
             }
         }
     }
+
+    .sd-collapsible {
+        transition-duration: .55s;
+    }
 }
 
 .implement {
@@ -85,7 +92,7 @@ h3 {
     background-color: #f9f9f9;
     box-sizing: border-box;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: scroll;
     width: calc(100% - @sideNavWidth);
     float: left;
     padding: 10px;
@@ -99,6 +106,10 @@ h3 {
 .markdown {
     .hljs {
         padding: 15px;
+
+        &-comment {
+            color: currentColor;
+        }
     }
 
     pre {

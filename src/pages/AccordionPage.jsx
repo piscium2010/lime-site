@@ -10,11 +10,11 @@ export default class AccordiontPage extends React.Component {
     render() {
         return (
             <div>
-                <h3>Story</h3>
+                <h2>Story</h2>
                 <ExampleBlock md={exampleMD}>
                     <Basic />
                 </ExampleBlock>
-                    <h3>Implement</h3>
+                <h2>Build it yourself</h2>
                 <section className='implement'>
                     <h4>Panel.jsx</h4>
                     <Markdown html={panelMD} />
