@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import ButtonPage from './pages/ButtonPage'
 import LoadingPage from './pages/LoadingPage'
 import MultiSelectPage from './pages/select/MultiSelectPage'
+import SelectBasicPage from './pages/select/BasicPage'
 import SearchPage from './pages/select/SearchPage'
 import AccordionPage from './pages/AccordionPage'
 import TestPage from './Test'
@@ -80,6 +81,7 @@ export default class App extends React.Component {
                             <Route path='/accordion' component={AccordionPage} />
                             <Route path='/loading' component={LoadingPage} />
                             <Route path='/multiselect' component={MultiSelectPage} />
+                            <Route path='/select/basic' component={SelectBasicPage} />
                             <Route path='/search' component={SearchPage} />
                             <Route path='/test' component={TestPage} />
                         </div>

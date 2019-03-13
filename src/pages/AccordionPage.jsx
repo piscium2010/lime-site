@@ -1,9 +1,9 @@
 import React from 'react'
-import Basic from '../examples/Accordion/Basic'
+import Basic from '../examples/accordion/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/Accordion/Basic.jsx.md'
-import panelMD from '../../md/components/Accordion/Panel.jsx.md'
-import accordionMD from '../../md/components/Accordion/accordion.jsx.md'
+import exampleMD from '../../md/examples/accordion/Basic.jsx.md'
+import panelMD from '../../md/components/accordion/Panel.jsx.md'
+import accordionMD from '../../md/components/accordion/accordion.jsx.md'
 import Markdown from '../components/Markdown'
 
 export default class AccordiontPage extends React.Component {
