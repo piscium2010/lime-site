@@ -10,10 +10,12 @@ module.exports = {
     },
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'public')
+      path: path.resolve(__dirname, 'public'),
+      publicPath:'/'
     },
     devServer: {
-      contentBase: './public',
+      contentBase: ['./public', path.join(__dirname, 'assets')],
+      historyApiFallback: true,
       hot: true
     },
     resolve: {

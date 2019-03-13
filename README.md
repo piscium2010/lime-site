@@ -70,3 +70,6 @@ markdown
 
 bg: #f4f5f5
 
+create webpack react
+	- with router
+	- hot reload
