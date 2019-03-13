@@ -30,7 +30,7 @@ export default class ExampleBlock extends React.Component {
         return (
             <div>
                 <section className="example-block">
-                    <div className='example-block-header sd-card'>
+                    <div className='example-block-header'>
                         <img
                             alt="expand code"
                             src={expand ? closeIcon : expandIcon}
