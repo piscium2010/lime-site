@@ -28,7 +28,8 @@ export default class Select extends React.Component {
 
     get text() {
         let { options = []} = this.props
-        return options.find(o => o.value === this.value)
+        let item = options.find(o => o.value === this.value)
+        return item ? item.text : ''
     }
 
     onBlur = evt => {
@@ -48,14 +49,12 @@ export default class Select extends React.Component {
     }
 
     onChange = evt => {
-        this.setState({
-            value: evt.target.value
-        })
         this.props.onChange(evt)
     }
 
     onClickItem = item => {
         this.setState({ value: item.value, show: false })
+        this.props.onChange(item)
     }
 
     onFocus = evt => {
@@ -98,10 +97,10 @@ export default class Select extends React.Component {
 
     render() {
         let { left, top, width, show } = this.state
-        let { lineHeight, options, ...rest } = this.props
+        let { lineHeight, options, style, ...rest } = this.props
 
         return (
-            <div ref={this.ref} className='lime-select-input'>
+            <div ref={this.ref} className='lime-select-input' style={style}>
                 <input
                     {...rest}
                     onFocus={this.onFocus}

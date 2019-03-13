@@ -5,7 +5,7 @@ import 'lime/lime.css'
 const options = []
 for (let i = 0; i < 20; i++) {
     options.push({
-        key: i,
+        value: i,
         text: `${i}. Lorem ipsum dolor sit amet`
     })
 }
@@ -17,18 +17,22 @@ export default class Basic extends React.Component {
         this.state = { value: ''}
     }
 
-    handleChange = evt => {
-        console.log(`change`,)
+    handleChange = item => {
         this.setState({
-            value: evt.target.value
+            value: item.text
         })
     }
 
     render() {
         return (
-            <div style={{ maxWidth: 400 }}>
-                <Select name='user' options={options} onChange={this.handleChange}/>
-                <div>{this.state.value}</div>
+            <div style={{ display:'flex' }}>
+                <Select 
+                    name='user' 
+                    options={options} 
+                    onChange={this.handleChange}
+                    style={{maxWidth: 400}}
+                />
+                <div>{this.state.value}&nbsp;A</div>
             </div>
         )
     }
