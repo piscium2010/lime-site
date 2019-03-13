@@ -18,19 +18,21 @@ export default class Li extends React.Component {
         this.setState({
             expand: children ? !expand : false,
         })
-        
+
         onClick(evt)
     }
 
     render() {
         let { children, title } = this.props
         return (
-            <li className={'sd-menu-item'} onClick={this.onClick}>
-                {title}
+            <React.Fragment>
+                <li className={'sd-menu-item'} onClick={this.onClick}>
+                    <span>{title}</span>
+                </li>
                 <Collapsible expand={this.expand}>
                     {children}
                 </Collapsible>
-            </li>
+            </React.Fragment>
         )
     }
 }
