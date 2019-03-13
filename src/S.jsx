@@ -41,7 +41,7 @@ export default class S extends React.Component {
     render() {
         let { left, top, width, show, value } = this.state
         let { lineHeight } = this.props
-        return <div className='sd-select-input'>
+        return <div className='lime-select-input'>
             <input onClick={this.onClick} value={value} />
             <Layer
                 show={show}

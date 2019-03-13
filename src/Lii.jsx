@@ -26,7 +26,7 @@ export default class Li extends React.Component {
         let { children, title } = this.props
         return (
             <React.Fragment>
-                <li className={'sd-menu-item'} onClick={this.onClick}>
+                <li className={'lime-menu-item'} onClick={this.onClick}>
                     <span>{title}</span>
                 </li>
                 <Collapsible expand={this.expand}>

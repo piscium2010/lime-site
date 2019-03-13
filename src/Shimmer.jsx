@@ -11,11 +11,11 @@ export default class Shimmer extends React.Component {
             show &&
             <React.Fragment>
                 <div style={{ width: 50, height: 50, borderRadius: '50%', margin: 3, overflow: 'hidden' }}>
-                    <div className="sd-shimmer" style={{ height: '100%', width: '100vw' }}></div>
+                    <div className="lime-shimmer" style={{ height: '100%', width: '100vw' }}></div>
                 </div>
-                <div className="sd-shimmer" style={{ height: 15, margin: 3 }}></div>
-                <div className="sd-shimmer" style={{ height: 15, margin: 3 }}></div>
-                <div className="sd-shimmer" style={{ height: 15, margin: 3 }}></div>
+                <div className="lime-shimmer" style={{ height: 15, margin: 3 }}></div>
+                <div className="lime-shimmer" style={{ height: 15, margin: 3 }}></div>
+                <div className="lime-shimmer" style={{ height: 15, margin: 3 }}></div>
             </React.Fragment>
         )
     }

@@ -111,7 +111,7 @@ export default class Select extends React.Component {
             </div>
         )
 
-        return <div ref={ref => this.c = ref} className='sd-select-input'>
+        return <div ref={ref => this.c = ref} className='lime-select-input'>
             <input
                 {...rest}
                 onFocus={this.onFocus}
@@ -120,7 +120,7 @@ export default class Select extends React.Component {
                 onChange={this.onChange}
                 onBlur={this.onBlur}
             />
-            {loading && <i className='sd-spin'></i>}
+            {loading && <i className='lime-spin'></i>}
             {
                 options &&
                 <Layer

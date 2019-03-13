@@ -99,7 +99,7 @@ export default class Select extends React.Component {
             </div>
         )
 
-        return <div ref={ref => this.c = ref} className='sd-select-input'>
+        return <div ref={ref => this.c = ref} className='lime-select-input'>
             <input
                 {...rest}
                 onFocus={this.onFocus}

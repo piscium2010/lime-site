@@ -12,7 +12,7 @@ export default class Loading extends React.Component {
         return (
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width:'100%', height:'100%' }}>
                 <div>
-                    <div className="sd-spin" style={{ width: size, height: size, margin: 'auto' }}></div>
+                    <div className="lime-spin" style={{ width: size, height: size, margin: 'auto' }}></div>
                     {text && <div style={{ textAlign: 'center' }}>{text}</div>}
                 </div>
             </div>
