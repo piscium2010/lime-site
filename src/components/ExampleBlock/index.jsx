@@ -28,11 +28,12 @@ export default class ExampleBlock extends React.Component {
     }
 
     render() {
-        let { md } = this.props
+        let { md, title = '' } = this.props
         let { expand } = this.state
         return (
             <section className="example-block">
                 <div className='example-block-header'>
+                    <h4 style={{ marginRight: 'auto' }}>{title}</h4>
                     <img
                         alt="expand code"
                         src={expand ? closeIcon : expandIcon}

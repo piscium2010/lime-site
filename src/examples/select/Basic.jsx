@@ -5,8 +5,7 @@ import 'lime/lime.css'
 const options = []
 for (let i = 0; i < 20; i++) {
     options.push({
-        value: i,
-        text: `${i}. Lorem ipsum dolor sit amet`
+        value: `${i}. Lorem ipsum dolor sit amet`
     })
 }
 
@@ -19,7 +18,7 @@ export default class Basic extends React.Component {
 
     handleChange = item => {
         this.setState({
-            value: item.text
+            value: item.value
         })
     }
 
@@ -32,7 +31,7 @@ export default class Basic extends React.Component {
                     onChange={this.handleChange}
                     style={{maxWidth: 400}}
                 />
-                <div>{this.state.value}&nbsp;A</div>
+                <span style={{lineHeight:'30px', padding: '0 15px'}}>{this.state.value}</span>
             </div>
         )
     }
