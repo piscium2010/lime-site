@@ -104,9 +104,13 @@ export default class Select extends React.Component {
         }
     }
 
-    renderItem = it => (
-        <div onClick={evt => this.onClickItem(it)}>{it.value}</div>
-    )
+    renderItem = item => {
+        let { renderItem = it => it.value } = this.props
+        console.log(`renderItem`,renderItem)
+        return (
+            <div onClickCapture={evt => this.onClickItem(item)}>{renderItem(item)}</div>
+        )
+    }
 
     onWindowScroll = evt => {
         if (this.node && this.node.contains(evt.target)) {
@@ -160,7 +164,7 @@ export default class Select extends React.Component {
                     >
                         <List
                             itemHeight={lineHeight}
-                            items={this.options.map(o => ({ value: o.value, key: o.value }))}
+                            items={this.options.map(o => ({ ...o, key: o.value }))}
                             renderItem={this.renderItem}
                         />
                     </Dropdown>

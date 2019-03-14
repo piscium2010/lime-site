@@ -17,7 +17,7 @@ export default class BasicPage extends React.Component {
                     <Basic />
                 </ExampleBlock>
                 <ExampleBlock md={loadingMD} title='Disable Option'>
-                    <Loading />
+                    <DisableOption />
                 </ExampleBlock>
                 <ExampleBlock md={loadingMD} title='Loading'>
                     <Loading />
