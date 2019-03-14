@@ -27,6 +27,7 @@ collapsible
 tooltip
 
 select
+	key event
 	load more
 	loading
 	onBlur

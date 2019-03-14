@@ -36,9 +36,9 @@ export default class ExampleBlock extends React.Component {
                     <h4 style={{ marginRight: 'auto' }}>{title}</h4>
                     <img
                         alt="expand code"
-                        src={expand ? closeIcon : expandIcon}
+                           src={expand ? closeIcon : expandIcon}
                         onClick={this.onClick}
-                        onMouseOver={this.onMouseOver}
+                        // onMouseOver={this.onMouseOver}
                     />
                 </div>
                 <Collapsible expand={expand}>

@@ -5,6 +5,7 @@ import Loading from '../../examples/select/Loading'
 import ExampleBlock from '../../components/ExampleBlock'
 import exampleMD from '../../../md/examples/select/Basic.jsx.md'
 import loadingMD from '../../../md/examples/Select/Loading.jsx.md'
+import disableOptionMD from '../../../md/examples/Select/DisableOption.jsx.md'
 import selectMD from '../../../md/components/Select/Select.jsx.md'
 import Markdown from '../../components/Markdown'
 
@@ -16,7 +17,7 @@ export default class BasicPage extends React.Component {
                 <ExampleBlock md={exampleMD} title='Basic'>
                     <Basic />
                 </ExampleBlock>
-                <ExampleBlock md={loadingMD} title='Disable Option'>
+                <ExampleBlock md={disableOptionMD} title='Disable Option'>
                     <DisableOption />
                 </ExampleBlock>
                 <ExampleBlock md={loadingMD} title='Loading'>

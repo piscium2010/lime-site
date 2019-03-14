@@ -3,9 +3,6 @@ import React from 'react';
 import List from 'lime/List'
 import { default as Dropdown } from 'lime/Layer'
 
-const EVENT_DELAYED1 = 200
-const EVENT_DELAYED2 = EVENT_DELAYED1 + 100
-
 export default class Select extends React.Component {
     static defaultProps = {
         lineHeight: 30,
@@ -13,7 +10,8 @@ export default class Select extends React.Component {
         onClick: () => { },
         onChange: () => { },
         onChangeInput: () => { },
-        onFocus: () => { }
+        onFocus: () => { },
+        renderItem: item => <div className={`lime-list-item`}>{item.value}</div>
     }
 
     constructor(props) {
@@ -26,23 +24,14 @@ export default class Select extends React.Component {
         }
     }
 
-    get inputValue() {
-        // let { inputValue } = this.state
-        // return inputValue === undefined ? this.value : inputValue
-        return this.state.inputValue
-    }
-
-    get node() {
-        return this.ref.current
-    }
+    get inputValue() { return this.state.inputValue }
+    get node() { return this.ref.current }
 
     get options() {
         let { options } = this.props
-        if (!this.inputValue) {
-            return options
-        } else {
-            return options && options.filter(o => o.value.indexOf(this.inputValue) >= 0)
-        }
+        return options && this.inputValue
+            ? options.filter(o => o.value.indexOf(this.inputValue) >= 0)
+            : options
     }
 
     get value() {
@@ -58,18 +47,18 @@ export default class Select extends React.Component {
 
     onBlurDropdown = () => {
         let { options, onChange } = this.props
-        let option = options && options.find(o => o.value === this.inputValue)
-        let cb = option ? () => onChange(option) : null
-
+        let option = options && options.find(o => !o.disabled && o.value === this.inputValue)
+        let triggerOnChange = option ? () => onChange(option) : null
         setTimeout(() => {
+            if (this.isFocus) { return }
             this.setState(prevState => {
                 return {
                     value: option ? option.value : prevState.value,
                     inputValue: undefined,
                     show: this.isFocus ? prevState.show : false
                 }
-            }, cb)
-        }, EVENT_DELAYED1) // spare time for onClickItem to execute
+            }, triggerOnChange)
+        }, 200) // spare time for onClickItem to execute
     }
 
     onClick = evt => {
@@ -77,14 +66,14 @@ export default class Select extends React.Component {
         this.props.onClick(evt)
     }
 
+    onClickItem = item => {
+        this.setState({ value: item.value, show: false, inputValue: undefined })
+        this.props.onChange(item)
+    }
+
     onChangeInput = evt => {
         this.setState({ inputValue: evt.target.value });
         this.props.onChangeInput(evt)
-    }
-
-    onClickItem = item => {
-        this.setState({ value: item.value, show: false })
-        this.props.onChange(item)
     }
 
     onFocus = evt => {
@@ -105,9 +94,17 @@ export default class Select extends React.Component {
         }
     }
 
-    renderItem = it => (
-        <div onClick={evt => this.onClickItem(it)}>{it.value}</div>
-    )
+    renderItem = item => {
+        let itemElement = this.props.renderItem(item)
+        let onClickCapture = evt => {
+            if (item.disabled) {
+                this.node.getElementsByTagName('input')[0].focus()
+            } else {
+                this.onClickItem(item)
+            }
+        }
+        return (<div onClickCapture={onClickCapture}>{itemElement}</div>)
+    }
 
     onWindowScroll = evt => {
         if (this.node && this.node.contains(evt.target)) {
@@ -126,7 +123,7 @@ export default class Select extends React.Component {
     }
 
     componentWillReceiveProps() {
-        this.triggerDropdownIfNeeded()
+        this.triggerDropdownIfNeeded() // e.g. after loading
     }
 
     render() {
@@ -152,7 +149,7 @@ export default class Select extends React.Component {
                 {loading && <i className='lime-spin'></i>}
                 {
                     this.options &&
-                    <Dropdown
+                    <Dropdown // position fixed
                         show={show}
                         left={left}
                         top={top}
@@ -161,7 +158,7 @@ export default class Select extends React.Component {
                     >
                         <List
                             itemHeight={lineHeight}
-                            items={this.options.map(o => ({ value: o.value, key: o.value }))}
+                            items={this.options.map(o => ({ ...o, key: o.value }))}
                             renderItem={this.renderItem}
                         />
                     </Dropdown>

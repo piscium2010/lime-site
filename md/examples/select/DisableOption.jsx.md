@@ -1,3 +1,4 @@
+```javascript
 import React from 'react';
 import Select from '../../components/Select'
 import 'lime/lime.css'
@@ -34,3 +35,4 @@ export default class DisableOption extends React.Component {
         )
     }
 }
+```
