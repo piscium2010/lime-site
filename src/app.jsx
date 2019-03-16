@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
-import ButtonPage from './pages/ButtonPage'
-import LoadingPage from './pages/LoadingPage'
-import MultiSelectPage from './pages/select/MultiSelectPage'
-import SelectBasicPage from './pages/select/BasicPage'
-import SearchPage from './pages/select/SearchPage'
 import AccordionPage from './pages/AccordionPage'
+import ButtonPage from './pages/ButtonPage'
+import CardPage from './pages/CardPage'
+import FloatMenuPage from './pages/menu/FloatMenuPage'
+import InlineMenuPage from './pages/menu/InlineMenuPage'
+import LoadingPage from './pages/LoadingPage'
+import SelectPage from './pages/SelectPage'
 import TestPage from './Test'
 import Button from 'lime/Button'
 import Scroll from 'lime/Scroll'
@@ -78,11 +79,12 @@ export default class App extends React.Component {
                     <div className='main'>
                         <div className="main-content">
                             <Route path='/button' component={ButtonPage} />
+                            <Route path='/card' component={CardPage} />
                             <Route path='/accordion' component={AccordionPage} />
                             <Route path='/loading' component={LoadingPage} />
-                            <Route path='/multiselect' component={MultiSelectPage} />
-                            <Route path='/select/basic' component={SelectBasicPage} />
-                            <Route path='/search' component={SearchPage} />
+                            <Route path='/menu/inlineMenu' component={InlineMenuPage} />
+                            <Route path='/menu/floatMenu' component={FloatMenuPage} />
+                            <Route path='/select' component={SelectPage} />
                             <Route path='/test' component={TestPage} />
                         </div>
                     </div>

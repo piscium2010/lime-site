@@ -8,9 +8,8 @@ export default class Select extends React.Component {
         onBlur: () => { },
         onClick: () => { },
         onChange: () => { },
-        onChangeInput: () => { },
         onFocus: () => { },
-        renderItem: item => <div className={`lime-list-item`}>{item.value}</div>
+        renderItem: (item, select) => <div className={`lime-list-item`} onClick={select}>{item.value}</div>
     }
 
     constructor(props) {
@@ -22,14 +21,17 @@ export default class Select extends React.Component {
             show: false
         }
     }
+    get allowInput() {
+        return (this.props.onChangeInput || this.props.filter) ? true : false
+    }
 
     get inputValue() { return this.state.inputValue }
     get node() { return this.ref.current }
 
     get options() {
-        let { options } = this.props
-        return options && this.inputValue
-            ? options.filter(o => o.value.indexOf(this.inputValue) >= 0)
+        let { options, filter } = this.props
+        return this.inputValue && filter
+            ? filter(this.inputValue, options)
             : options
     }
 
@@ -49,15 +51,16 @@ export default class Select extends React.Component {
         let option = options && options.find(o => !o.disabled && o.value === this.inputValue)
         let triggerOnChange = option ? () => onChange(option) : null
         setTimeout(() => {
-            if (this.isFocus) { return }
-            this.setState(prevState => {
-                return {
-                    value: option ? option.value : prevState.value,
-                    inputValue: undefined,
-                    show: this.isFocus ? prevState.show : false
-                }
-            }, triggerOnChange)
-        }, 200) // spare time for onClickItem to execute
+            if (!this.isFocus || !this.allowInput) {
+                this.setState(prevState => {
+                    return {
+                        value: option ? option.value : prevState.value,
+                        inputValue: this.isFocus ? prevState.inputValue : undefined,
+                        show: this.isFocus ? prevState.show : false
+                    }
+                }, triggerOnChange)
+            }
+        }, 200) // spare time for item click event to execute
     }
 
     onClick = evt => {
@@ -65,14 +68,9 @@ export default class Select extends React.Component {
         this.props.onClick(evt)
     }
 
-    onClickItem = item => {
-        this.setState({ value: item.value, show: false, inputValue: undefined })
-        this.props.onChange(item)
-    }
-
     onChangeInput = evt => {
-        this.setState({ inputValue: evt.target.value });
-        this.props.onChangeInput(evt)
+        this.setState({ inputValue: evt.target.value })
+        this.props.onChangeInput && this.props.onChangeInput(evt)
     }
 
     onFocus = evt => {
@@ -81,28 +79,42 @@ export default class Select extends React.Component {
     }
 
     triggerDropdownIfNeeded = () => {
-        let show = this.isFocus
-        if (show && this.state.show === false) {
+        if (this.isFocus) {
             let { left, top, width, height } = this.node.getBoundingClientRect()
             this.setState({
                 left,
                 top: top + height + 5,
                 width,
-                show
+                show: this.allowInput ? true : !this.state.show
             })
         }
     }
 
     renderItem = item => {
-        let itemElement = this.props.renderItem(item)
-        let onClickCapture = evt => {
-            if (item.disabled) {
-                this.node.getElementsByTagName('input')[0].focus()
+        let { multi, onChange } = this.props
+        let multiSelect = () => {
+            let value = Array.from(this.value)
+            let i = value.indexOf(item.value)
+            if (i >= 0) {
+                value.splice(i, 1)
             } else {
-                this.onClickItem(item)
+                value.push(item.value)
             }
+            this.setState({
+                value,
+                inputValue: undefined
+            })
+            onChange(value)
         }
-        return (<div onClickCapture={onClickCapture}>{itemElement}</div>)
+        let select = () => {
+            this.setState({
+                value: item.value,
+                show: false,
+                inputValue: undefined
+            })
+            onChange(item)
+        }
+        return this.props.renderItem(item, multi ? multiSelect : select)
     }
 
     onWindowScroll = evt => {
@@ -122,23 +134,25 @@ export default class Select extends React.Component {
     }
 
     componentWillReceiveProps() {
-        this.triggerDropdownIfNeeded() // e.g. after loading
+        this.triggerDropdownIfNeeded() // trigger after loading, focus, etc
     }
 
     render() {
         let { left, top, width, show } = this.state
         let { className = '',
+            filter,
             lineHeight,
             loading,
             options,
             style,
+            multi,
             onChangeInput,
             ...rest } = this.props
-
         return (
             <div ref={this.ref} className={`lime-select-input ${className}`} style={style}>
                 <input
                     {...rest}
+                    readOnly={this.allowInput ? false : true}
                     onFocus={this.onFocus}
                     onClick={this.onClick}
                     value={this.inputValue === undefined ? this.value : this.inputValue}

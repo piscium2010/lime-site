@@ -11,6 +11,9 @@ react-router
     hot reload?
 Search
 
+Layer
+	- onHide?
+
 button
     ripple
 
@@ -74,3 +77,8 @@ bg: #f4f5f5
 create webpack react
 	- with router
 	- hot reload
+
+create react webpack
+	- html-webpack-plugin
+	- ttf loader
+	- url loader

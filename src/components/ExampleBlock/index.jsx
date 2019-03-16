@@ -21,33 +21,30 @@ export default class ExampleBlock extends React.Component {
         }))
     }
 
-    onMouseOver = evt => {
-        this.setState({
-            expand: true
-        })
-    }
-
     render() {
         let { md, title = '' } = this.props
         let { expand } = this.state
         return (
-            <section className="example-block">
-                <div className='example-block-header'>
-                    <h4 style={{ marginRight: 'auto' }}>{title}</h4>
-                    <img
-                        alt="expand code"
-                           src={expand ? closeIcon : expandIcon}
-                        onClick={this.onClick}
-                        // onMouseOver={this.onMouseOver}
-                    />
-                </div>
-                <Collapsible expand={expand}>
-                    <div><Markdown html={md} /></div>
-                </Collapsible>
-                <div style={{ marginTop: 15 }}>
-                    {this.props.children}
-                </div>
-            </section>
+            <React.Fragment>
+                <h4>{title}</h4>
+                <section className="example-block">
+                    <div className='example-block-header'>
+                        {/* <h4 style={{ marginRight: 'auto' }}>{title}</h4> */}
+                        {/* <img
+                            alt="code"
+                            src={expand ? closeIcon : expandIcon}
+                            onClick={this.onClick}
+                        /> */}
+                        <i className="fas fa-code" onClick={this.onClick}></i>
+                    </div>
+                    <Collapsible expand={expand}>
+                        <div><Markdown html={md} /></div>
+                    </Collapsible>
+                    <div className='example-block-content'>
+                        {this.props.children}
+                    </div>
+                </section>
+            </React.Fragment>
         )
     }
 }

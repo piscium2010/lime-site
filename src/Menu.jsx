@@ -1,47 +1,68 @@
 import React from 'react';
-import List from './Lii'
+import List from './components/InlineMenu'
 import Scroll from 'lime/Scroll'
 import { Link } from "react-router-dom";
-
-const Li = ({ title, to, children, ...rest }) => {
+let n = 0
+const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) => {
+    let active = k == activeK
+    let className = active ? 'lime-active lime-active-text lime-ribbon-right' : ''
+    let menuItem = (
+        <List
+            title={title}
+            className={className}
+            onClick={() => onClick(k)}
+            {...rest}>{children}
+        </List>
+    )
     return (
-        to ? <Link to={to}><List title={title} {...rest}>{children}</List></Link> : <List title={title} {...rest}>{children}</List>
+        to ? <Link to={to}>{menuItem}</Link> : menuItem
     )
 }
 
 export default class Menu extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            activeK: -1
+        }
+    }
+
+    onClick = k => {
+        this.setState({
+            activeK: k
+        })
+    }
+
     render() {
+        let { activeK } = this.state
         return (
             <div className='side-nav'>
-                <Scroll style={{ height: '99vh' }}>
+                <Scroll style={{ height: '99vh' }} >
                     <ul>
-                        <Li title={'Get Started'}></Li>
-                        <Li title={'Button'} to='/button'></Li>
-                        <Li title={'Card'} to='/card'></Li>
-                        <Li title={'Collapsible'} defaultExpand>
-                        </Li>
-                        <Li title={'Accordian'} to='/accordion'></Li>
-                        <Li title={'Layer'} to='/layer'></Li>
-                        <Li title={'Loading'} to='/loading'></Li>
-                        <Li title={'Menu'}>
+                        <Li k={1} activeK={activeK} onClick={this.onClick} title={'Get Started'}></Li>
+                        <Li k={2} activeK={activeK} onClick={this.onClick} title={'Accordian'} to='/accordion'></Li>
+                        <Li k={3} activeK={activeK} onClick={this.onClick} title={'Button'} to='/button'></Li>
+                        <Li k={4} activeK={activeK} onClick={this.onClick} title={'Card'} to='/card'></Li>
+                        <Li k={51} activeK={activeK} onClick={this.onClick} title={'CheckBox'} to='/checBox'></Li>
+                        <Li k={5} activeK={activeK} onClick={this.onClick} title={'ChoiceGroup'} to='/choiceGroup'></Li>
+                        <Li k={6} activeK={activeK} onClick={this.onClick} title={'Collapsible'}></Li>
+                        <Li k={7} activeK={activeK} onClick={this.onClick} title={'Dialog'}></Li>
+                        <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/layer'></Li>
+                        <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/list'></Li>
+                        <Li k={10} activeK={activeK} onClick={this.onClick} title={'Loading'} to='/loading'></Li>
+                        <Li k={11} activeK={activeK} title={'Menu'}>
                             <ul>
-                                <Li title={'inline'} to='/menu/inline'></Li>
-                                <Li title={'horizontal'}></Li>
-                                <Li title={'vertical'}></Li>
+                                <Li k={12} activeK={activeK} onClick={this.onClick} title={'Inline'} to='/menu/inlineMenu'></Li>
+                                <Li k={13} activeK={activeK} onClick={this.onClick} title={'Float'} to='/menu/floatMenu'></Li>
                             </ul>
                         </Li>
-                        <Li title={'Ripple'} to='/ripple'></Li>
-                        <Li title={'Select'}>
-                            <ul>
-                                <Li title={'basic'} to='/select/basic'></Li>
-                                <Li title={'divider'} to='/select/divider'></Li>
-                                <Li title={'filter'} to='/select/filter'></Li>
-                                <Li title={'multi'} to='/select/multi'></Li>
-                                <Li title={'search'} to='/select/search'></Li>
-                            </ul>
-                        </Li>
-                        <Li title={'Shimmer'} to='/shimmer'></Li>
-                        <Li title={'Scroll'} to='/scroll'></Li>
+                        <Li k={14} activeK={activeK} onClick={this.onClick} title={'Ripple'} to='/ripple'></Li>
+                        <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/textField'></Li>
+                        <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/toggle'></Li>
+                        <Li k={15} activeK={activeK} onClick={this.onClick} title={'Select'} to='/select'></Li>
+                        <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/select'></Li>
+                        <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/shimmer'></Li>
+                        <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/scroll'></Li>
                     </ul>
                 </Scroll>
             </div>

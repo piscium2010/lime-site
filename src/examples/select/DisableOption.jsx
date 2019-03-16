@@ -12,11 +12,11 @@ for (let i = 0; i < 10; i++) {
 
 export default class DisableOption extends React.Component {
 
-    renderItem = ({value, disabled}) => {
+    renderItem = ({value, disabled}, select) => {
         return (
             disabled 
             ? <div className='lime-list-item-disabled'>{value}</div>
-            : <div className='lime-list-item'>{value}</div>
+            : <div className='lime-list-item' onClick={select}>{value}</div>
         )
     }
 
@@ -24,7 +24,6 @@ export default class DisableOption extends React.Component {
         return (
             <div style={{ display:'flex' }}>
                 <Select 
-                    id='test'
                     name='disable-option'
                     options={options}
                     renderItem={this.renderItem}

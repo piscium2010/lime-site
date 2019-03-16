@@ -10,7 +10,7 @@ export default class AccordiontPage extends React.Component {
     render() {
         return (
             <div>
-                <h2>Story</h2>
+                <h2>Accordion</h2>
                 <ExampleBlock md={exampleMD}>
                     <Basic />
                 </ExampleBlock>

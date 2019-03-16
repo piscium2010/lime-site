@@ -8,13 +8,14 @@
     animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
 }
 @primaryColor: #a0d911;
+@bodyBackground: #f9f9f9;
 @keyframes lime-loading {
     from {transform: rotate(0deg)}
     to {transform: rotate((360deg))}
 }
 
 @sideNavWidth: 280px;
-@sectionMarginBottom: 15px;
+@sectionMarginBottom: 30px;
 
 a {
     color: currentColor;
@@ -25,6 +26,7 @@ a {
 }
 
 body {
+    background-color: @bodyBackground;
     font-weight: 300;
     font-family: Roboto,sans-serif;
     margin: 0;
@@ -41,51 +43,31 @@ h4 {
     font-weight: 400;
 }
 
-ul {
-    padding: 0;
-    li {
-        padding-left: 40px !important;
-    }
-
-    .lime-collapsible {
-        li {
-            padding-left: 60px !important;
-        }
-    }
-}
-
-li {
-    &:focus, &:hover {
-        background-color: lighten(@primaryColor, 50%);
-        outline: none;
-    }
-}
-
 .section(){
     background-color: #fff;
     border: 1px solid #e0e0e0;
-    padding: 0 15px 15px;
-    margin-bottom: 15px;
+    padding: 0 10px 10px;
+    margin-bottom: @sectionMarginBottom;
 }
 
 .example-block {
     .section();
+    padding: 0 10px 30px;
 
     &-header {
         align-items: center;
         background-color: #f2f2f2;
         display: flex;
         justify-content: flex-end;
-        margin: 0 -15px @sectionMarginBottom;
+        margin: 0 -10px 10px;
         border: none;
-        height: 30px;
-        padding: 5px @sectionMarginBottom;
+        height: 26px;
+        padding: 5px 10px;
 
-        img {
+        .fa-code {
             border-radius: 50%;
             cursor: pointer;
-            width: 16px;
-            height: 16px;
+            font-size: small;
             padding: 10px;
             background-color: rgba(0,0,0,0);
             transition: background-color .3s ease-out;
@@ -98,6 +80,10 @@ li {
     .lime-collapsible {
         transition-duration: .55s;
     }
+
+    &-content {
+        margin-top: 20px;
+    }
 }
 
 .implement {
@@ -107,10 +93,31 @@ li {
 .side-nav {
     width: @sideNavWidth;
     float: left;
+
+    ul {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        li {
+            background-color: #fff;
+            margin-right: 10px;
+            padding-left: 40px !important;
+            &:focus, &:hover {
+                background-color: lighten(@primaryColor, 50%);
+                outline: none;
+            }
+        }
+    
+        .lime-collapsible {
+            li {
+                padding-left: 60px !important;
+            }
+        }
+    }
 }
 
 .main {
-    background-color: #f9f9f9;
+    background-color: @bodyBackground;
     box-sizing: border-box;
     height: 100vh;
     overflow-y: scroll;

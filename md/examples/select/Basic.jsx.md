@@ -18,6 +18,7 @@ export default class Basic extends React.Component {
     }
 
     handleChange = item => {
+        console.log(`change`,)
         this.setState({
             value: item.value
         })
