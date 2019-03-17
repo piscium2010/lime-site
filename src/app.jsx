@@ -9,9 +9,12 @@ import ChoiceGroupPage from './pages/choiceGroupPage'
 import DialogPage from './pages/dialogPage'
 import FloatMenuPage from './pages/menu/FloatMenuPage'
 import InlineMenuPage from './pages/menu/InlineMenuPage'
-import LoadingPage from './pages/LoadingPage'
+import ListPage from './pages/ListPage'
 import Nav from './Nav'
 import SelectPage from './pages/SelectPage'
+import SpinPage from './pages/SpinPage'
+import ShimmerPage from './pages/ShimmerPage'
+import TogglePage from './pages/TogglePage'
 import SideNav from './SideNav'
 import './atom-one-dark.css'
 import 'lime/lime.css'
@@ -38,10 +41,13 @@ export default class App extends React.Component {
                             <Route path='/collapsible' component={CollapsiblePage} />
                             <Route path='/choiceGroup' component={ChoiceGroupPage} />
                             <Route path='/dialog' component={DialogPage} />
-                            <Route path='/loading' component={LoadingPage} />
+                            <Route path='/list' component={ListPage} />
                             <Route path='/menu/inlineMenu' component={InlineMenuPage} />
                             <Route path='/menu/floatMenu' component={FloatMenuPage} />
                             <Route path='/select' component={SelectPage} />
+                            <Route path='/spin' component={SpinPage} />
+                            <Route path='/shimmer' component={ShimmerPage} />
+                            <Route path='/toggle' component={TogglePage} />
                         </div>
                     </div>
                     <Nav/>

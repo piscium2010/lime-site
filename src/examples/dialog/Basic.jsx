@@ -1,7 +1,6 @@
 import React from 'react';
 import Dialog from 'lime/Dialog'
 import 'lime/lime.css'
-import '@fortawesome/fontawesome-free/css/all.css'
 
 export default class Basic extends React.Component {
     constructor(props) {
@@ -17,10 +16,14 @@ export default class Basic extends React.Component {
         });
     }
 
+    onBlurDialog = evt => {
+        this.setState({ show: false })
+    }
+
     render() {
         return (
             <div>
-                <Dialog show={this.state.show}>
+                <Dialog show={this.state.show} onBlurDialog={this.onBlurDialog}>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, ab.
                     </p>

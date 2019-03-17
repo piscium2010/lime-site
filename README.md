@@ -21,7 +21,7 @@ button
     ripple
 
 Dialog
-	- api onBlurDialog
+	- api onBlurDialog - done
 
 menu 
     responsive?

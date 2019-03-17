@@ -73,7 +73,6 @@ export default class SideNav extends React.Component {
                         <Li k={7} activeK={activeK} onClick={this.onClick} title={'Dialog'} to='dialog'></Li>
                         <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/layer'></Li>
                         <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/list'></Li>
-                        <Li k={10} activeK={activeK} onClick={this.onClick} title={'Loading'} to='/loading'></Li>
                         <Li k={11} activeK={activeK} title={'Menu'}>
                             <ul>
                                 <Li k={12} activeK={activeK} onClick={this.onClick} title={'Inline'} to='/menu/inlineMenu'></Li>
@@ -83,10 +82,11 @@ export default class SideNav extends React.Component {
                         <Li k={14} activeK={activeK} onClick={this.onClick} title={'Ripple'} to='/ripple'></Li>
                         <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/textField'></Li>
                         <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/toggle'></Li>
+                        <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/scroll'></Li>
                         <Li k={15} activeK={activeK} onClick={this.onClick} title={'Select'} to='/select'></Li>
                         <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/select'></Li>
                         <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/shimmer'></Li>
-                        <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/scroll'></Li>
+                        <Li k={19} activeK={activeK} onClick={this.onClick} title={'Spin'} to='/spin'></Li>
                     </ul>
                     <div className='mask'></div>
                     <div className='bottom shadow'></div>
