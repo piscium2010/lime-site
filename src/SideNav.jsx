@@ -69,7 +69,7 @@ export default class SideNav extends React.Component {
                         <Li k={4} activeK={activeK} onClick={this.onClick} title={'Card'} to='/card'></Li>
                         <Li k={51} activeK={activeK} onClick={this.onClick} title={'CheckBox'} to='/checBox'></Li>
                         <Li k={5} activeK={activeK} onClick={this.onClick} title={'ChoiceGroup'} to='/choiceGroup'></Li>
-                        <Li k={6} activeK={activeK} onClick={this.onClick} title={'Collapsible'}></Li>
+                        <Li k={6} activeK={activeK} onClick={this.onClick} title={'Collapsible'} to='/collapsible'></Li>
                         <Li k={7} activeK={activeK} onClick={this.onClick} title={'Dialog'}></Li>
                         <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/layer'></Li>
                         <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/list'></Li>
