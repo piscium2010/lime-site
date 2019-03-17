@@ -1,8 +1,8 @@
 import React from 'react';
 import List from './components/InlineMenu'
 import Scroll from 'lime/Scroll'
-import { Link } from "react-router-dom";
-let n = 0
+import { Link } from "react-router-dom"
+
 const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) => {
     let active = k == activeK
     let className = active ? 'lime-active lime-active-text lime-ribbon-right' : ''
@@ -19,9 +19,10 @@ const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) =
     )
 }
 
-export default class Menu extends React.Component {
+export default class SideNav extends React.Component {
     constructor(props) {
         super(props)
+        this.logoTextRef = React.createRef()
         this.state = {
             activeK: -1
         }
@@ -33,11 +34,34 @@ export default class Menu extends React.Component {
         })
     }
 
+    onScroll = evt => {
+        let className = evt.target.getAttribute('class')
+        if ('main'.indexOf(className) == 0) {
+            let top = evt.target.scrollTop / 1
+            if (top > 50) {
+                this.logoTextRef.current.classList.add('show')
+            } else {
+                this.logoTextRef.current.classList.remove('show')
+            }
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScroll, true)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.onScroll, true)
+    }
+
     render() {
         let { activeK } = this.state
         return (
             <div className='side-nav'>
-                <Scroll style={{ height: '99vh' }} >
+                <div className='lime-logo'><span ref={this.logoTextRef} className='lime-logo-text'>{'{Lime}'}</span></div>
+                <Scroll style={{ height: window.innerHeight - 50 - 10, paddingBottom: 10 }} >
+                    <div className='mask'></div>
+                    <div className='top shadow'></div>
                     <ul>
                         <Li k={1} activeK={activeK} onClick={this.onClick} title={'Get Started'}></Li>
                         <Li k={2} activeK={activeK} onClick={this.onClick} title={'Accordian'} to='/accordion'></Li>
@@ -64,6 +88,8 @@ export default class Menu extends React.Component {
                         <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/shimmer'></Li>
                         <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/scroll'></Li>
                     </ul>
+                    <div className='mask'></div>
+                    <div className='bottom shadow'></div>
                 </Scroll>
             </div>
         )

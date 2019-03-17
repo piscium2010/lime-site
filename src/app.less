@@ -1,21 +1,11 @@
-.lime-loading {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid blue;
-    border-left-color: transparent;
-    animation: lime-loading 1.3s infinite forwards;
-    animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
-}
 @primaryColor: #a0d911;
 @bodyBackground: #f9f9f9;
+@sideNavWidth: 280px;
+@sectionMarginBottom: 30px;
 @keyframes lime-loading {
     from {transform: rotate(0deg)}
     to {transform: rotate((360deg))}
 }
-
-@sideNavWidth: 280px;
-@sectionMarginBottom: 30px;
 
 a {
     color: currentColor;
@@ -30,6 +20,7 @@ body {
     font-weight: 300;
     font-family: Roboto,sans-serif;
     margin: 0;
+    overflow: hidden;
 }
 
 h2 {
@@ -93,13 +84,14 @@ h4 {
 .side-nav {
     width: @sideNavWidth;
     float: left;
+    position: relative;
 
     ul {
         background-color: transparent;
         margin: 0;
         padding: 0;
         li {
-            background-color: #fff;
+            background-color: white;
             margin-right: 10px;
             padding-left: 40px !important;
             &:focus, &:hover {
@@ -114,6 +106,51 @@ h4 {
             }
         }
     }
+
+    .lime-logo {
+        background-color: white;
+        height: 50px;
+        margin-right: 10px;
+
+        .lime-logo-text {
+            color: #a0d911;
+            font-size: 30px;
+            font-weight: bolder;
+            height: 50px;
+            line-height: 50px;
+            left: 40px;
+            position: absolute;
+            top: 0px;
+            transition: top .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            will-change: top;
+            // &.show {
+            //     top: 20px;
+            // }
+        }
+    }
+
+    .shadow {
+        width: calc(100% - 10px);
+        height: 10px;
+        position: absolute;
+        z-index: 1;
+        &.top {
+            background: radial-gradient(at top, rgba(0,0,0,.2), transparent 80%) no-repeat;
+            top: 0;
+        }
+        &.bottom {
+            background: radial-gradient(at bottom, rgba(0,0,0,.2), transparent 80%) no-repeat;
+            bottom: 0;
+        }
+    }
+
+    .mask {
+        height: 10px;
+        background: #fff;
+        margin-right: 10px;
+        position: relative;
+        z-index: 2;
+    }
 }
 
 .main {
@@ -124,6 +161,7 @@ h4 {
     width: calc(100% - @sideNavWidth);
     float: left;
     padding: 10px;
+    padding-top: 50px;
 
     &-content{
         margin: auto;
@@ -152,5 +190,34 @@ h4 {
         button {
             padding: 5px 8px;
         }
+    }
+}
+
+.nav {
+    background-color: #a0d911;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    transition: height .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    will-change: auto;
+
+    .lime-logo {
+        position: relative;
+        color: white;
+        font-size: 30px;
+        font-weight: bolder;
+        height: 50px;
+        line-height: 50px;
+        margin-left: 40px;
+        margin-right: auto;
+    }
+
+    &.hide {
+        height: 0;
     }
 }
