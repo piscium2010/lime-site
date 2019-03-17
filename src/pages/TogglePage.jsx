@@ -9,7 +9,7 @@ export default class TogglePage extends React.Component {
     render() {
         return (
             <div>
-                <h2>Spin</h2>
+                <h2>Toggle</h2>
                 <ExampleBlock md={exampleMD} title={'Basic'}>
                     <Basic />
                 </ExampleBlock>

@@ -80,13 +80,13 @@ export default class SideNav extends React.Component {
                             </ul>
                         </Li>
                         <Li k={14} activeK={activeK} onClick={this.onClick} title={'Ripple'} to='/ripple'></Li>
-                        <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/textField'></Li>
-                        <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/toggle'></Li>
                         <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/scroll'></Li>
                         <Li k={15} activeK={activeK} onClick={this.onClick} title={'Select'} to='/select'></Li>
-                        <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/select'></Li>
+                        <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/search'></Li>
                         <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/shimmer'></Li>
                         <Li k={19} activeK={activeK} onClick={this.onClick} title={'Spin'} to='/spin'></Li>
+                        <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/textField'></Li>
+                        <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/toggle'></Li>
                     </ul>
                     <div className='mask'></div>
                     <div className='bottom shadow'></div>

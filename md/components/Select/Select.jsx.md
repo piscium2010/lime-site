@@ -92,13 +92,13 @@ export default class Select extends React.Component {
     }
 
     renderItem = item => {
-        let { multi, onChange } = this.props
+        let { multi, onChange, lineHeight } = this.props
         let multiSelect = () => {
             let value = Array.from(this.value)
             let i = value.indexOf(item.value)
             if (i >= 0) {
                 value.splice(i, 1)
-            } else {
+            } else { 
                 value.push(item.value)
             }
             this.setState({
@@ -115,7 +115,10 @@ export default class Select extends React.Component {
             })
             onChange(item)
         }
-        return this.props.renderItem(item, multi ? multiSelect : select)
+        let itemElement = this.props.renderItem(item, multi ? multiSelect : select)
+        return (
+            <div style={{ lineHeight: `${lineHeight}px` }}>{itemElement}</div>
+        )
     }
 
     onWindowScroll = evt => {
