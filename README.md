@@ -21,6 +21,7 @@ button
     ripple
 
 Dialog
+	- api onBlurDialog
 
 menu 
     responsive?
@@ -67,7 +68,9 @@ shimmer - done
 
 less - prefix, > - done
 
-list - undefined options - done
+list
+	 - undefined options - done
+	 - huge data
 
 prefix dictionary
 

@@ -1,14 +1,14 @@
 import React from 'react'
-import Basic from '../examples/collapsible/Basic'
+import Basic from '../examples/dialog/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/collapsible/Basic.jsx.md'
+import exampleMD from '../../md/examples/dialog/Basic.jsx.md'
 import Markdown from '../components/Markdown'
 
 export default class AccordiontPage extends React.Component {
     render() {
         return (
             <div>
-                <h2>Collapsible</h2>
+                <h2>Dialog</h2>
                 <ExampleBlock md={exampleMD}>
                     <Basic />
                 </ExampleBlock>

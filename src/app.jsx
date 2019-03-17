@@ -5,7 +5,8 @@ import ButtonPage from './pages/ButtonPage'
 import CardPage from './pages/CardPage'
 import CheckBoxPage from './pages/CheckBoxPage'
 import CollapsiblePage from './pages/CollapsiblePage'
-import choiceGroupPage from './pages/choiceGroupPage'
+import ChoiceGroupPage from './pages/choiceGroupPage'
+import DialogPage from './pages/dialogPage'
 import FloatMenuPage from './pages/menu/FloatMenuPage'
 import InlineMenuPage from './pages/menu/InlineMenuPage'
 import LoadingPage from './pages/LoadingPage'
@@ -35,7 +36,8 @@ export default class App extends React.Component {
                             <Route path='/accordion' component={AccordionPage} />
                             <Route path='/checkbox' component={CheckBoxPage} />
                             <Route path='/collapsible' component={CollapsiblePage} />
-                            <Route path='/choiceGroup' component={choiceGroupPage} />
+                            <Route path='/choiceGroup' component={ChoiceGroupPage} />
+                            <Route path='/dialog' component={DialogPage} />
                             <Route path='/loading' component={LoadingPage} />
                             <Route path='/menu/inlineMenu' component={InlineMenuPage} />
                             <Route path='/menu/floatMenu' component={FloatMenuPage} />
