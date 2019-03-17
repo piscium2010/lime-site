@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './components/InlineMenu'
 import { Link } from "react-router-dom"
+import GithubLink from './components/GithubLink'
 
 const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) => {
     let active = k == activeK
@@ -56,14 +57,17 @@ export default class Nav extends React.Component {
 
     render() {
         return (
-            <div ref={this.ref} className='nav'>
-                <div ref={this.logoRef} className='lime-logo'>{"{Lime}"}</div>
-                <div style={{ margin: '0 10px 0', cursor: 'pointer' }}>
-                    <a href='https://github.com/piscium2010/lime' target='_blank'>
-                        <i class="fab fa-github" style={{ fontSize: 30, lineHeight: '50px' }}></i>
-                    </a>
+            <React.Fragment>
+                <div className='git-fixed-link'>
+                    <GithubLink />
                 </div>
-            </div>
+                <div ref={this.ref} className='nav'>
+                    <div ref={this.logoRef} className='lime-logo'>{"{Lime}"}</div>
+                    <div style={{ margin: '0 10px 0', cursor: 'pointer', flex: '0 0 29px' }}>
+                        <GithubLink />Í
+                    </div>
+                </div>
+            </React.Fragment>
         )
     }
 }

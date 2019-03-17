@@ -63,30 +63,29 @@ export default class SideNav extends React.Component {
                     <div className='mask'></div>
                     <div className='top shadow'></div>
                     <ul>
-                        <Li k={1} activeK={activeK} onClick={this.onClick} title={'Get Started'}></Li>
-                        <Li k={2} activeK={activeK} onClick={this.onClick} title={'Accordian'} to='/accordion'></Li>
-                        <Li k={3} activeK={activeK} onClick={this.onClick} title={'Button'} to='/button'></Li>
-                        <Li k={4} activeK={activeK} onClick={this.onClick} title={'Card'} to='/card'></Li>
-                        <Li k={51} activeK={activeK} onClick={this.onClick} title={'CheckBox'} to='/checkbox'></Li>
-                        <Li k={5} activeK={activeK} onClick={this.onClick} title={'ChoiceGroup'} to='/choiceGroup'></Li>
-                        <Li k={6} activeK={activeK} onClick={this.onClick} title={'Collapsible'} to='/collapsible'></Li>
+                        <Li k={2} activeK={activeK} onClick={this.onClick} title={'Accordian'} to='/lime/accordion'></Li>
+                        <Li k={3} activeK={activeK} onClick={this.onClick} title={'Button'} to='/lime/button'></Li>
+                        <Li k={4} activeK={activeK} onClick={this.onClick} title={'Card'} to='/lime/card'></Li>
+                        <Li k={51} activeK={activeK} onClick={this.onClick} title={'CheckBox'} to='/lime/checkbox'></Li>
+                        <Li k={5} activeK={activeK} onClick={this.onClick} title={'ChoiceGroup'} to='/lime/choiceGroup'></Li>
+                        <Li k={6} activeK={activeK} onClick={this.onClick} title={'Collapsible'} to='/lime/collapsible'></Li>
                         <Li k={7} activeK={activeK} onClick={this.onClick} title={'Dialog'} to='dialog'></Li>
-                        <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/layer'></Li>
-                        <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/list'></Li>
+                        <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/lime/layer'></Li>
+                        <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/lime/list'></Li>
                         <Li k={11} activeK={activeK} title={'Menu'}>
                             <ul>
-                                <Li k={12} activeK={activeK} onClick={this.onClick} title={'Inline'} to='/menu/inlineMenu'></Li>
-                                <Li k={13} activeK={activeK} onClick={this.onClick} title={'Float'} to='/menu/floatMenu'></Li>
+                                <Li k={12} activeK={activeK} onClick={this.onClick} title={'Inline'} to='/lime/menu/inlineMenu'></Li>
+                                <Li k={13} activeK={activeK} onClick={this.onClick} title={'Float'} to='/lime/menu/floatMenu'></Li>
                             </ul>
                         </Li>
-                        <Li k={14} activeK={activeK} onClick={this.onClick} title={'Ripple'} to='/ripple'></Li>
-                        <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/scroll'></Li>
-                        <Li k={15} activeK={activeK} onClick={this.onClick} title={'Select'} to='/select'></Li>
-                        <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/search'></Li>
-                        <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/shimmer'></Li>
-                        <Li k={19} activeK={activeK} onClick={this.onClick} title={'Spin'} to='/spin'></Li>
-                        <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/textField'></Li>
-                        <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/toggle'></Li>
+                        <Li k={14} activeK={activeK} onClick={this.onClick} title={'Ripple'} to='/lime/ripple'></Li>
+                        <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/lime/scroll'></Li>
+                        <Li k={15} activeK={activeK} onClick={this.onClick} title={'Select'} to='/lime/select'></Li>
+                        <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/lime/search'></Li>
+                        <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/lime/shimmer'></Li>
+                        <Li k={19} activeK={activeK} onClick={this.onClick} title={'Spin'} to='/lime/spin'></Li>
+                        <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/lime/textField'></Li>
+                        <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/lime/toggle'></Li>
                     </ul>
                     <div className='mask'></div>
                     <div className='bottom shadow'></div>

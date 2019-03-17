@@ -77,6 +77,18 @@ h4 {
     }
 }
 
+.git-fixed-link {
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    color: @primaryColor;
+    display: none;
+    @media(min-width: 1140px) {
+        display: block;
+    }
+}
+
 .implement {
     .section();
 }
@@ -123,9 +135,6 @@ h4 {
             top: 0px;
             transition: top .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
             will-change: top;
-            // &.show {
-            //     top: 20px;
-            // }
         }
     }
 
@@ -156,16 +165,15 @@ h4 {
 .main {
     background-color: @bodyBackground;
     box-sizing: border-box;
+    float: left;
     height: 100vh;
     overflow-y: scroll;
-    width: calc(100% - @sideNavWidth);
-    float: left;
     padding: 10px;
     padding-top: 50px;
-
+    width: calc(100% - @sideNavWidth);
     &-content{
-        margin: auto;
-        max-width: 900px;
+        margin-right: auto;
+        max-width: 800px;
     }
 }
 
@@ -219,5 +227,20 @@ h4 {
 
     &.hide {
         height: 0;
+    }
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 50px;
+    .lime-logo {
+        color: @primaryColor;
+        font-size: 80px;
+    }
+    .desc {
+        max-width: 300px;
     }
 }
