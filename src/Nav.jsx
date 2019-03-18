@@ -63,7 +63,7 @@ export default class Nav extends React.Component {
                 </div>
                 <div ref={this.ref} className='nav'>
                     <div ref={this.logoRef} className='lime-logo'>{"{Lime}"}</div>
-                    <div style={{ margin: '0 10px 0', cursor: 'pointer', flex: '0 0 29px' }}>
+                    <div style={{ margin: '0 18px 0', cursor: 'pointer', flex: '0 0 29px' }}>
                         <GithubLink />Í
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../components/Button'
+import { Link } from "react-router-dom"
 
 export default class GetStartedPage extends React.Component {
     render() {
@@ -12,9 +13,9 @@ export default class GetStartedPage extends React.Component {
                     <p className='desc'>
                         An extremly light weight react UI kit used for building your own UI component
                     </p>
-                    <div className='lime-flex-center start'>
+                    <Link to='/lime' className='lime-flex-center start'>
                         <Button className='lime-button primary'>Get Started</Button>
-                    </div>
+                    </Link>
                 </div>
             </div>
         )
