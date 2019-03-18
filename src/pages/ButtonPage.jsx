@@ -14,14 +14,14 @@ export default class CardPage extends React.Component {
         return (
             <div>
                 <h2>Button</h2>
-                <ExampleBlock md={pureMD} title={'Pure CSS'}>
+                <ExampleBlock md={pureMD} title={'Basic'}>
                     <Pure />
                 </ExampleBlock>
-                <ExampleBlock md={basicMD} title={'Component'}>
-                    <Basic />
-                </ExampleBlock>
-                <ExampleBlock md={basicMD} title={'Icon Button'}>
+                <ExampleBlock md={iconButtonMD} title={'Icon'}>
                     <IconButton />
+                </ExampleBlock>
+                <ExampleBlock md={basicMD} title={'Ripple'}>
+                    <Basic />
                 </ExampleBlock>
                 <h2>Build it yourself</h2>
                 <section className='implement'>

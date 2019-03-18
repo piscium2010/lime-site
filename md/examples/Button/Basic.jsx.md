@@ -5,14 +5,16 @@ import 'lime/lime.css'
 
 export default class Basic extends React.Component {
     render() {
+        let style = { marginRight: 10 }
         return (
-            <div style={{ display: 'flex', justifyContent: 'space-around', maxWidth: 500 }}>
-                <Button className='lime-button primary lime-raised'>Raised</Button>
-                <Button className='lime-button primary'>Primary</Button>
-                <Button className='lime-button'>Default</Button>
-                <Button className='lime-button text'>Text</Button>
-                <Button className='lime-button primary' disabled>Disabled</Button>
-                <Button className='lime-button text' disabled>Disabled</Button>
+            <div style={{ display: 'flex', justifyContent: 'space-around', maxWidth: 600 }}>
+                <Button style={style} className='lime-button primary lime-raised'>Primary</Button>
+                <Button style={style} className='lime-button primary'>Primary</Button>
+                <Button style={style} className='lime-button'>Default</Button>
+                <Button style={style} className='lime-button text'>Text</Button>
+                <Button style={style} className='lime-button primary' disabled>Primary</Button>
+                <Button style={style} className='lime-button' disabled>Default</Button>
+                <Button style={style} className='lime-button text' disabled>Text</Button>
             </div>
         )
     }

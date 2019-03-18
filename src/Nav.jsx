@@ -62,7 +62,12 @@ export default class Nav extends React.Component {
                     <GithubLink />
                 </div>
                 <div ref={this.ref} className='nav'>
-                    <div ref={this.logoRef} className='lime-logo'>{"{Lime}"}</div>
+                    <div ref={this.logoRef} className='lime-logo'>
+                    <Link to='/'>
+                    {"{Lime}"}
+                    </Link>
+                    </div>
+                    
                     <div style={{ margin: '0 18px 0', cursor: 'pointer', flex: '0 0 29px' }}>
                         <GithubLink />Í
                     </div>

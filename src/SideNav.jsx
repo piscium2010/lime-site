@@ -58,7 +58,11 @@ export default class SideNav extends React.Component {
         let { activeK } = this.state
         return (
             <div className='side-nav'>
-                <div className='lime-logo'><span ref={this.logoTextRef} className='lime-logo-text'>{'{Lime}'}</span></div>
+                <div className='lime-logo'>
+                    <span ref={this.logoTextRef} className='lime-logo-text'>
+                        <Link to='/'>{'{Lime}'}</Link>
+                    </span>
+                </div>
                 <Scroll style={{ height: window.innerHeight - 50 - 10, paddingBottom: 10 }} >
                     <div className='mask'></div>
                     <div className='top shadow'></div>
