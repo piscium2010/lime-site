@@ -233,14 +233,59 @@ h4 {
 .home {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
     height: 100vh;
-    padding: 50px;
+    .card {
+        box-sizing: border-box;
+        background-color: @primaryColor;
+        height: 400px;;
+        width: 400px;
+        position: relative;
+        bottom: 50px;
+        padding: 30px;
+    }
+
     .lime-logo {
-        color: @primaryColor;
+        color: #fff;
         font-size: 80px;
+        font-weight: bold;
+        text-align: center;
+        margin: 30px 0;
     }
+
     .desc {
-        max-width: 300px;
+        color: #fff;
+        line-height: 1.5em;
+        //padding: 0 30px;
     }
+
+    .start {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        button {
+            position: relative;
+            font-size: 30px;
+            font-weight: 200;
+            height: 90px;
+            flex: 1 1 100%;
+            color: #fff !important;
+            &::before {
+                content: " ";
+                background: #fff;
+                display: block;
+                opacity: .1;
+                position: absolute;
+                pointer-events: none;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+
+    
 }
