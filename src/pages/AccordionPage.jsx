@@ -11,6 +11,7 @@ export default class AccordiontPage extends React.Component {
         return (
             <div>
                 <h2>Accordion</h2>
+                <p>We can break this into two parts. One is the container - <i>Accordion</i> and another the <i>Panel</i>. Magic is within the panel, which needs to be collapsible. Build the Panel with lime Collapsible component, then you will have your Accordion ready and served.</p>
                 <ExampleBlock md={exampleMD}>
                     <Basic />
                 </ExampleBlock>

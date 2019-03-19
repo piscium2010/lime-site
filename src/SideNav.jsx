@@ -5,17 +5,16 @@ import { Link } from "react-router-dom"
 
 const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) => {
     let active = k == activeK
-    let className = active ? 'lime-active lime-active-text lime-ribbon-right' : ''
+    let className = active ? 'lime-active-text lime-ribbon-right' : ''
     let menuItem = (
         <List
             title={title}
             className={className}
-            onClick={() => onClick(k)}
             {...rest}>{children}
         </List>
     )
     return (
-        to ? <Link to={to}>{menuItem}</Link> : menuItem
+        to ? <Link to={to} onClick={() => onClick(k)}>{menuItem}</Link> : menuItem
     )
 }
 
