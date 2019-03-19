@@ -16,7 +16,7 @@ export default class FilterOption extends React.Component {
             <div style={{ display: 'flex' }}>
                 <Select
                     name='user'
-                    filter={(input, options) => options.filter(o => o.value.indexOf(input) >= 0)}
+                    filter={(input, options) => options.filter(o => o.text.indexOf(input) >= 0)}
                     options={options}
                     onChange={this.handleChange}
                     style={{ maxWidth: 400 }}

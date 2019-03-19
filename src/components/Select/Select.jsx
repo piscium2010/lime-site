@@ -60,7 +60,7 @@ export default class Select extends React.Component {
 
     onBlurDropdown = () => {
         let { options, onChange } = this.props
-        let option = options && options.find(o => !o.disabled && o.value === this.inputValue)
+        let option = options && options.find(o => !o.disabled && o.text === this.inputValue)
         let triggerOnChange = option ? () => onChange(option) : null
         setTimeout(() => {
             if (!this.isFocus || !this.allowInput) {
@@ -86,8 +86,8 @@ export default class Select extends React.Component {
     }
 
     onFocus = evt => {
-        console.log(`focus`,)
         this.isFocus = true
+        this.setState({ inputValue: this.text })
         this.props.onFocus(evt)
     }
 
@@ -154,7 +154,7 @@ export default class Select extends React.Component {
     }
 
     render() {
-        console.log(`label`,this.text,'value:', this.value)
+        console.log('options', this.value)
         const { left, top, width, show } = this.state
         const { className = '',
             filter,
@@ -168,19 +168,20 @@ export default class Select extends React.Component {
             ...rest } = this.props
         return (
             <div ref={this.ref} className={`lime-select-input ${className}`} style={style}>
-                {/* <div className='lime-select-text' style={{lineHeight: `${lineHeight}px`}}>
-                    {this.text.length > 0 && !this.isFocus && this.text.join(',')}
-                </div> */}
+                <div className='lime-select-text' style={{ lineHeight: `${lineHeight}px`, opacity: this.isFocus ? 0 : 1 }}>
+                    {this.text.join(',')}
+                </div>
                 <input
                     {...rest}
                     readOnly={this.allowInput ? false : true}
                     onFocus={this.onFocus}
                     onClick={this.onClick}
-                    value={this.inputValue === undefined ? this.text.join(',') : this.inputValue}
+                    value={this.inputValue === undefined ? this.value : this.inputValue}
                     onChange={this.onChangeInput}
                     onBlur={this.onBlur}
+                    style={{ opacity: this.isFocus ? 1 : 0 }}
                 />
-                <input name={name} type='hidden' value={this.value}/>
+                {/* <input name={name} type='hidden' value={this.value}/> */}
                 {loading && <i className='lime-spin'></i>}
                 {
                     this.options &&
