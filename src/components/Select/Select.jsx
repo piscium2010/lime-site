@@ -9,7 +9,7 @@ export default class Select extends React.Component {
         onClick: () => { },
         onChange: () => { },
         onFocus: () => { },
-        renderItem: (item, select) => <div className={`lime-list-item`} onClick={select}>{item.value}</div>
+        renderItem: (item, select) => <div className={`lime-list-item`} onClick={select}>{item.text}</div>
     }
 
     constructor(props) {
@@ -26,6 +26,18 @@ export default class Select extends React.Component {
     }
 
     get inputValue() { return this.state.inputValue }
+
+    get text() {
+        const { multi, options = [] } = this.props
+        let option
+        if (multi) {
+            option = options.filter(o => Array.from(this.value).includes(o.value))
+        } else {
+            option = options.filter(o => o.value === this.value)
+        }
+        return option.map(o => o.text)
+    }
+
     get node() { return this.ref.current }
 
     get options() {
@@ -74,6 +86,7 @@ export default class Select extends React.Component {
     }
 
     onFocus = evt => {
+        console.log(`focus`,)
         this.isFocus = true
         this.props.onFocus(evt)
     }
@@ -97,7 +110,7 @@ export default class Select extends React.Component {
             let i = value.indexOf(item.value)
             if (i >= 0) {
                 value.splice(i, 1)
-            } else { 
+            } else {
                 value.push(item.value)
             }
             this.setState({
@@ -141,11 +154,13 @@ export default class Select extends React.Component {
     }
 
     render() {
-        let { left, top, width, show } = this.state
-        let { className = '',
+        console.log(`label`,this.text,'value:', this.value)
+        const { left, top, width, show } = this.state
+        const { className = '',
             filter,
             lineHeight,
             loading,
+            name = '',
             options,
             style,
             multi,
@@ -153,15 +168,19 @@ export default class Select extends React.Component {
             ...rest } = this.props
         return (
             <div ref={this.ref} className={`lime-select-input ${className}`} style={style}>
+                {/* <div className='lime-select-text' style={{lineHeight: `${lineHeight}px`}}>
+                    {this.text.length > 0 && !this.isFocus && this.text.join(',')}
+                </div> */}
                 <input
                     {...rest}
                     readOnly={this.allowInput ? false : true}
                     onFocus={this.onFocus}
                     onClick={this.onClick}
-                    value={this.inputValue === undefined ? this.value : this.inputValue}
+                    value={this.inputValue === undefined ? this.text.join(',') : this.inputValue}
                     onChange={this.onChangeInput}
                     onBlur={this.onBlur}
                 />
+                <input name={name} type='hidden' value={this.value}/>
                 {loading && <i className='lime-spin'></i>}
                 {
                     this.options &&
