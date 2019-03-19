@@ -8,7 +8,7 @@ export default class CheckBoxPage extends React.Component {
     render() {
         return (
             <div>
-                <h2>CheckBox</h2>
+                <h2>Checkbox</h2>
                 <ExampleBlock md={exampleMD}>
                     <Basic />
                 </ExampleBlock>
