@@ -5,20 +5,34 @@ import 'lime/lime.css'
 export default class Basic extends React.Component {
     render() {
         const options = [
-            { key: '1', value: 'Male', text: 'Male' },
-            { key: '2', value: 'Female', text: 'Male' }
+            { value: 'Male', text: 'Male' },
+            { value: 'Female', text: 'Male' }
         ]
         const optionsII = [
-            { key: '1', value: 'Single', text: 'Male' },
-            { key: '2', value: 'Married but available', text: 'Male' }
+            { value: 'Single', text: 'Male' },
+            { value: 'Married but available', text: 'Male' }
         ]
         return (
             <div>
                 <p>
-                    <ChoiceGroup options={options} />
+                    <ChoiceGroup name='a'>
+                        <ChoiceGroup.Option value='1'>
+                            Male
+                        </ChoiceGroup.Option>
+                        <ChoiceGroup.Option value='2'>
+                            Female
+                        </ChoiceGroup.Option>
+                    </ChoiceGroup>
                 </p>
                 <p>
-                    <ChoiceGroup options={optionsII} style={{ display: 'flex', flexDirection: 'column' }} />
+                    <ChoiceGroup style={{ display: 'flex', flexDirection: 'column' }} >
+                        <ChoiceGroup.Option value='1'>
+                            Male
+                        </ChoiceGroup.Option>
+                        <ChoiceGroup.Option value='2'>
+                            Female
+                        </ChoiceGroup.Option>
+                    </ChoiceGroup>
                 </p>
             </div>
         )
