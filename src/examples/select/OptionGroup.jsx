@@ -6,6 +6,7 @@ const options = []
 for (let i = 0; i < 10; i++) {
     options.push({
         value: i % 3 === 0 ? undefined : `${i}. Lorem ipsum dolor sit amet`,
+        text: i % 3 === 0 ? undefined : `${i}. Lorem ipsum dolor sit amet`,
         header: 'Group',
         groupHeader: i % 3 === 0
     })

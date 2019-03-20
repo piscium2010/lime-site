@@ -5,12 +5,12 @@ import 'lime/lime.css'
 export default class Basic extends React.Component {
     render() {
         const options = [
-            { key: '1', value: 'Male' },
-            { key: '2', value: 'Female' }
+            { key: '1', value: 'Male', text: 'Male' },
+            { key: '2', value: 'Female', text: 'Male' }
         ]
         const optionsII = [
-            { key: '1', value: 'Single' },
-            { key: '2', value: 'Married but available' }
+            { key: '1', value: 'Single', text: 'Male' },
+            { key: '2', value: 'Married but available', text: 'Male' }
         ]
         return (
             <div>

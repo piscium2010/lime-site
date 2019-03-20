@@ -5,7 +5,8 @@ import 'lime/lime.css'
 const data = []
 for (let i = 0; i < 20; i++) {
     data.push({
-        value: `${i}. Lorem ipsum dolor sit amet`
+        value: `${i}. Lorem ipsum dolor sit amet`,
+        text: `${i}. Lorem ipsum dolor sit amet`
     })
 }
 
