@@ -154,7 +154,6 @@ export default class Select extends React.Component {
     }
 
     render() {
-        console.log('options', this.value)
         const { left, top, width, show } = this.state
         const { className = '',
             filter,
