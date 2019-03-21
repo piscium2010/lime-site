@@ -1,5 +1,8 @@
 # lime-site
 //to do
+bootstrap - compatible
+
+all - lineheight
 
 textfield 
 	- label

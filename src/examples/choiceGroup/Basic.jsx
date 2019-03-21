@@ -3,19 +3,16 @@ import ChoiceGroup from 'lime/ChoiceGroup'
 import 'lime/lime.css'
 
 export default class Basic extends React.Component {
+    onChange = ({value}) => {
+        console.log(`value`,value)
+    }
+
     render() {
-        const options = [
-            { value: 'Male', text: 'Male' },
-            { value: 'Female', text: 'Male' }
-        ]
-        const optionsII = [
-            { value: 'Single', text: 'Male' },
-            { value: 'Married but available', text: 'Male' }
-        ]
         return (
             <div>
+                <h5>H</h5>
                 <p>
-                    <ChoiceGroup name='a'>
+                    <ChoiceGroup name='gender' defaultValue='2' onChange={this.onChange}>
                         <ChoiceGroup.Option value='1'>
                             Male
                         </ChoiceGroup.Option>
@@ -24,13 +21,14 @@ export default class Basic extends React.Component {
                         </ChoiceGroup.Option>
                     </ChoiceGroup>
                 </p>
+                <h5>V</h5>
                 <p>
-                    <ChoiceGroup style={{ display: 'flex', flexDirection: 'column' }} >
-                        <ChoiceGroup.Option value='1'>
-                            Male
+                    <ChoiceGroup name='marriage' style={{ display: 'inline-flex', flexDirection: 'column' }} >
+                        <ChoiceGroup.Option value='3'> 
+                            Single
                         </ChoiceGroup.Option>
-                        <ChoiceGroup.Option value='2'>
-                            Female
+                        <ChoiceGroup.Option value='4'>
+                            Married <span style={{color:'#cdcdcd'}}>but available</span>
                         </ChoiceGroup.Option>
                     </ChoiceGroup>
                 </p>

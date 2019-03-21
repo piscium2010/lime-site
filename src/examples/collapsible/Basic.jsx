@@ -20,6 +20,7 @@ export default class Basic extends React.Component {
     render() {
         return (
             <div>
+                <button className='lime-button' onClick={this.onClick}>Click Me</button>
                 <Collapsible expand={this.state.expand}>
                     <div style={{ height: 50, background: '#a0d911', padding: '0 10px' }}>
                         <span style={{
@@ -31,7 +32,6 @@ export default class Basic extends React.Component {
                         >{'{Lime}'}</span>
                     </div>
                 </Collapsible>
-                <button className='lime-button' onClick={this.onClick}>Click Me</button>
             </div>
         )
     }
