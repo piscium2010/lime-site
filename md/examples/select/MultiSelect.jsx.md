@@ -7,7 +7,8 @@ const options = []
 for (let i = 0; i < 10; i++) {
     options.push({
         key: i,
-        value: `${i}. Lorem ipsum dolor sit amet`
+        value: `${i}`,
+        text: `${i}. Lorem ipsum dolor sit amet`
     })
 }
 
@@ -47,7 +48,7 @@ export default class MultiSelect extends React.Component {
                     this.setState({ selected })
                     select()
                 }}
-            >{it.value}</label>
+            >{it.text}</label>
         </div>)
     }
 

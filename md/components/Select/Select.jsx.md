@@ -10,7 +10,7 @@ export default class Select extends React.Component {
         onClick: () => { },
         onChange: () => { },
         onFocus: () => { },
-        renderItem: (item, select) => <div className={`lime-list-item`} onClick={select}>{item.value}</div>
+        renderItem: (item, select) => <div className={`lime-list-item`} onClick={select}>{item.text}</div>
     }
 
     constructor(props) {
@@ -27,6 +27,18 @@ export default class Select extends React.Component {
     }
 
     get inputValue() { return this.state.inputValue }
+
+    get text() {
+        const { multi, options = [] } = this.props
+        let option
+        if (multi) {
+            option = options.filter(o => Array.from(this.value).includes(o.value))
+        } else {
+            option = options.filter(o => o.value === this.value)
+        }
+        return option.map(o => o.text)
+    }
+
     get node() { return this.ref.current }
 
     get options() {
@@ -49,7 +61,7 @@ export default class Select extends React.Component {
 
     onBlurDropdown = () => {
         let { options, onChange } = this.props
-        let option = options && options.find(o => !o.disabled && o.value === this.inputValue)
+        let option = options && options.find(o => !o.disabled && o.text === this.inputValue)
         let triggerOnChange = option ? () => onChange(option) : null
         setTimeout(() => {
             if (!this.isFocus || !this.allowInput) {
@@ -76,6 +88,7 @@ export default class Select extends React.Component {
 
     onFocus = evt => {
         this.isFocus = true
+        this.setState({ inputValue: this.text })
         this.props.onFocus(evt)
     }
 
@@ -98,7 +111,7 @@ export default class Select extends React.Component {
             let i = value.indexOf(item.value)
             if (i >= 0) {
                 value.splice(i, 1)
-            } else { 
+            } else {
                 value.push(item.value)
             }
             this.setState({
@@ -142,11 +155,13 @@ export default class Select extends React.Component {
     }
 
     render() {
-        let { left, top, width, show } = this.state
-        let { className = '',
+        console.log('options', this.value)
+        const { left, top, width, show } = this.state
+        const { className = '',
             filter,
             lineHeight,
             loading,
+            name = '',
             options,
             style,
             multi,
@@ -154,6 +169,9 @@ export default class Select extends React.Component {
             ...rest } = this.props
         return (
             <div ref={this.ref} className={`lime-select-input ${className}`} style={style}>
+                <div className='lime-select-text' style={{ lineHeight: `${lineHeight}px`, opacity: this.isFocus ? 0 : 1 }}>
+                    {this.text.join(',')}
+                </div>
                 <input
                     {...rest}
                     readOnly={this.allowInput ? false : true}
@@ -162,7 +180,9 @@ export default class Select extends React.Component {
                     value={this.inputValue === undefined ? this.value : this.inputValue}
                     onChange={this.onChangeInput}
                     onBlur={this.onBlur}
+                    style={{ opacity: this.isFocus ? 1 : 0 }}
                 />
+                {/* <input name={name} type='hidden' value={this.value}/> */}
                 {loading && <i className='lime-spin'></i>}
                 {
                     this.options &&
