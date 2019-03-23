@@ -29,12 +29,6 @@ export default class ExampleBlock extends React.Component {
                 <h4>{title}</h4>
                 <section className="example-block">
                     <div className='example-block-header'>
-                        {/* <h4 style={{ marginRight: 'auto' }}>{title}</h4> */}
-                        {/* <img
-                            alt="code"
-                            src={expand ? closeIcon : expandIcon}
-                            onClick={this.onClick}
-                        /> */}
                         <i className="fas fa-code" onClick={this.onClick}></i>
                     </div>
                     <Collapsible expand={expand}>
