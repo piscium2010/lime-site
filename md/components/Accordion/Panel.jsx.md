@@ -7,7 +7,7 @@ export default class Panel extends React.Component {
         let { title, children, activeKey, eventKey, ...rest } = this.props
         return (
             <React.Fragment>
-                <h5 eventkey={eventKey} {...rest}>{title}</h5>
+                <h4 eventkey={eventKey} {...rest}>{title}</h4>
                 <Collapsible expand={activeKey == eventKey}>
                     {children}
                 </Collapsible>

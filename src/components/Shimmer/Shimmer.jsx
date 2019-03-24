@@ -1,4 +1,5 @@
 import React from 'react'
+import 'lime/lime.css'
 
 export default class Shimmer extends React.Component {
     static defaultProps = {

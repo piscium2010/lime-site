@@ -1,11 +1,11 @@
 import React from 'react';
-import Shimmer from '../../components/Shimmer'
+import TextField from '../../components/TextField'
 
 export default class Basic extends React.Component {
     render() {
         return (
             <div>
-                <Shimmer show />
+                <TextField />
             </div>
         )
     }

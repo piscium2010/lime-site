@@ -41,7 +41,7 @@ export default class Nav extends React.Component {
             let top = evt.target.scrollTop / 1
             if (top > 50) {
                 this.ref.current.classList.add('hide')
-            } else {
+            } else if(top < 10) {
                 this.ref.current.classList.remove('hide')
             }
         }

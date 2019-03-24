@@ -20,8 +20,9 @@ export default class Basic extends React.Component {
 
     render() {
         const { activeId } = this.state
-        const Header = () => <h3>Header</h3>
-        const Content = () => <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, ab.</p>
+        const Header = () => <h3 style={{ margin: '0 0 15px 0' }}>Header</h3>
+        const Hr = () => <hr style={{ color: '#f2f2f2', margin: '0 -15px' }} />
+        const Content = () => <p style={{ lineHeight: '1.2em', maxWidth: 400 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dipisicing elit. Corrupti, ab.</p>
         const Footer = (props) => <div style={{ display: 'flex', justifyContent: 'flex-end' }}>{props.children}</div>
         const btnStyle = { flex: '0 0 80px' }
         return (
@@ -29,6 +30,7 @@ export default class Basic extends React.Component {
                 <p>
                     <Dialog show={activeId === 1} onBlurDialog={this.close}>
                         <Header />
+                        <Hr />
                         <Content />
                         <Footer>
                             <button style={btnStyle} className='lime-button primary' onClick={this.close}>OK</button>
@@ -39,6 +41,7 @@ export default class Basic extends React.Component {
                 <p>
                     <Dialog show={activeId === 2}>
                         <Header />
+                        <Hr />
                         <Content />
                         <Footer>
                             <button style={btnStyle} className='lime-button primary' onClick={this.close}>OK</button>

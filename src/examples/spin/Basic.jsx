@@ -6,8 +6,12 @@ export default class Basic extends React.Component {
     render() {
         return (
             <div>
-                <Spin />
-                <Spin text='Loading'/>
+                <p>
+                    <Spin size={20}/>
+                </p>
+                <p>
+                    <Spin text='Loading' />
+                </p>
             </div>
         )
     }
