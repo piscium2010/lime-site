@@ -2,6 +2,7 @@ import React from 'react'
 import Basic from '../examples/textField/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/textField/Basic.jsx.md'
+import textFieldMD from '../../md/components/TextField/TextField.jsx.md'
 import Markdown from '../components/Markdown'
 
 export default class TextFieldPage extends React.Component {
@@ -14,6 +15,8 @@ export default class TextFieldPage extends React.Component {
                 </ExampleBlock>
                 <h2>Build it yourself</h2>
                 <section className='implement'>
+                    <h4>TextField.jsx</h4>
+                    <Markdown html={textFieldMD} />
                 </section>
             </div>
         )
