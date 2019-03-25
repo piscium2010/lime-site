@@ -5,9 +5,12 @@
     "main": "webpack.config.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "b": "babel ../lime/dist --watch --out-dir node_modules/lime --copy-files ",
+        "babel:watch": "babel ../lime/dist --watch --out-dir node_modules/lime --copy-files ",
+        "babel": "babel ../lime/dist --out-dir node_modules/lime --copy-files ",
         "server": "webpack && webpack-dev-server --open",
-        "start": "npm-run-all --parallel b server"
+        "webpack": "webpack",
+        "start": "npm-run-all --parallel babel:watch server",
+        "build": "PRODUCTION=true npm-run-all --parallel babel webpack"
     },
     "keywords": [],
     "author": "",

@@ -2,9 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const highlight = require('highlight.js')
+const isProduction = process.env.PRODUCTION
+// console.log(`isProduction`,isProduction)
 
 module.exports = {
-  mode: 'development',
+  mode: isProduction ? 'production' : 'development',
   entry: {
     app: './src/index.jsx'
   },
@@ -64,7 +66,7 @@ module.exports = {
       },
     ]
   },
-  devtool: 'inline-source-map',
+  devtool: isProduction ? 'false' : 'inline-source-map',
   plugins: [
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
