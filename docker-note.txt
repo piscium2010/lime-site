@@ -1,0 +1,18 @@
+Docker run -it -p 8080:8080 --rm tomcat:8.0
+
+Docker run -it -p 8080:8080 --name tomcat -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps -v /Users/ssc/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml --rm tomcat:8.0
+Docker run -it -p 8080:8080 --name tom -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps -v /Users/ssc/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml tomcat:8.0
+
+Docker run -it -p 8080:8080 -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps --rm tomcat:8.0
+
+docker cp a60548d3d04e:/usr/local/tomcat /Users/ssc/
+
+docker cp /Users/ssc/tomcat/conf/tomcat-users.xml f2b02b9b784b:/usr/local/tomcat/conf/tomcat-users.xml
+
+docker run -it -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml --rm tomcat:8.0
+docker run -d -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml tomcat:8.0
+
+jenkins
+
+docker run --privileged -it -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home --rm jenkins/jenkins:2.167
+docker run --privileged -d -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins:2.167
