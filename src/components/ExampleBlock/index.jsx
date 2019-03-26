@@ -2,11 +2,6 @@ import React from 'react'
 import Collapsible from 'lime/Collapsible'
 import Markdown from '../../components/Markdown'
 
-// const expandIcon = 'https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg'
-const expandIcon = '/code-closed.svg'
-// const closeIcon = 'https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg'
-const closeIcon = '/code-open.svg'
-
 export default class ExampleBlock extends React.Component {
     constructor(props) {
         super(props)

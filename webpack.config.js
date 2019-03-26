@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const highlight = require('highlight.js')
+const highlight = require('highlight.js');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const isProduction = process.env.PRODUCTION
-// console.log(`isProduction`,isProduction)
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
@@ -11,7 +13,7 @@ module.exports = {
     app: './src/index.jsx'
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
@@ -47,12 +49,17 @@ module.exports = {
       },
       {
         test: /\.(css|less)$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
+        use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'less-loader']
       },
       {
         test: /\.(md)$/,
         use: [
-          'html-loader',
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: isProduction ? true : false
+            }
+          },
           {
             loader: 'markdown-loader',
             options: {
@@ -67,13 +74,27 @@ module.exports = {
     ]
   },
   devtool: isProduction ? 'false' : 'inline-source-map',
+  optimization: {
+    minimizer: isProduction ? [
+      new TerserJSPlugin({}),
+      new OptimizeCSSAssetsPlugin({})
+    ] : []
+  },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       title: 'Lime',
       filename: 'index.html',
       template: './src/index.html'
-    }),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+    })
+  ].concat(isProduction ? [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: isProduction ? '[name].[hash].css' : '[name].css',
+      chunkFilename: isProduction ? '[id].[hash].css' : '[id].css',
+    })
+  ] : [
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin()
+    ])
 };
