@@ -1,11 +1,14 @@
 const path = require('path');
+const CleanCSSPlugin = require('less-plugin-clean-css');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const highlight = require('highlight.js');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const isProduction = process.env.PRODUCTION
+const isProduction = process.env.NODE_ENV == 'production'
+console.log(`isProduction`, isProduction)
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
@@ -15,7 +18,7 @@ module.exports = {
   output: {
     filename: '[name].[hash].bundle.js',
     path: path.resolve(__dirname, 'public'),
-    publicPath: '/'
+    publicPath: isProduction ? './' : '/'
   },
   devServer: {
     contentBase: ['./public', path.join(__dirname, 'assets')],
@@ -49,7 +52,24 @@ module.exports = {
       },
       {
         test: /\.(css|less)$/,
-        use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'less-loader']
+        use: [
+          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+          {
+            loader: 'css-loader', options: isProduction ?
+              {
+                sourceMap: false,
+                modules: false
+              } : {}
+          },
+          {
+            loader: 'less-loader', options: isProduction ?
+              {
+                plugins: [
+                  new CleanCSSPlugin({ advanced: true })
+                ]
+              } : {}
+          }
+        ]
       },
       {
         test: /\.(md)$/,
@@ -76,11 +96,12 @@ module.exports = {
   devtool: isProduction ? 'false' : 'inline-source-map',
   optimization: {
     minimizer: isProduction ? [
-      new TerserJSPlugin({}),
+      new TerserJSPlugin(),
       new OptimizeCSSAssetsPlugin({})
     ] : []
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Lime',
       filename: 'index.html',
