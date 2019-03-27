@@ -15,4 +15,5 @@ docker run -d -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/to
 jenkins
 
 docker run --privileged -it -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home --rm jenkins/jenkins:2.167
+docker run --privileged -d --name jen -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins:2.167
 docker run --privileged -d -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins:2.167
