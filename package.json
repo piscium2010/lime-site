@@ -5,13 +5,12 @@
     "main": "webpack.config.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "babel:watch": "babel ../lime/dist --watch --out-dir node_modules/lime --copy-files ",
+        "copyfiles:watch": "babel ../lime/dist --watch --out-dir node_modules/lime --copy-files ",
         "copyfiles": "babel ../lime/dist --out-dir node_modules/lime --copy-files ",
-        "server": "webpack && webpack-dev-server --open",
-        "webpack": "webpack",
-        "start": "npm-run-all --parallel babel:watch server",
-        "build": "NODE_ENV=production npm-run-all --parallel copyfiles webpack",
-        "b": "NODE_ENV=production webpack"
+        "devServer": "webpack --config webpack.dev.js && webpack-dev-server --open",
+        "webpack": "webpack --config webpack.prod.js",
+        "start": "npm-run-all --parallel copyfiles:watch devServer",
+        "build": "NODE_ENV=production npm-run-all --parallel copyfiles webpack"
     },
     "keywords": [],
     "author": "",
@@ -59,6 +58,7 @@
         "url-loader": "^1.1.2",
         "webpack": "^4.29.5",
         "webpack-cli": "^3.2.3",
-        "webpack-dev-server": "^3.1.14"
+        "webpack-dev-server": "^3.1.14",
+        "webpack-merge": "^4.2.1"
     }
 }
