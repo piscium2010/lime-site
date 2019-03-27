@@ -2,6 +2,9 @@
 //to do
 bootstrap - compatible
 
+toggle 
+	- size
+
 all - lineheight
 
 textfield 
@@ -25,6 +28,7 @@ button
 
 Dialog
 	- api onBlurDialog - done
+	- shake
 
 menu 
     responsive?

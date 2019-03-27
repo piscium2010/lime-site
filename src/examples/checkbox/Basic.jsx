@@ -23,7 +23,7 @@ export default class Basic extends React.Component {
         return (
             <div>
                 <div style={{ display: 'flex', justifyContent: 'space-around', maxWidth: 600 }}>
-                    <Checkbox name={'react'} label='React' onChange={this.handleChange} defaultChecked onClick={evt => console.log(`click`,)}/>
+                    <Checkbox name={'react'} label='React' onChange={this.handleChange} defaultChecked />
                     <Checkbox boxStyle={{...size.medium}} name={'vue'} label='Vue' onChange={this.handleChange} />
                     <Checkbox boxStyle={{...size.large}} name={'angular'} label='Angular' onChange={this.handleChange} />
                 </div>
