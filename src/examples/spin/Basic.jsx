@@ -1,6 +1,6 @@
 import React from 'react';
 import Spin from '../../components/Spin'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 export default class Basic extends React.Component {
     render() {

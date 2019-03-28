@@ -8,14 +8,17 @@
         "copyfiles:watch": "babel ../lime/dist --watch --out-dir node_modules/lime --copy-files ",
         "copyfiles": "babel ../lime/dist --out-dir node_modules/lime --copy-files ",
         "devServer": "webpack --config webpack.dev.js && webpack-dev-server --open",
-        "webpack": "webpack --config webpack.prod.js",
-        "start": "npm-run-all --parallel copyfiles:watch devServer",
-        "build": "NODE_ENV=production npm-run-all --parallel copyfiles webpack"
+        "webpack": "webpack -p --config webpack.prod.js",
+        "start": "npm run devServer",
+        "build": "webpack",
+        "xs:start": "npm-run-all --parallel copyfiles:watch devServer",
+        "xs:build": "NODE_ENV=production npm-run-all --parallel copyfiles webpack"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@piscium2010/lime": "^2.0.3",
         "classnames": "^2.2.6",
         "debounce": "^1.2.0",
         "npm-watch": "^0.6.0",

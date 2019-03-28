@@ -1,6 +1,6 @@
 import React from 'react'
-import Layer from 'lime/Layer'
-import 'lime/lime.css'
+import Layer from '@piscium2010/lime/Layer'
+import '@piscium2010/lime/lime.css'
 
 const translation = ['石原里美', '新垣结衣', '三上悠亚']
 const layerStyle = { transform: 'translate(-50%,-100%)' }

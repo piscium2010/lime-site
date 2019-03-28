@@ -1,6 +1,6 @@
 ```javascript
 import React from 'react';
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 export default class Pure extends React.Component {
     render() {

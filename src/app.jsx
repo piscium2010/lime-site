@@ -22,7 +22,7 @@ import ShimmerPage from './pages/ShimmerPage'
 import SideNav from './SideNav'
 import TogglePage from './pages/TogglePage'
 import TextFieldPage from './pages/TextFieldPage'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 import './atom-one-dark.css'
 import './app.less'
 

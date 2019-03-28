@@ -1,7 +1,7 @@
 ```javascript
 import React from 'react'
 import '@fortawesome/fontawesome-free/css/all.css'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 const size = {
     small: { padding: 0, width: 35, height: 35, fontSize: 12 },

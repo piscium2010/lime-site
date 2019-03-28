@@ -4,7 +4,7 @@ import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/Shimmer/Basic.jsx.md'
 import shimmerMD from '../../md/components/Shimmer/Shimmer.jsx.md'
 import Markdown from '../components/Markdown'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 export default class SpinPage extends React.Component {
     render() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import List from 'lime/List'
-import { default as Dropdown } from 'lime/Layer'
+import List from '@piscium2010/lime/List'
+import { default as Dropdown } from '@piscium2010/lime/Layer'
 
 export default class Select extends React.Component {
     static defaultProps = {

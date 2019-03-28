@@ -1,6 +1,6 @@
 import React from 'react';
 import List from './components/InlineMenu'
-import Scroll from 'lime/Scroll'
+import Scroll from '@piscium2010/lime/Scroll'
 import { Link } from "react-router-dom"
 
 const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) => {

@@ -1,7 +1,7 @@
 ```javascript
 import React from 'react';
-import Checkbox from 'lime/Checkbox'
-import 'lime/lime.css'
+import Checkbox from '@piscium2010/lime/Checkbox'
+import '@piscium2010/lime/lime.css'
 
 const size = {
     small: { width: 16, height: 16 },

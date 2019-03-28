@@ -1,5 +1,5 @@
 import React from 'react'
-import Collapsible from 'lime/Collapsible'
+import Collapsible from '@piscium2010/lime/Collapsible'
 
 export default class Panel extends React.Component {
     render() {

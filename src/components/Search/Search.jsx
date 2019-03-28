@@ -1,7 +1,7 @@
 import React from 'react'
-import Layer from 'lime/Layer'
+import Layer from '@piscium2010/lime/Layer'
 import '@fortawesome/fontawesome-free/css/all.css'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 const iconStyle = { lineHeight: '30px', color: '#a0d911', padding: '0 5px' }
 const itemStyle = { cursor: 'pointer', padding: '0 10px', color: '#cdcdcd', height: 30, lineHeight: '30px' }

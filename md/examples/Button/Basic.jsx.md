@@ -1,7 +1,7 @@
 ```javascript
 import React from 'react';
 import Button from '../../components/Button'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 export default class Basic extends React.Component {
     render() {

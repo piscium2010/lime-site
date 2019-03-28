@@ -1,6 +1,6 @@
 import React from 'react';
-import Collapsible from 'lime/Collapsible'
-import 'lime/lime.css'
+import Collapsible from '@piscium2010/lime/Collapsible'
+import '@piscium2010/lime/lime.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 export default class Basic extends React.Component {

@@ -1,7 +1,7 @@
 ```javascript
 import React from 'react';
-import Toggle from 'lime/Toggle'
-import 'lime/lime.css'
+import Toggle from '@piscium2010/lime/Toggle'
+import '@piscium2010/lime/lime.css'
 
 const itemStyle = { display: 'flex', justifyContent: 'space-between', padding: 12 }
 const ruleStyle = { color: '#f2f2f2', margin: 0 }

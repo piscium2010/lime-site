@@ -1,5 +1,5 @@
 import React from 'react'
-import Ripple from 'lime/Ripple'
+import Ripple from '@piscium2010/lime/Ripple'
 
 
 

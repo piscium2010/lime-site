@@ -1,6 +1,6 @@
 ```javascript
 import React from 'react'
-import Ripple from 'lime/Ripple'
+import Ripple from '@piscium2010/lime/Ripple'
 
 export default class Button extends React.Component {
     render() {

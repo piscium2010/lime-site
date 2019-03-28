@@ -1,6 +1,6 @@
 import React from 'react';
-import Collapsible from 'lime/Collapsible'
-import Ripple from 'lime/Ripple'
+import Collapsible from '@piscium2010/lime/Collapsible'
+import Ripple from '@piscium2010/lime/Ripple'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 export default class InlineMenu extends React.Component {

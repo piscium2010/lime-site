@@ -1,6 +1,6 @@
 ```javascript
 import React from 'react';
-import Layer from 'lime/Layer'
+import Layer from '@piscium2010/lime/Layer'
 import debounce from 'debounce'
 
 export default class FloatMenu extends React.Component {

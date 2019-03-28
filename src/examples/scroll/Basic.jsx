@@ -1,5 +1,5 @@
 import React from 'react';
-import Scroll from 'lime/Scroll'
+import Scroll from '@piscium2010/lime/Scroll'
 
 export default class Basic extends React.Component {
     render() {

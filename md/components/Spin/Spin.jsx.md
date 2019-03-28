@@ -1,6 +1,6 @@
 ```javascript
 import React from 'react'
-import 'lime/lime.css'
+import '@piscium2010/lime/lime.css'
 
 export default class Spin extends React.Component {
     static defaultProps = {

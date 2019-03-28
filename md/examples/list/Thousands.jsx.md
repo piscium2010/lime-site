@@ -1,7 +1,7 @@
 ```javascript
 import React from 'react';
-import List from 'lime/List'
-import 'lime/lime.css'
+import List from '@piscium2010/lime/List'
+import '@piscium2010/lime/lime.css'
 
 const items = []
 
