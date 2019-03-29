@@ -1,7 +1,7 @@
 Docker run -it -p 8080:8080 --rm tomcat:8.0
 
-Docker run -it -p 8080:8080 --name tomcat -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps -v /Users/ssc/tomcat/conf:/usr/local/tomcat/conf --rm tomcat:8.0
-Docker run -it -p 8080:8080 --name tom -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps -v /Users/ssc/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml tomcat:8.0
+Docker run -it -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf --rm tomcat:8.0
+Docker run -d -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf tomcat:8.0
 
 Docker run -it -p 8080:8080 -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps --rm tomcat:8.0
 
@@ -10,15 +10,21 @@ docker cp a60548d3d04e:/usr/local/tomcat /Users/ssc/
 docker cp /Users/ssc/tomcat/conf/tomcat-users.xml f2b02b9b784b:/usr/local/tomcat/conf/tomcat-users.xml
 
 docker run -it -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf --rm tomcat:8.0
-docker run -d -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml tomcat:8.0
+docker run -d -p 80:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf tomcat:8.0
+
 
 
 docker run --privileged -it -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home --rm jenkins/jenkins:2.167
 docker run --privileged -d --name jen -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins:2.167
 docker run --privileged -d -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins:2.167
-docker run --privileged -d -p 8090:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jens
+docker run --privileged -d --name jen -p 8090:8080 -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /var/jenkins_home:/var/jenkins_home jenkins/jenkins:2.167
+
+
+yum-config-manager --add-repo https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+cd lime-site
+npm install
+npm run build
 
 rm -rf /usr/local/tomcat/webapps/ROOT/*
-mv public/* /usr/local/tomcat/webapps/ROOT
-
-
+mv lime-site/public/* /usr/local/tomcat/webapps/ROOT
