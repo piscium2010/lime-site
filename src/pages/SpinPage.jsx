@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/Spin/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/Spin/Basic.jsx.md'
+import exampleMD from '../../md/examples/spin/Basic.jsx.md'
 import spinMD from '../../md/components/Spin/Spin.jsx.md'
 import Markdown from '../components/Markdown'
 

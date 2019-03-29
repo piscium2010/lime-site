@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/Shimmer/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/Shimmer/Basic.jsx.md'
+import exampleMD from '../../md/examples/shimmer/Basic.jsx.md'
 import shimmerMD from '../../md/components/Shimmer/Shimmer.jsx.md'
 import Markdown from '../components/Markdown'
 import '@piscium2010/lime/lime.css'

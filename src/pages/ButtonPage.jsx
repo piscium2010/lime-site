@@ -6,7 +6,7 @@ import iconButtonMD from '../../md/examples/button/IconButton.jsx.md'
 import Pure from '../examples/button/Pure'
 import pureMD from '../../md/examples/button/Pure.jsx.md'
 import ExampleBlock from '../components/ExampleBlock'
-import buttonMD from '../../md/components/button/Button.jsx.md'
+import buttonMD from '../../md/components/Button/Button.jsx.md'
 import Markdown from '../components/Markdown'
 
 export default class CardPage extends React.Component {
