@@ -28,7 +28,3 @@ npm run build
 
 rm -rf /usr/local/tomcat/webapps/ROOT/*
 mv lime-site/public/* /usr/local/tomcat/webapps/ROOT
-<<<<<<< HEAD
-115.159.157.195
-=======
->>>>>>> 14f1858c8637cfb3ecfbfe06da6d69993eb76373
