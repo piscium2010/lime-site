@@ -226,6 +226,13 @@
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz#1498c3eb78ee7c78c5488418707de90aaf58d5d7"
 
+"@piscium2010/lime@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.0.3.tgz#0de6802982c0b20be9d90ce36166901ae98da463"
+  dependencies:
+    classnames "^2.2.6"
+    debounce "^1.2.0"
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
@@ -6971,7 +6978,6 @@ webpack-log@^2.0.0:
 webpack-merge@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.2.1.tgz#5e923cf802ea2ace4fd5af1d3247368a633489b4"
-  integrity sha512-4p8WQyS98bUJcCvFMbdGZyZmsKuWjWVnVHnAS3FFg0HDaRVrPbkivx2RYCre8UiemD67RsiFFLfn4JhLAin8Vw==
   dependencies:
     lodash "^4.17.5"
 
