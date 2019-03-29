@@ -1,5 +1,5 @@
 import React from 'react'
-import Basic from '../examples/Spin/Basic'
+import Basic from '../examples/spin/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/spin/Basic.jsx.md'
 import spinMD from '../../md/components/Spin/Spin.jsx.md'

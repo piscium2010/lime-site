@@ -1,5 +1,5 @@
 import React from 'react'
-import Basic from '../examples/Shimmer/Basic'
+import Basic from '../examples/shimmer/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/shimmer/Basic.jsx.md'
 import shimmerMD from '../../md/components/Shimmer/Shimmer.jsx.md'
