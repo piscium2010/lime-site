@@ -11,7 +11,7 @@ export default class Pure extends React.Component {
                     <h3 style={{ margin: '0 0 15px 0' }}>Header</h3>
                     <hr style={{ margin: '0 -15px', color: '#f2f2f2' }} />
                     <p style={{ lineHeight: '1.2em' }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur praesentium facilis consequatur, repellat blanditiis nobis quos aperiam, iure cumque rerum accusamus. Temporibus sapiente consectetur vero voluptatibus voluptates doloribus ea facilis.</p>
-                    <div style={{ fontSize: 12 }}><i class="far fa-heart"></i><span>&nbsp;32</span></div>
+                    <div style={{ fontSize: 12 }}><i className="far fa-heart"></i><span>&nbsp;32</span></div>
                 </div>
             </div>
         )
