@@ -10,7 +10,7 @@
         "devServer": "webpack --config webpack.dev.js && webpack-dev-server --open",
         "webpack": "webpack -p --config webpack.prod.js",
         "start": "npm run devServer",
-        "build": "webpack",
+        "build": "npm run webpack",
         "xs:start": "npm-run-all --parallel copyfiles:watch devServer",
         "xs:build": "NODE_ENV=production npm-run-all --parallel copyfiles webpack"
     },
