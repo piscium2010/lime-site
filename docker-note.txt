@@ -30,3 +30,14 @@ rm -rf /usr/local/tomcat/webapps/ROOT/*
 mv lime-site/public/* /usr/local/tomcat/webapps/ROOT
 115.159.157.195
  https://github.com/piscium2010/lime-site.git
+
+ https://github.com/piscium2010/Dockers.git
+
+ https://github.com/piscium2010/Dockers.git
+
+ 0998ef477287
+
+ sudo apt install openjdk-8-jre
+
+ ln -s /root/.nvm/versions/node/v11.12.0/bin/node /bin/node
+ ln -s /root/.nvm/versions/node/v11.12.0/bin/npm /bin/npm
