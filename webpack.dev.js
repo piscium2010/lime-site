@@ -11,7 +11,7 @@ module.exports = merge(common, {
         publicPath: '/'
     },
     devServer: {
-        contentBase: ['./public', path.join(__dirname, 'assets')],
+        contentBase: [path.join(__dirname, 'public')],
         historyApiFallback: true,
         hot: true
     },
