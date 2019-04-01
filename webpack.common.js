@@ -5,7 +5,7 @@ const highlight = require('highlight.js');
 
 module.exports = {
     entry: {
-        app: './src/index.jsx'
+        app: './src/app.jsx'
     },
     output: {
         filename: '[name].[hash].bundle.js',
@@ -17,24 +17,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ttf$/,
+                test: /\.(png|jpg|gif|woff2|woff|eot|svg|ttf)$/i,
                 use: [
                     {
-                        loader: 'ttf-loader',
+                        loader: 'url-loader',
                         options: {
-                            name: './font/[hash].[ext]',
-                        },
-                    },
+                            limit: 8192
+                        }
+                    }
                 ]
             },
             {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-            },
-            {
-                test: /\.(png|jpg|gif|woff2|woff|eot|svg)$/,
-                loader: 'file-loader'
             },
             {
                 test: /\.(md)$/,
@@ -63,7 +59,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Lime',
             filename: 'index.html',
-            template: './src/index.html'
+            template: './index.html'
         })
     ]
 }

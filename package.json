@@ -18,13 +18,13 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.7.2",
         "@piscium2010/lime": "^2.0.3",
         "classnames": "^2.2.6",
         "debounce": "^1.2.0",
         "react": "^16.8.2",
         "react-dom": "^16.8.2",
-        "react-router-dom": "^4.3.1",
-        "@fortawesome/fontawesome-free": "^5.7.2"
+        "react-router-dom": "^4.3.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.2.3",
@@ -49,7 +49,6 @@
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "style-loader": "^0.23.1",
         "terser-webpack-plugin": "^1.2.3",
-        "ttf-loader": "^1.0.2",
         "url-loader": "^1.1.2",
         "webpack": "^4.29.5",
         "webpack-cli": "^3.2.3",

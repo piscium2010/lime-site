@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import ReactDOM from 'react-dom'
 import AccordionPage from './pages/AccordionPage'
 import ButtonPage from './pages/ButtonPage'
 import CardPage from './pages/CardPage'
@@ -26,7 +27,7 @@ import '@piscium2010/lime/lime.css'
 import './atom-one-dark.css'
 import './app.less'
 
-export default class App extends React.Component {
+class App extends React.Component {
     render() {
         return (
             <Router>
@@ -63,3 +64,5 @@ export default class App extends React.Component {
         )
     }
 }
+
+ReactDOM.render(<App/>,document.getElementById('app'))
