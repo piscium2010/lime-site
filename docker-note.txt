@@ -1,6 +1,7 @@
 Docker run -it -p 8080:8080 --rm tomcat:8.0
 
-Docker run -it -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf --rm tomcat:8.0
+Docker run -it -p 8080:8080 -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf --rm tomcat:8.0
+Docker run -it -p 8080:8080 -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml --rm tomcat:7.0
 Docker run -d -p 8080:8080 --name tom -v /usr/local/tomcat/webapps:/usr/local/tomcat/webapps -v /usr/local/tomcat/conf:/usr/local/tomcat/conf tomcat:8.0
 
 Docker run -it -p 8080:8080 -v /Users/ssc/tomcat/webapps:/usr/local/tomcat/webapps --rm tomcat:8.0
