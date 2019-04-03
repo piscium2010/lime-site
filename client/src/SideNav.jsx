@@ -27,34 +27,10 @@ export default class SideNav extends React.Component {
         }
     }
 
-    onClick = k => {
-        this.setState({
-            activeK: k
-        })
-    }
-
-    onScroll = evt => {
-        let className = evt.target.getAttribute('class')
-        if ('main'.indexOf(className) == 0) {
-            let top = evt.target.scrollTop / 1
-            if (top > 50) {
-                this.logoTextRef.current.classList.add('show')
-            } else {
-                this.logoTextRef.current.classList.remove('show')
-            }
-        }
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.onScroll, true)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.onScroll, true)
-    }
+    onClick = k => { this.setState({ activeK: k }) }
 
     render() {
-        let { activeK } = this.state
+        const { activeK } = this.state
         return (
             <div className='side-nav'>
                 <div className='lime-logo'>
@@ -89,6 +65,7 @@ export default class SideNav extends React.Component {
                         <Li k={19} activeK={activeK} onClick={this.onClick} title={'Spin'} to='/lime/spin'></Li>
                         <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/lime/textField'></Li>
                         <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/lime/toggle'></Li>
+                        <div className='placeholder'></div>
                     </ul>
                     <div className='mask'></div>
                     <div className='bottom shadow'></div>

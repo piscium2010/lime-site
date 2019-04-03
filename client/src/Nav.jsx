@@ -29,19 +29,14 @@ export default class Nav extends React.Component {
         }
     }
 
-    onClick = k => {
-        this.setState({
-            activeK: k
-        })
-    }
+    onClick = k => { this.setState({ activeK: k }) }
 
     onScroll = evt => {
-        let className = evt.target.getAttribute('class')
-        if ('main'.indexOf(className) == 0) {
-            let top = evt.target.scrollTop / 1
+        if (evt.target === document) {
+            const top = document.scrollingElement.scrollTop / 1
             if (top > 50) {
                 this.ref.current.classList.add('hide')
-            } else if(top < 10) {
+            } else if (top < 10) {
                 this.ref.current.classList.remove('hide')
             }
         }
@@ -63,11 +58,11 @@ export default class Nav extends React.Component {
                 </div>
                 <div ref={this.ref} className='nav'>
                     <div ref={this.logoRef} className='lime-logo'>
-                    <Link to='/'>
-                    {"{Lime}"}
-                    </Link>
+                        <Link to='/'>
+                            {"{Lime}"}
+                        </Link>
                     </div>
-                    
+
                     <div style={{ margin: '0 18px 0', cursor: 'pointer', flex: '0 0 29px' }}>
                         <GithubLink />Í
                     </div>
