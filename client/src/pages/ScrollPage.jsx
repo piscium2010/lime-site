@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/scroll/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/scroll/Basic.jsx.md'
+import exampleMD from '../../md/examples/scroll/Basic.md.js'
 import Markdown from '../components/Markdown'
 
 export default class ScrollPage extends React.Component {

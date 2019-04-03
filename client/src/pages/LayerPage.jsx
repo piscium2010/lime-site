@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/layer/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/layer/Basic.jsx.md'
+import exampleMD from '../../md/examples/layer/Basic.md.js'
 import Markdown from '../components/Markdown'
 
 export default class LayerPage extends React.Component {

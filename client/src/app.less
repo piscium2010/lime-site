@@ -7,6 +7,20 @@
     to {transform: rotate((360deg))}
 }
 
+#app {
+    &::before{
+        display:block;
+        content:'';
+        clear: both;
+    }
+
+    &::after {
+        display:block;
+        content:'';
+        clear: both;
+    }
+}
+
 a {
     color: currentColor;
     text-decoration: none !important;
@@ -19,6 +33,7 @@ body {
     background-color: @bodyBackground;
     color: #353535;
     font-weight: 300;
+    font-size: 17px;
     font-family: Roboto,sans-serif;
     margin: 0;
     overflow: hidden;
@@ -182,16 +197,11 @@ h4 {
 }
 
 .markdown {
-    .hljs {
-        padding: 15px;
-
-        &-comment {
-            color: currentColor;
-        }
-    }
+    font-size: 14px;
 
     pre {
-        margin: 0;
+        border-radius: 0px !important;
+        margin: 0 !important;
     }
 
     .copy {
@@ -298,7 +308,5 @@ h4 {
                 left: 0;
             }
         }
-    }
-
-    
+    }   
 }

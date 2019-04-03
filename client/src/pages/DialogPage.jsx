@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/dialog/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/dialog/Basic.jsx.md'
+import exampleMD from '../../md/examples/dialog/Basic.md.js'
 import Markdown from '../components/Markdown'
 
 export default class AccordiontPage extends React.Component {

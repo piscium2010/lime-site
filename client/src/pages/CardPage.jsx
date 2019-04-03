@@ -1,6 +1,6 @@
 import React from 'react';
 import Pure from '../examples/card/Pure'
-import pureMD from '../../md/examples/card/Pure.jsx.md'
+import pureMD from '../../md/examples/card/Pure.md.js'
 import ExampleBlock from '../components/ExampleBlock'
 
 export default class ButtonPage extends React.Component {

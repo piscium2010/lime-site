@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/ripple/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/ripple/Basic.jsx.md'
+import exampleMD from '../../md/examples/ripple/Basic.md.js'
 import Markdown from '../components/Markdown'
 
 export default class RipplePage extends React.Component {

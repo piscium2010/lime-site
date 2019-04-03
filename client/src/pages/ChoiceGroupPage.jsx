@@ -1,7 +1,7 @@
 import React from 'react'
 import Basic from '../examples/choiceGroup/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/choiceGroup/Basic.jsx.md'
+import exampleMD from '../../md/examples/choiceGroup/Basic.md.js'
 import Markdown from '../components/Markdown'
 
 export default class CheckBoxPage extends React.Component {

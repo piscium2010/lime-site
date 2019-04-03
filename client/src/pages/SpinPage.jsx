@@ -1,8 +1,8 @@
 import React from 'react'
 import Basic from '../examples/spin/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/spin/Basic.jsx.md'
-import spinMD from '../../md/components/Spin/Spin.jsx.md'
+import exampleMD from '../../md/examples/spin/Basic.md.js'
+import spinMD from '../../md/components/Spin/Spin.md.js'
 import Markdown from '../components/Markdown'
 
 export default class SpinPage extends React.Component {
@@ -16,7 +16,7 @@ export default class SpinPage extends React.Component {
                 <h2>Build it yourself</h2>
                 <section className='implement'>
                     <h4>Spin.jsx</h4>
-                    <Markdown html={spinMD} />
+                    <Markdown md={spinMD} />
                 </section>
             </div>
         )

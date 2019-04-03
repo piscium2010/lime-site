@@ -1,20 +1,20 @@
 import React from 'react'
 import Basic from '../examples/select/Basic'
-import basicMD from '../../md/examples/select/Basic.jsx.md'
+import basicMD from '../../md/examples/select/Basic.md.js'
 import DisableOption from '../examples/select/DisableOption'
-import disableOptionMD from '../../md/examples/select/DisableOption.jsx.md'
+import disableOptionMD from '../../md/examples/select/DisableOption.md.js'
 import ExampleBlock from '../components/ExampleBlock'
 import FilterOption from '../examples/select/FilterOption'
-import filterOptionMD from '../../md/examples/select/FilterOption.jsx.md'
+import filterOptionMD from '../../md/examples/select/FilterOption.md.js'
 import Loading from '../examples/select/Loading'
-import loadingMD from '../../md/examples/select/Loading.jsx.md'
+import loadingMD from '../../md/examples/select/Loading.md.js'
 import MultiSelect from '../examples/select/MultiSelect'
-import multiSelectMD from '../../md/examples/select/MultiSelect.jsx.md'
+import multiSelectMD from '../../md/examples/select/MultiSelect.md.js'
 import OptionGroup from '../examples/select/OptionGroup'
-import optionGroupMD from '../../md/examples/select/OptionGroup.jsx.md'
+import optionGroupMD from '../../md/examples/select/OptionGroup.md.js'
 import SearchOption from '../examples/select/SearchOption'
-import searchOptionMD from '../../md/examples/select/SearchOption.jsx.md'
-import selectMD from '../../md/components/Select/Select.jsx.md'
+import searchOptionMD from '../../md/examples/select/SearchOption.md.js'
+import selectMD from '../../md/components/Select/Select.md.js'
 import Markdown from '../components/Markdown'
 
 export default class BasicPage extends React.Component {
@@ -46,7 +46,7 @@ export default class BasicPage extends React.Component {
                 <h2>Build it yourself</h2>
                 <section className='implement'>
                     <h4>Select.jsx</h4>
-                    <Markdown html={selectMD} />
+                    <Markdown md={selectMD} />
                 </section>
             </div>
         )

@@ -1,9 +1,9 @@
 import React from 'react'
 import Basic from '../examples/list/Basic'
 import ExampleBlock from '../components/ExampleBlock'
-import exampleMD from '../../md/examples/list/Basic.jsx.md'
+import exampleMD from '../../md/examples/list/Basic.md.js'
 import Thousands from '../examples/list/Thousands'
-import thousandsMD from '../../md/examples/list/Thousands.jsx.md'
+import thousandsMD from '../../md/examples/list/Thousands.md.js'
 import Markdown from '../components/Markdown'
 
 export default class ListPage extends React.Component {

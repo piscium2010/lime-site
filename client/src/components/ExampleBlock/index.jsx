@@ -27,7 +27,7 @@ export default class ExampleBlock extends React.Component {
                         <i className="fas fa-code" onClick={this.onClick}></i>
                     </div>
                     <Collapsible expand={expand}>
-                        <div><Markdown html={md} /></div>
+                        <div><Markdown md={md} /></div>
                     </Collapsible>
                     <div className='example-block-content'>
                         {this.props.children}

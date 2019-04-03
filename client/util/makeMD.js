@@ -2,19 +2,19 @@ const fs = require('fs')
 const path = require('path')
 
 function makeMD(dirPath) {
-    let files = fs.readdirSync(dirPath)
-    let newDir = dirPath.replace('src', 'md')
+    const files = fs.readdirSync(dirPath)
+    const newDir = dirPath.replace('src', 'md')
 
     if (!fs.existsSync(newDir)) { fs.mkdirSync(newDir); }
 
     for (let i = 0; i < files.length; i++) {
-        let filename = files[i]
-        let filePath = path.join(dirPath, filename)
+        const filename = files[i]
+        const filePath = path.join(dirPath, filename)
 
         if (fs.statSync(filePath).isFile()) {
             if (filename.indexOf('index') < 0) {
-                let content = '```javascript\n' + fs.readFileSync(filePath, 'utf8') + '\n```'
-                let newfile = filePath.replace('src', 'md') + '.md'
+                const content = 'const md = `' + fs.readFileSync(filePath, 'utf8').replace(/`/g,'\\`') + '`\nexport default md\n'
+                const newfile = filePath.replace('src', 'md').replace('.jsx','') + '.md.js'
                 fs.writeFileSync(newfile, content)
             }
         }

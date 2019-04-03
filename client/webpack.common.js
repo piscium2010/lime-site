@@ -31,27 +31,7 @@ module.exports = {
                 test: /\.jsx?/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
-            },
-            {
-                test: /\.(md)$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                        options: {
-                            minimize: true
-                        }
-                    },
-                    {
-                        loader: 'markdown-loader',
-                        options: {
-                            highlight: (code, lang) => {
-                                const html = highlight.highlight('js', code).value;
-                                return `<span class="hljs">${html}</span>`;
-                            }
-                        },
-                    },
-                ],
-            },
+            }
         ]
     },
     plugins: [

@@ -1,12 +1,12 @@
 import React from 'react';
 import Basic from '../examples/button/Basic'
-import basicMD from '../../md/examples/button/Basic.jsx.md'
+import basicMD from '../../md/examples/button/Basic.md.js'
 import IconButton from '../examples/button/IconButton'
-import iconButtonMD from '../../md/examples/button/IconButton.jsx.md'
+import iconButtonMD from '../../md/examples/button/IconButton.md.js'
 import Pure from '../examples/button/Pure'
-import pureMD from '../../md/examples/button/Pure.jsx.md'
+import pureMD from '../../md/examples/button/Pure.md.js'
 import ExampleBlock from '../components/ExampleBlock'
-import buttonMD from '../../md/components/Button/Button.jsx.md'
+import buttonMD from '../../md/components/Button/Button.md.js'
 import Markdown from '../components/Markdown'
 
 export default class ButtonPage extends React.Component {
@@ -26,7 +26,7 @@ export default class ButtonPage extends React.Component {
                 <h2>Build it yourself</h2>
                 <section className='implement'>
                     <h4>Button.jsx</h4>
-                    <Markdown html={buttonMD} />
+                    <Markdown md={buttonMD} />
                 </section>
             </div>
         )

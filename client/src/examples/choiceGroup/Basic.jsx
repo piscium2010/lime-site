@@ -4,7 +4,6 @@ import '@piscium2010/lime/lime.css'
 
 export default class Basic extends React.Component {
     onChange = ({value}) => {
-        console.log(`value`,value)
     }
 
     render() {
