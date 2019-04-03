@@ -7,10 +7,10 @@ export default class Basic extends React.Component {
         return (
             <div>
                 <p>
-                    <Spin size={20}/>
+                    <Spin size={20} show/>
                 </p>
                 <p>
-                    <Spin text='Loading' />
+                    <Spin text='Loading' show />
                 </p>
             </div>
         )

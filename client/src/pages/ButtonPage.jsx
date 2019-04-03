@@ -9,7 +9,7 @@ import ExampleBlock from '../components/ExampleBlock'
 import buttonMD from '../../md/components/Button/Button.jsx.md'
 import Markdown from '../components/Markdown'
 
-export default class CardPage extends React.Component {
+export default class ButtonPage extends React.Component {
     render() {
         return (
             <div>

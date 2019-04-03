@@ -1,28 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import ReactDOM from 'react-dom'
-import AccordionPage from './pages/AccordionPage'
-import ButtonPage from './pages/ButtonPage'
-import CardPage from './pages/CardPage'
-import CheckBoxPage from './pages/CheckBoxPage'
-import CollapsiblePage from './pages/CollapsiblePage'
-import ChoiceGroupPage from './pages/ChoiceGroupPage'
-import DialogPage from './pages/DialogPage'
-import FloatMenuPage from './pages/menu/FloatMenuPage'
 import GetStartedPage from './pages/GetStartedPage'
-import InlineMenuPage from './pages/menu/InlineMenuPage'
-import ListPage from './pages/ListPage'
-import LayerPage from './pages/LayerPage'
 import Nav from './Nav'
-import RipplePage from './pages/RipplePage'
-import ScrollPage from './pages/ScrollPage'
-import SelectPage from './pages/SelectPage'
-import SearchPage from './pages/SearchPage'
-import SpinPage from './pages/SpinPage'
-import ShimmerPage from './pages/ShimmerPage'
 import SideNav from './SideNav'
-import TogglePage from './pages/TogglePage'
-import TextFieldPage from './pages/TextFieldPage'
 import '@piscium2010/lime/lime.css'
 import './atom-one-dark.css'
 import './app.less'
@@ -36,26 +17,26 @@ class App extends React.Component {
                     <Route path='/lime/' component={SideNav} />
                     <div className='main'>
                         <div className="main-content">
-                            <Route path='/lime/button' component={ButtonPage} />
-                            <Route path='/lime/card' component={CardPage} />
-                            <Route path='/lime/accordion' component={AccordionPage} />
-                            <Route path='/lime/checkbox' component={CheckBoxPage} />
-                            <Route path='/lime/collapsible' component={CollapsiblePage} />
-                            <Route path='/lime/choiceGroup' component={ChoiceGroupPage} />
-                            <Route path='/lime/dialog' component={DialogPage} />
-                            <Route path='/lime/list' component={ListPage} />
-                            <Route path='/lime/layer' component={LayerPage} />
-                            <Route path='/lime/menu/inlineMenu' component={InlineMenuPage} />
-                            <Route path='/lime/menu/floatMenu' component={FloatMenuPage} />
-                            <Route path='/lime/ripple' component={RipplePage} />
-                            <Route path='/lime/scroll' component={ScrollPage} />
-                            <Route path='/lime/select' component={SelectPage} />
-                            <Route path='/lime/search' component={SearchPage} />
-                            <Route path='/lime/spin' component={SpinPage} />
-                            <Route path='/lime/start' component={GetStartedPage} />
-                            <Route path='/lime/shimmer' component={ShimmerPage} />
-                            <Route path='/lime/toggle' component={TogglePage} />
-                            <Route path='/lime/textField' component={TextFieldPage} />
+                            <Route path='/lime/button' component={lazyLoadPage('ButtonPage')} />
+                            <Route path='/lime/card' component={lazyLoadPage('CardPage')} />
+                            <Route path='/lime/accordion' component={lazyLoadPage('AccordionPage')} />
+                            <Route path='/lime/checkbox' component={lazyLoadPage('CheckBoxPage')} />
+                            <Route path='/lime/collapsible' component={lazyLoadPage('CollapsiblePage')} />
+                            <Route path='/lime/choiceGroup' component={lazyLoadPage('ChoiceGroupPage')} />
+                            <Route path='/lime/dialog' component={lazyLoadPage('DialogPage')} />
+                            <Route path='/lime/list' component={lazyLoadPage('ListPage')} />
+                            <Route path='/lime/layer' component={lazyLoadPage('LayerPage')} />
+                            <Route path='/lime/menu/inlineMenu' component={lazyLoadPage('InlineMenuPage')} />
+                            <Route path='/lime/menu/floatMenu' component={lazyLoadPage('FloatMenuPage')} />
+                            <Route path='/lime/ripple' component={lazyLoadPage('RipplePage')} />
+                            <Route path='/lime/scroll' component={lazyLoadPage('ScrollPage')} />
+                            <Route path='/lime/select' component={lazyLoadPage('SelectPage')} />
+                            <Route path='/lime/search' component={lazyLoadPage('SearchPage')} />
+                            <Route path='/lime/spin' component={lazyLoadPage('SpinPage')} />
+                            <Route path='/lime/start' component={lazyLoadPage('GetStartedPage')} />
+                            <Route path='/lime/shimmer' component={lazyLoadPage('ShimmerPage')} />
+                            <Route path='/lime/toggle' component={lazyLoadPage('TogglePage')} />
+                            <Route path='/lime/textField' component={lazyLoadPage('TextFieldPage')} />
                         </div>
                     </div>
                     <Route path='/lime/' component={Nav} />
@@ -66,3 +47,23 @@ class App extends React.Component {
 }
 
 ReactDOM.render(<App/>,document.getElementById('app'))
+
+function lazyLoadPage(componentName) {
+    return class LazyLoadComponent extends React.Component {
+        state = { loading: true, component: null }
+
+        componentDidMount() {
+            import('./pages/'+componentName).then(module => {
+                this.setState({
+                    loading: false,
+                    component: module.default
+                })
+            })
+        }
+
+        render() {
+            const { loading, component: C } = this.state
+            return loading ? <div>loading...</div> : <C />
+        }
+    }
+}

@@ -2,154 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="486d5e80-8f71-49b1-a29d-dd1103c6dc26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/414ff5daad323a1c47c5177d4bd29674.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/462806316fea535a6a57651bc2b000b0.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/4b115e1153a9ea339d6a0bb284cc8ed3.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/5dd3976cb5d61e2e561f2a46b916f377.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/61969d433bf265b9717a6c357a1e04e4.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/65779ebcc35604a25c2ba77309c5b8af.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/80533988ff5fecd5be26557d08ce8237.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/82905d8d1c06969df11c8c378e9bdd4c.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/app.04114e40b33d80440fba.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/app.04114e40b33d80440fba.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/b5596f4d339f99e3d69bc41be78db962.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/b70cea0339374107969eb53e5b1f603f.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/b90365bccdabd68c6c03902b4b141f09.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/c39278f7abfc798a241551194f55e29f.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/d9d17590c975aad1be0ddab673f9c769.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/e7e957c87c454bccaa3bf9fdaa6874f8.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/f6c6f6c8cb7784254ad00056f6fbd74e.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Accordion/Accordion.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Accordion/Panel.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Button/Button.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/FloatMenu/FloatMenu.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/InlineMenu/InlineMenu.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Loading.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Search/Search.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Select/Select.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Shimmer/Shimmer.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/Spin/Spin.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/components/TextField/TextField.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/Toggle/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/accordion/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/button/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/button/IconButton.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/button/Pure.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/card/Pure.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/checkbox/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/choiceGroup/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/collapsible/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/dialog/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/floatMenu/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/inlineMenu/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/layer/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/list/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/list/Thousands.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/ripple/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/scroll/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/search/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/DisableOption.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/FilterOption.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/LoadMore.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/Loading.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/MultiSelect.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/OptionGroup.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/select/SearchOption.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/shimmer/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/spin/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../md/examples/textField/Basic.jsx.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Nav.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/SideNav.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/app.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/atom-one-dark.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Accordion/Accordion.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Accordion/Panel.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Accordion/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Button/Button.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Button/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/ExampleBlock/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/FloatMenu/FloatMenu.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/FloatMenu/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/GithubLink/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/InlineMenu/InlineMenu.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/InlineMenu/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Loading.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Markdown/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Search/Search.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Search/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Select/Select.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Select/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Shimmer/Shimmer.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Shimmer/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Spin/Spin.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/Spin/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/TextField/TextField.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/components/TextField/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/Toggle/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/accordion/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/button/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/button/IconButton.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/button/Pure.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/card/Pure.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/checkbox/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/choiceGroup/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/collapsible/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/dialog/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/floatMenu/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/inlineMenu/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/layer/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/list/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/list/Thousands.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/ripple/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/scroll/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/search/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/DisableOption.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/FilterOption.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/LoadMore.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/Loading.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/MultiSelect.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/OptionGroup.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/select/SearchOption.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/shimmer/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/spin/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/examples/textField/Basic.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/AccordionPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/ButtonPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/CardPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/CheckBoxPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/ChoiceGroupPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/CollapsiblePage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/DialogPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/GetStartedPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/LayerPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/ListPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/LoadingPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/RipplePage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/ScrollPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/SearchPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/SelectPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/ShimmerPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/SpinPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/TextFieldPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/TogglePage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/menu/FloatMenuPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/pages/menu/InlineMenuPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../util/copyToClipBoard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../util/makeMD.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack.common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack.dev.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack.prod.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/ButtonPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/ButtonPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/webpack.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.04114e40b33d80440fba.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.04114e40b33d80440fba.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/default/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -159,7 +18,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -171,9 +52,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/codeburnt/controllers/HomeCtrl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java" />
       </list>
     </option>
   </component>
@@ -196,6 +77,51 @@
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="codeburnt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="codeburnt" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="codeburnt" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+              <item name="GzipFilter.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -293,7 +219,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1892552" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1892552" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -307,7 +233,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32982457" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32982457" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32982457" />
@@ -343,13 +269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/controllers/HomeCtrl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -358,16 +277,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#481#482#0" expanded="true" />
             <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -383,6 +292,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

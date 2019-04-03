@@ -14,8 +14,8 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.zip.GZIPOutputStream;
 
-@Order(1)
-@WebFilter(filterName = "GzipFilter", urlPatterns = "/*\\.(css|html)/")
+//@Order(1)
+//@WebFilter(filterName = "GzipFilter", urlPatterns = "/*\\.(css|html)/")
 public class GzipFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

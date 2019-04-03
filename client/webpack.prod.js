@@ -35,7 +35,10 @@ module.exports = merge(common, {
         minimizer: [
             new TerserJSPlugin(),
             new OptimizeCSSAssetsPlugin({})
-        ]
+        ],
+        splitChunks: {
+            chunks: 'all'
+        }
     },
     plugins: [
         new MiniCssExtractPlugin({
