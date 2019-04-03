@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import GetStartedPage from './pages/GetStartedPage'
 import Nav from './Nav'
 import SideNav from './SideNav'
+import Spin from './components/Spin'
 import '@piscium2010/lime/lime.css'
 import './atom-one-dark.css'
 import './app.less'
@@ -46,14 +47,14 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App/>,document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'))
 
 function lazyLoadPage(componentName) {
     return class LazyLoadComponent extends React.Component {
         state = { loading: true, component: null }
 
         componentDidMount() {
-            import('./pages/'+componentName).then(module => {
+            import('./pages/' + componentName).then(module => {
                 this.setState({
                     loading: false,
                     component: module.default
@@ -62,8 +63,18 @@ function lazyLoadPage(componentName) {
         }
 
         render() {
+            const style = {
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+            }
             const { loading, component: C } = this.state
-            return loading ? <div>loading...</div> : <C />
+            return loading ? <div style={style}><Spin show={true} /></div> : <C />
         }
     }
 }

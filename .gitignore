@@ -5,7 +5,7 @@ node_modules
 target
 *.iml
 bin
-idea
-webapp
+/\.idea/
+static
 .project
 .classpath
