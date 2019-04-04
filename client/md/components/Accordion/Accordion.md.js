@@ -7,7 +7,7 @@ export default class Accordion extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            activeKey: props.defaultActiveKey || ''
+            activeKey: 'defaultActiveKey' in props ? props.defaultActiveKey : ''
         }
     }
 
@@ -16,7 +16,7 @@ export default class Accordion extends React.Component {
     }
 
     onClick = evt => {
-        let eventKey = evt.target.getAttribute('eventKey')
+        const eventKey = evt.target.getAttribute('eventKey')
         if (eventKey) {
             this.setState(preState => ({
                 activeKey: eventKey == preState.activeKey ? '' : eventKey
@@ -25,8 +25,7 @@ export default class Accordion extends React.Component {
     }
 
     render() {
-        let { children, defaultActiveKey, ...rest } = this.props
-
+        const { children, defaultActiveKey, ...rest } = this.props
         return (
             <div onClickCapture={this.onClick} {...rest}>
                 {

@@ -4,7 +4,7 @@ import '@piscium2010/lime/lime.css'
 
 const src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554395938337&di=0a5d717409d8c7d981454b931503745f&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F277b6ade2be0c587ff4402caf3f3965de3b4d0902a7d9-a89yhE_fw658'
 
-export default class Pure extends React.Component {
+export default class Ripple extends React.Component {
     render() {
         return (
             <div style={{ maxWidth: 600 }}>

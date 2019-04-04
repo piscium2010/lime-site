@@ -2,11 +2,10 @@
 @primaryColor: #9dd411;
 @bodyBackground: #f9f9f9;
 @sideNavWidth: 280px;
-@sectionMarginBottom: 30px;
-@keyframes lime-loading {
-    from {transform: rotate(0deg)}
-    to {transform: rotate((360deg))}
-}
+// @keyframes lime-loading {
+//     from {transform: rotate(0deg)}
+//     to {transform: rotate((360deg))}
+// }
 
 #app {
     &::before{
@@ -32,7 +31,7 @@ a {
 
 body {
     background-color: @bodyBackground;
-    color: #353535;
+    color: #03121a;
     font-weight: 300;
     font-size: 17px;
     font-family: Roboto,sans-serif;
@@ -40,26 +39,23 @@ body {
     overflow-y: scroll;
 }
 
-h2 {
-    font-weight: 400;
-    &:not(:first-child) {
-        margin-top: 100px;
-    }
-}
-
 h4 {
     font-weight: 400;
 }
 
-.section(){
+section {
+    margin-bottom: 180px;
+}
+
+.code-section(){
     background-color: #fff;
     border: 1px solid #e0e0e0;
     padding: 0 10px 10px;
-    margin-bottom: @sectionMarginBottom;
+    margin-bottom: 100px;
 }
 
 .example-block {
-    .section();
+    .code-section();
     padding: 0 10px 30px;
 
     &-header {
@@ -69,7 +65,7 @@ h4 {
         justify-content: flex-end;
         margin: 0 -10px 10px;
         border: none;
-        height: 26px;
+        height: 33px;
         padding: 5px 10px;
 
         .fa-code {
@@ -107,7 +103,7 @@ h4 {
 }
 
 .implement {
-    .section();
+    .code-section();
 }
 
 .side-nav {
@@ -172,10 +168,10 @@ h4 {
             background: radial-gradient(at top, rgba(0,0,0,.2), transparent 80%) no-repeat;
             top: 0;
         }
-        &.bottom {
-            background: radial-gradient(at bottom, rgba(0,0,0,.2), transparent 80%) no-repeat;
-            bottom: 0;
-        }
+        // &.bottom {
+        //     background: radial-gradient(at bottom, rgba(0,0,0,.2), transparent 80%) no-repeat;
+        //     bottom: 0;
+        // }
     }
 
     .mask {
@@ -189,17 +185,18 @@ h4 {
 
 .main {
     background-color: @bodyBackground;
-    box-sizing: border-box;
-    float: left;
-    padding: 20px;
-    padding-top: 50px;
-    width: calc(100% - @sideNavWidth);
+    padding: 50px 20px 20px 20px;
     position: relative;
     margin-left: @sideNavWidth;
     min-height: 100vh;
     &-content{
         margin-right: auto;
         max-width: 800px;
+        h2 {
+            color: #03121a;
+            font-weight: bold;
+            font-size: x-large;
+        }
     }
 }
 

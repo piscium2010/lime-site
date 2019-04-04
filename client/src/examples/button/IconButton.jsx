@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../components/Button'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@piscium2010/lime/lime.css'
 
@@ -9,30 +10,24 @@ const size = {
     large: { padding: 0, width: 50, height: 50, fontSize: 30 }
 }
 
-export default class Pure extends React.Component {
+export default class IconButton extends React.Component {
     render() {
         return (
-            <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 600, alignItems: 'center' }}>
-                <button className='lime-button primary lime-raised lime-round' style={{ marginRight: 'auto', ...size.small }}>
-                    <i className="fas fa-angle-up"></i>
-                </button>
-                <button className='lime-button primary lime-raised lime-round' style={{ marginRight: 'auto', ...size.normal }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-start', maxWidth: 600, alignItems: 'center' }}>
+                <Button className='lime-button primary lime-raised lime-round' style={{ marginRight: 'auto', ...size.normal }}>
                     <i className="fas fa-plus"></i>
-                </button>
-                <button className='lime-button primary lime-raised lime-round' style={{ marginRight: 'auto', ...size.medium }}>
+                </Button>
+                <Button className='lime-button primary lime-raised lime-round' style={{ marginRight: 'auto', ...size.normal }}>
                     <i className="fas fa-bars"></i>
-                </button>
-                <button className='lime-button primary lime-raised lime-round' style={{ marginRight: 'auto', ...size.large }}>
-                    <i className="fab fa-github"></i>
-                </button>
-                <button className='lime-button primary' style={{ marginRight: 'auto' }}>
+                </Button>
+                <Button className='lime-button primary' style={{ marginRight: 'auto' }}>
                     <i style={{ marginRight: 6, fontSize: 12 }} className="fas fa-save"></i>
                     <span>Save</span>
-                </button>
-                <button className='lime-button' style={{ marginRight: 'auto' }}>
+                </Button>
+                <Button className='lime-button warning' style={{ marginRight: 'auto' }}>
                     <i style={{ marginRight: 6, fontSize: 12 }} className="far fa-trash-alt"></i>
                     <span>Delete</span>
-                </button>
+                </Button>
             </div>
         )
     }

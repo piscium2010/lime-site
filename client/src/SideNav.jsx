@@ -4,9 +4,9 @@ import Scroll from '@piscium2010/lime/Scroll'
 import { Link } from "react-router-dom"
 
 const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) => {
-    let active = k == activeK
-    let className = active ? 'lime-active-text lime-ribbon-right' : ''
-    let menuItem = (
+    const active = k == activeK
+    const className = active ? 'lime-active-text lime-ribbon-right' : ''
+    const menuItem = (
         <List
             title={title}
             className={className}
