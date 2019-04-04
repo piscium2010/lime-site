@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="486d5e80-8f71-49b1-a29d-dd1103c6dc26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/ButtonPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/ButtonPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/webpack.prod.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeburnt/filters/GzipFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.04114e40b33d80440fba.bundle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.04114e40b33d80440fba.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/1.f6c5fbdc15e96d375fb7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.f6c5fbdc15e96d375fb7.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/app.f6c5fbdc15e96d375fb7.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/vendors~app.f6c5fbdc15e96d375fb7.bundle.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/default/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

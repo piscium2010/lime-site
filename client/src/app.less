@@ -1,4 +1,5 @@
-@primaryColor: #a0d911;
+//@primaryColor: #a0d911;
+@primaryColor: #9dd411;
 @bodyBackground: #f9f9f9;
 @sideNavWidth: 280px;
 @sectionMarginBottom: 30px;
@@ -150,7 +151,6 @@ h4 {
         margin-right: 10px;
 
         .lime-logo-text {
-            color: @primaryColor;
             font-size: 30px;
             font-weight: bolder;
             height: 50px;
@@ -165,7 +165,7 @@ h4 {
 
     .shadow {
         width: calc(100% - 10px);
-        height: 10px;
+        height: 4px;
         position: absolute;
         z-index: 1;
         &.top {
@@ -223,7 +223,7 @@ h4 {
 }
 
 .nav {
-    background-color: #a0d911;
+    background-color: @primaryColor;
     color: #fff;
     display: flex;
     justify-content: flex-end;

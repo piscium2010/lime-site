@@ -34,7 +34,7 @@ export default class SideNav extends React.Component {
         return (
             <div className='side-nav'>
                 <div className='lime-logo'>
-                    <span ref={this.logoTextRef} className='lime-logo-text'>
+                    <span ref={this.logoTextRef} className='lime-logo-text lime-active-text'>
                         <Link to='/'>{'{Lime}'}</Link>
                     </span>
                 </div>
@@ -67,8 +67,6 @@ export default class SideNav extends React.Component {
                         <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/lime/toggle'></Li>
                         <div className='placeholder'></div>
                     </ul>
-                    <div className='mask'></div>
-                    <div className='bottom shadow'></div>
                 </Scroll>
             </div>
         )
