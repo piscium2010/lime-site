@@ -10,7 +10,7 @@ export default class Basic extends React.Component {
             <p>
                 <div className='lime-card' style={style}>
                     Click Me
-                    <Ripple color='rgba(0,0,0,.12)' />
+                    <Ripple dark />
                 </div>
             </p>
         )
