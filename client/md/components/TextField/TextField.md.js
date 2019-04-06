@@ -5,7 +5,7 @@ export default class TextField extends React.Component {
         const { children, className = '', icon, ...rest } = this.props
 
         return (
-            <div className={\`lime-textField-input ${className}\`} >
+            <div className={\`lime-textField-input \${className}\`} >
                 {icon}
                 <input type="text" {...rest} />
             </div>

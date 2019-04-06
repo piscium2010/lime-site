@@ -129,7 +129,7 @@ export default class Select extends React.Component {
         }
         let itemElement = this.props.renderItem(item, multi ? multiSelect : select)
         return (
-            <div style={{ lineHeight: \`${lineHeight}px\` }}>{itemElement}</div>
+            <div style={{ lineHeight: \`\${lineHeight}px\` }}>{itemElement}</div>
         )
     }
 
@@ -166,8 +166,8 @@ export default class Select extends React.Component {
             onChangeInput,
             ...rest } = this.props
         return (
-            <div ref={this.ref} className={\`lime-select-input ${className}\`} style={style}>
-                <div className='lime-select-text' style={{ lineHeight: \`${lineHeight}px\`, opacity: this.isFocus ? 0 : 1 }}>
+            <div ref={this.ref} className={\`lime-select-input \${className}\`} style={style}>
+                <div className='lime-select-text' style={{ lineHeight: \`\${lineHeight}px\`, opacity: this.isFocus ? 0 : 1 }}>
                     {this.text.join(',')}
                 </div>
                 <input

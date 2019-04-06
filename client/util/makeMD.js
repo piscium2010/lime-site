@@ -13,7 +13,7 @@ function makeMD(dirPath) {
 
         if (fs.statSync(filePath).isFile()) {
             if (filename.indexOf('index') < 0) {
-                const content = 'const md = `' + fs.readFileSync(filePath, 'utf8').replace(/`/g,'\\`') + '`\nexport default md\n'
+                const content = 'const md = `' + fs.readFileSync(filePath, 'utf8').replace(/`/g,'\\`').replace(/\$/g,'\\$') + '`\nexport default md\n'
                 const newfile = filePath.replace('src', 'md').replace('.jsx','') + '.md.js'
                 fs.writeFileSync(newfile, content)
             }

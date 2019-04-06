@@ -53,10 +53,10 @@ export default class FloatMenu extends React.Component {
     render() {
         let { show, left, top, width } = this.state
         let { className, children, title, placement, ...rest } = this.props
-        let arrow = <i className={\`fas fa-angle-${placement}\`} style={FloatMenu.arrowStyle}></i>
+        let arrow = <i className={\`fas fa-angle-\${placement}\`} style={FloatMenu.arrowStyle}></i>
 
         return (
-            <li className={\`lime-menu-item ${className}\`}
+            <li className={\`lime-menu-item \${className}\`}
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}
                 onClick={this.onClick}

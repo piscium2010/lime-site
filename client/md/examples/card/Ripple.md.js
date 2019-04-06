@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@piscium2010/lime/lime.css'
 import Ripple from '@piscium2010/lime/Ripple'
 
-const src = 'http://pic.kekenet.com/2016/0307/80721457349180.jpg'
+const src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554482973127&di=82ab1429d5770226d6fcf571dec95a6a&imgtype=0&src=http%3A%2F%2Fwx2.sinaimg.cn%2Forj360%2F006kblPKgy1fk5l332guzj30dc0dcmy8.jpg'
 
 export default class RippleCard extends React.Component {
     render() {

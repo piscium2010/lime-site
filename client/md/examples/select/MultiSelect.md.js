@@ -6,8 +6,8 @@ const options = []
 for (let i = 0; i < 10; i++) {
     options.push({
         key: i,
-        value: \`${i}\`,
-        text: \`${i}. Lorem ipsum dolor sit amet\`
+        value: \`\${i}\`,
+        text: \`\${i}. Lorem ipsum dolor sit amet\`
     })
 }
 

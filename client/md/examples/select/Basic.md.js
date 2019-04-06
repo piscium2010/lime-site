@@ -5,8 +5,8 @@ import '@piscium2010/lime/lime.css'
 const options = []
 for (let i = 0; i < 20; i++) {
     options.push({
-        value: \`${i}\`,
-        text: \`${i} Lorem ipsum dolor sit amet.\`
+        value: \`\${i}\`,
+        text: \`\${i} Lorem ipsum dolor sit amet.\`
     })
 }
 

@@ -51,7 +51,7 @@ export default class SideNav extends React.Component {
                         <Li k={7} activeK={activeK} onClick={this.onClick} title={'Dialog'} to='dialog'></Li>
                         <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/lime/layer'></Li>
                         <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/lime/list'></Li>
-                        <Li k={11} activeK={activeK} title={'Menu'}>
+                        <Li k={11} activeK={activeK} title={'Menu'} defaultExpand>
                             <ul>
                                 <Li k={12} activeK={activeK} onClick={this.onClick} title={'Inline'} to='/lime/menu/inlineMenu'></Li>
                                 <Li k={13} activeK={activeK} onClick={this.onClick} title={'Float'} to='/lime/menu/floatMenu'></Li>

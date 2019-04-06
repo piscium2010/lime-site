@@ -33,7 +33,7 @@ export default class InlineMenu extends React.Component {
             : <i className="fas fa-angle-down" style={InlineMenu.arrowStyle}></i>
         return (
             <React.Fragment>
-                <li className={\`lime-menu-item ${className}\`} onClick={this.onClick} {...rest}>
+                <li className={\`lime-menu-item \${className}\`} onClick={this.onClick} {...rest}>
                     <span>{title}</span>
                     {children && arrow}
                     <Ripple /> {/*parent be position:relative, overflow: hidden*/}

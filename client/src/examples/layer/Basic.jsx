@@ -35,6 +35,7 @@ export default class Basic extends React.Component {
 
         return (
             <div>
+                <p style={{paddingLeft:10}}>Simulate a tooltip</p>
                 <button
                     className='lime-button text'
                     onMouseOver={evt => this.onMouseOver(evt, 0)}

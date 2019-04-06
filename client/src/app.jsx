@@ -27,8 +27,8 @@ class App extends React.Component {
                             <Route path='/lime/dialog' component={lazyLoadPage('DialogPage')} />
                             <Route path='/lime/list' component={lazyLoadPage('ListPage')} />
                             <Route path='/lime/layer' component={lazyLoadPage('LayerPage')} />
-                            <Route path='/lime/menu/inlineMenu' component={lazyLoadPage('InlineMenuPage')} />
-                            <Route path='/lime/menu/floatMenu' component={lazyLoadPage('FloatMenuPage')} />
+                            <Route path='/lime/menu/inlineMenu' component={lazyLoadPage('menu/InlineMenuPage')} />
+                            <Route path='/lime/menu/floatMenu' component={lazyLoadPage('menu/FloatMenuPage')} />
                             <Route path='/lime/ripple' component={lazyLoadPage('RipplePage')} />
                             <Route path='/lime/scroll' component={lazyLoadPage('ScrollPage')} />
                             <Route path='/lime/select' component={lazyLoadPage('SelectPage')} />
@@ -74,7 +74,7 @@ function lazyLoadPage(componentName) {
                 alignItems: 'center'
             }
             const { loading, component: C } = this.state
-            return loading ? <div style={style}><Spin show={true} /></div> : <C />
+            return loading ? <div style={style}><Spin show threshold={3000} /></div> : <C />
         }
     }
 }
