@@ -3,29 +3,33 @@ import Layer from '@piscium2010/lime/Layer'
 import debounce from 'debounce'
 
 export default class FloatMenu extends React.Component {
-    static arrowStyle = { lineHeight: '40px', float: 'right', color: '#404040', fontSize: 'small', marginLeft: 5 }
+    static arrowStyle = { lineHeight: '50px', float: 'right', color: 'currentColor', fontSize: 'small', marginLeft: 5 }
 
     constructor(props) {
         super(props);
+        this.ref = React.createRef()
         this.state = { show: false }
-        this.debouncedShowOrHideLayer = debounce(this.showOrHideLayer, 200)
+        this.debouncedShowOrHideLayer = debounce(this.showOrHideLayer, 300)
     }
 
     onBlurLayer = evt => {
-        this.debouncedShowOrHideLayer(false)
+        if (!this.ref.current.contains(evt.target)) {
+            this.debouncedShowOrHideLayer(false)
+        }
     }
 
     onClick = evt => {
-        this.debouncedShowOrHideLayer(false)
+        this.setState({show: !this.state.show})
         this.props.onClick && this.props.onClick(evt)
     }
 
-    onMouseOver = evt => {
+    onMouseOverTitle = evt => {
         if (evt.target !== evt.currentTarget) return
-        let { children, placement } = this.props
-        let { left, top, width, height } = evt.target.getBoundingClientRect()
+        if (!this.props.children) return
+        const { placement } = this.props
+        const { left, top, width, height } = evt.target.getBoundingClientRect()
         let x, y
-        switch(placement) {
+        switch (placement) {
             case 'down':
                 x = left
                 y = top + height
@@ -35,7 +39,7 @@ export default class FloatMenu extends React.Component {
                 y = top
                 break
         }
-        this.debouncedShowOrHideLayer(children ? true : false, x, y, width)
+        this.debouncedShowOrHideLayer(/*show=*/true, x, y, width)
     }
 
     onMouseLeave = evt => {
@@ -43,7 +47,7 @@ export default class FloatMenu extends React.Component {
     }
 
     showOrHideLayer = (show, left, top, width) => {
-        this.setState({ show, left, top, width })
+        this.setState({show, left, top, width})
     }
 
     componentWillUnmount() {
@@ -51,22 +55,28 @@ export default class FloatMenu extends React.Component {
     }
 
     render() {
-        let { show, left, top, width } = this.state
-        let { className, children, title, placement, ...rest } = this.props
-        let arrow = <i className={`fas fa-angle-${placement}`} style={FloatMenu.arrowStyle}></i>
-
+        const { show, left, top, width } = this.state
+        const { className = '', children, title, placement, ...rest } = this.props
+        const arrow = <i className={`fas fa-angle-${placement}`} style={FloatMenu.arrowStyle}></i>
         return (
-            <li className={`lime-menu-item ${className}`}
-                onMouseOver={this.onMouseOver}
+            <li
+                {...rest}
+                ref={this.ref}
+                style={{ listStyle: 'none' }}
+                className={`${className}`}
                 onMouseLeave={this.onMouseLeave}
                 onClick={this.onClick}
-                {...rest}
+            >
+                <div className="lime-menu-item lime-hover-text"
+                    style={{ height: 50, lineHeight: '50px' }}
+                    onMouseOver={this.onMouseOverTitle}
                 >
-                <span>{title}</span>
-                {children && arrow}
+                    {title}
+                    {children ? arrow : null}
+                </div>
                 <Layer
                     show={show}
-                    style={{minWidth: width}}
+                    style={{ minWidth: width }}
                     left={left}
                     top={top}
                     onBlur={this.onBlurLayer}>

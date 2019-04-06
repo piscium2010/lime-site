@@ -4,7 +4,7 @@ import Ripple from '@piscium2010/lime/Ripple'
 import '@fortawesome/fontawesome-free/css/all.css'
 
 export default class InlineMenu extends React.Component {
-    static arrowStyle = { lineHeight: '40px', float: 'right', color: '#404040' }
+    static arrowStyle = { lineHeight: '40px', float: 'right', color: 'currentColor' }
 
     constructor(props) {
         super(props);
@@ -17,26 +17,25 @@ export default class InlineMenu extends React.Component {
 
     onClick = evt => {
         if (evt.target !== evt.currentTarget) return
-        let { children, onClick = () => { } } = this.props
-        let { expand } = this.state
+        const { children, onClick = () => { } } = this.props
+        const { expand } = this.state
         this.setState({
             expand: children ? !expand : false,
         })
-
         onClick(evt)
     }
 
     render() {
-        let { children, className = '', defaultExpand, title, onClick, ...rest } = this.props
-        let arrow = this.expand
+        const { children, className = '', defaultExpand, title, onClick, ...rest } = this.props
+        const arrow = this.expand
             ? <i className="fas fa-angle-up" style={InlineMenu.arrowStyle}></i>
             : <i className="fas fa-angle-down" style={InlineMenu.arrowStyle}></i>
         return (
             <React.Fragment>
-                <li className={`lime-menu-item ${className}`} onClick={this.onClick} {...rest}>
+                <li className={`lime-menu-item lime-hover-text ${className}`} onClick={this.onClick} {...rest}>
                     <span>{title}</span>
                     {children && arrow}
-                    <Ripple /> {/*parent be position:relative, overflow: hidden*/}
+                    <Ripple dark/> {/*parent be position:relative, overflow: hidden*/}
                 </li>
                 <Collapsible expand={this.expand}>
                     {children}

@@ -5,14 +5,18 @@ import Ripple from '@piscium2010/lime/Ripple'
 
 export default class Basic extends React.Component {
     render() {
-        const style = { cursor: 'pointer', display: 'inline', position: 'relative', padding: 10 }
+        const style = { cursor: 'pointer', display: 'inline-block', width:'50%', height:300, position: 'relative' }
         return (
-            <p>
+            <section>
                 <div className='lime-card' style={style}>
-                    Click Me
+                    Dark
                     <Ripple dark />
                 </div>
-            </p>
+                <div className='lime-card' style={{...style, background:'#9dd411', color:'white'}}>
+                    Light
+                    <Ripple />
+                </div>
+            </section>
         )
     }
 }

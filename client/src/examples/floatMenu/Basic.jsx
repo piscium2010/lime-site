@@ -1,15 +1,15 @@
 import React from 'react';
-import List from '../../components/FloatMenu'
+import FloatMenu from '../../components/FloatMenu'
 import { Link } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.css'
 
-console.log(`List`, List)
+console.log(`List`, FloatMenu)
 
 const Li = ({ title, to, children, ...rest }) => {
     return (
         to
-            ? <Link to={to}><List title={title} {...rest}>{children}</List></Link>
-            : <List title={title} {...rest}>{children}</List>
+            ? <Link to={to}><FloatMenu title={title} {...rest}>{children}</FloatMenu></Link>
+            : <FloatMenu title={title} {...rest}>{children}</FloatMenu>
     )
 }
 
@@ -20,11 +20,11 @@ export default class Menu extends React.Component {
                 <Li title={'Home'}></Li>
                 <Li title={'Language'} ></Li>
                 <Li title={'Components'} placement='down'>
-                    <ul>
+                    <ul style={{ paddingLeft: 0 }}>
                         <Li title={'Button'}></Li>
                         <Li title={'Select'}></Li>
                         <Li title={'Menu'} placement='right'>
-                            <ul>
+                            <ul style={{ paddingLeft: 0 }}>
                                 <Li title={'Inline'}></Li>
                                 <Li title={'Float'}></Li>
                             </ul>
