@@ -16,33 +16,38 @@ import SearchOption from '../examples/select/SearchOption'
 import searchOptionMD from '../../md/examples/select/SearchOption.md.js'
 import selectMD from '../../md/components/Select/Select.md.js'
 import Markdown from '../components/Markdown'
+import PageHeader from '../components/PageHeader'
 
 export default class BasicPage extends React.Component {
     render() {
+        const desc = <span>Select one from the plenty available options. </span>
         return (
             <div>
-                <h2>Select</h2>
-                <ExampleBlock md={basicMD} title='Basic'>
-                    <Basic />
-                </ExampleBlock>
-                <ExampleBlock md={loadingMD} title='Loading'>
-                    <Loading />
-                </ExampleBlock>
-                <ExampleBlock md={disableOptionMD} title='Disable Option'>
-                    <DisableOption />
-                </ExampleBlock>
-                <ExampleBlock md={optionGroupMD} title='Option Group'>
-                    <OptionGroup />
-                </ExampleBlock>
-                <ExampleBlock md={searchOptionMD} title='Search Option'>
-                    <SearchOption />
-                </ExampleBlock>
-                <ExampleBlock md={filterOptionMD} title='Filter'>
-                    <FilterOption />
-                </ExampleBlock>
-                <ExampleBlock md={multiSelectMD} title='Multi Select'>
-                    <MultiSelect />
-                </ExampleBlock>
+                <PageHeader title='Select' desc={desc} />
+                <h2>Usage</h2>
+                <section>
+                    <ExampleBlock md={basicMD} title='Basic'>
+                        <Basic />
+                    </ExampleBlock>
+                    <ExampleBlock md={loadingMD} title='Loading'>
+                        <Loading />
+                    </ExampleBlock>
+                    <ExampleBlock md={disableOptionMD} title='Disable Option'>
+                        <DisableOption />
+                    </ExampleBlock>
+                    <ExampleBlock md={optionGroupMD} title='Option Group'>
+                        <OptionGroup />
+                    </ExampleBlock>
+                    <ExampleBlock md={searchOptionMD} title='Search Option'>
+                        <SearchOption />
+                    </ExampleBlock>
+                    <ExampleBlock md={filterOptionMD} title='Filter'>
+                        <FilterOption />
+                    </ExampleBlock>
+                    <ExampleBlock md={multiSelectMD} title='Multi Select'>
+                        <MultiSelect />
+                    </ExampleBlock>
+                </section>
                 <h2>Build it yourself</h2>
                 <section className='implement'>
                     <h4>Select.jsx</h4>
