@@ -5,6 +5,7 @@ import GetStartedPage from './pages/GetStartedPage'
 import Nav from './Nav'
 import SideNav from './SideNav'
 import Spin from './components/Spin'
+import Footer from './Footer'
 import '@piscium2010/lime/lime.css'
 import './atom-one-dark.css'
 import './app.less'
@@ -39,6 +40,7 @@ class App extends React.Component {
                             <Route path='/lime/toggle' component={lazyLoadPage('TogglePage')} />
                             <Route path='/lime/textField' component={lazyLoadPage('TextFieldPage')} />
                         </div>
+                        <Footer/>
                     </div>
                     <Route path='/lime/' component={Nav} />
                 </React.Fragment>
@@ -51,9 +53,10 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 function lazyLoadPage(componentName) {
     return class LazyLoadComponent extends React.Component {
-        state = { loading: true, component: null }
+        state = { loading: false, component: null}
 
         componentDidMount() {
+            this.setState({loading: true})
             import('./pages/' + componentName).then(module => {
                 this.setState({
                     loading: false,
@@ -74,7 +77,7 @@ function lazyLoadPage(componentName) {
                 alignItems: 'center'
             }
             const { loading, component: C } = this.state
-            return loading ? <div style={style}><Spin show threshold={3000} /></div> : <C />
+            return C ? <C /> : <div style={style}><Spin show={loading} threshold={3000} /></div>
         }
     }
 }
