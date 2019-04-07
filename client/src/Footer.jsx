@@ -4,8 +4,8 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className='footer'>
-                <div className='hem lime-active-text'>
-                    by piscium2010
+                <div className="lime-active-text desc">
+                by piscium2010
                 </div>
             </div>
         )

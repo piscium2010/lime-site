@@ -2,10 +2,21 @@
 @primaryColor: #9dd411;
 @bodyBackground: #f9f9f9;
 @sideNavWidth: 280px;
-// @keyframes lime-loading {
-//     from {transform: rotate(0deg)}
-//     to {transform: rotate((360deg))}
-// }
+
+.code-section(){
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 0 10px 10px;
+    margin-bottom: 100px;
+}
+
+.strips() { // from https://leaverou.github.io/css3patterns/#cicada-stripes
+    background-image: linear-gradient(90deg, rgba(205,205,205,.07) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(205,205,205,.13) 50%, transparent 50%),
+    linear-gradient(90deg, transparent 50%, rgba(205,205,205,.17) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(205,205,205,.19) 50%);
+    background-size: 13px, 29px, 37px, 53px;
+}
 
 #app {
     &::before{
@@ -47,12 +58,7 @@ section {
     margin-bottom: 180px;
 }
 
-.code-section(){
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    padding: 0 10px 10px;
-    margin-bottom: 100px;
-}
+
 
 .example-block {
     .code-section();
@@ -91,15 +97,13 @@ section {
 }
 
 .footer {
-    height: 300px;
+    height: 100px;
     margin: 0 -20px -20px;
-    background-color: @bodyBackground;
+    position: relative;
+    // .strips;
     
-    .hem {
-        bottom: 0;
-        width: 100%;
-        position: absolute;
-        padding: 10px 0;
+    .desc {
+        line-height: 100px;
         text-align: center;
     }
 }
@@ -261,11 +265,7 @@ section {
 }
 
 .home {
-    background-image: linear-gradient(90deg, rgba(205,205,205,.07) 50%, transparent 50%),
-    linear-gradient(90deg, rgba(205,205,205,.13) 50%, transparent 50%),
-    linear-gradient(90deg, transparent 50%, rgba(205,205,205,.17) 50%),
-    linear-gradient(90deg, transparent 50%, rgba(205,205,205,.19) 50%);
-    background-size: 13px, 29px, 37px, 53px;
+    .strips;
     display: flex;
     justify-content: center;
     align-items: center;
