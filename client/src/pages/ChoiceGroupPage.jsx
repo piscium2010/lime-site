@@ -2,6 +2,8 @@ import React from 'react'
 import Basic from '../examples/choiceGroup/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/choiceGroup/Basic.md.js'
+import choiceGroupMD from '../../md/components/ChoiceGroup/ChoiceGroup.md.js'
+import choiceOptionMD from '../../md/components/ChoiceGroup/Option.md.js'
 import PageHeader from '../components/PageHeader'
 import Markdown from '../components/Markdown'
 
@@ -17,7 +19,15 @@ export default class ChoicGroupPage extends React.Component {
                     </ExampleBlock>
                 </section>
                 <h2>Build it yourself</h2>
-                <section className='implement'>
+                <section>
+                    <div className='implement'>
+                        <h4>ChoiceOption.jsx</h4>
+                        <Markdown md={choiceOptionMD} />
+                    </div>
+                    <div className='implement'>
+                        <h4>ChoiceGroup.jsx</h4>
+                        <Markdown md={choiceGroupMD} />
+                    </div>
                 </section>
             </div>
         )

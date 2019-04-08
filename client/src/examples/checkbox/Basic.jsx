@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '@piscium2010/lime/Checkbox'
+import Checkbox from '../../components/Checkbox'
 import '@piscium2010/lime/lime.css'
 
 const size = {

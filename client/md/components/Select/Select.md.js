@@ -2,6 +2,9 @@ const md = `import React from 'react';
 import List from '@piscium2010/lime/List'
 import { default as Dropdown } from '@piscium2010/lime/Layer'
 
+const arrowStyle = { position: 'absolute', top: 0, right: 0, paddingRight: '10px' }
+const spinStyle = { width: 20, height: 20, alignSelf: 'center', marginRight: 5 }
+
 export default class Select extends React.Component {
     static defaultProps = {
         lineHeight: 30,
@@ -21,6 +24,7 @@ export default class Select extends React.Component {
             show: false
         }
     }
+
     get allowInput() {
         return (this.props.onChangeInput || this.props.filter) ? true : false
     }
@@ -29,19 +33,19 @@ export default class Select extends React.Component {
 
     get text() {
         const { multi, options = [] } = this.props
-        let option
+        let selectedOption
         if (multi) {
-            option = options.filter(o => Array.from(this.value).includes(o.value))
+            selectedOption = options.filter(o => Array.from(this.value).includes(o.value))
         } else {
-            option = options.filter(o => o.value === this.value)
+            selectedOption = options.filter(o => o.value === this.value)
         }
-        return option.map(o => o.text)
+        return selectedOption.map(o => o.text)
     }
 
     get node() { return this.ref.current }
 
     get options() {
-        let { options, filter } = this.props
+        const { options, filter } = this.props
         return this.inputValue && filter
             ? filter(this.inputValue, options)
             : options
@@ -59,9 +63,9 @@ export default class Select extends React.Component {
     }
 
     onBlurDropdown = () => {
-        let { options, onChange } = this.props
-        let option = options && options.find(o => !o.disabled && o.text === this.inputValue)
-        let triggerOnChange = option ? () => onChange(option) : null
+        const { options, onChange } = this.props
+        const option = options && options.find(o => !o.disabled && o.text === this.inputValue)
+        const triggerOnChange = option ? () => onChange(option) : null
         setTimeout(() => {
             if (!this.isFocus || !this.allowInput) {
                 this.setState(prevState => {
@@ -93,21 +97,21 @@ export default class Select extends React.Component {
 
     triggerDropdownIfNeeded = () => {
         if (this.isFocus) {
-            let { left, top, width, height } = this.node.getBoundingClientRect()
+            const { left, top, width, height } = this.node.getBoundingClientRect()
             this.setState({
                 left,
-                top: top + height + 5,
+                top: top + height,
                 width,
                 show: this.allowInput ? true : !this.state.show
             })
         }
     }
 
-    renderItem = item => {
-        let { multi, onChange, lineHeight } = this.props
-        let multiSelect = () => {
-            let value = Array.from(this.value)
-            let i = value.indexOf(item.value)
+    renderSelectItem = item => {
+        const { multi, onChange, lineHeight } = this.props
+        const multiSelect = () => {
+            const value = Array.from(this.value)
+            const i = value.indexOf(item.value)
             if (i >= 0) {
                 value.splice(i, 1)
             } else {
@@ -119,7 +123,7 @@ export default class Select extends React.Component {
             })
             onChange(value)
         }
-        let select = () => {
+        const select = () => {
             this.setState({
                 value: item.value,
                 show: false,
@@ -127,17 +131,15 @@ export default class Select extends React.Component {
             })
             onChange(item)
         }
-        let itemElement = this.props.renderItem(item, multi ? multiSelect : select)
+        const itemElement = this.props.renderItem(item, multi ? multiSelect : select)
         return (
             <div style={{ lineHeight: \`\${lineHeight}px\` }}>{itemElement}</div>
         )
     }
 
     onWindowScroll = evt => {
-        if (this.node && this.node.contains(evt.target)) {
-            return
-        } else {
-            this.state.show && this.setState({ show: false })
+        if (!this.node.contains(evt.target) && this.state.show) { // hide dropdown when window scrolling
+            this.setState({ show: false })
         }
     }
 
@@ -146,7 +148,7 @@ export default class Select extends React.Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.onWindowScroll, true)
+        window.removeEventListener('scroll', this.onWindowScroll)
     }
 
     componentWillReceiveProps() {
@@ -155,7 +157,8 @@ export default class Select extends React.Component {
 
     render() {
         const { left, top, width, show } = this.state
-        const { className = '',
+        const {
+            className = '',
             filter,
             lineHeight,
             loading,
@@ -165,11 +168,13 @@ export default class Select extends React.Component {
             multi,
             onChangeInput,
             ...rest } = this.props
+        const spin = <i className='lime-spin' style={spinStyle}></i>
+        const arrow = <i className={\`fas fa-angle-down\`} style={{ ...arrowStyle, lineHeight: \`\${lineHeight}px\` }}></i>
+        const displayText = <div className='lime-select-text' style={{ opacity: this.isFocus ? 0 : 1, lineHeight: \`\${lineHeight}px\` }}>{this.text.join(',')}</div>
+
         return (
             <div ref={this.ref} className={\`lime-select-input \${className}\`} style={style}>
-                <div className='lime-select-text' style={{ lineHeight: \`\${lineHeight}px\`, opacity: this.isFocus ? 0 : 1 }}>
-                    {this.text.join(',')}
-                </div>
+                {displayText}
                 <input
                     {...rest}
                     readOnly={this.allowInput ? false : true}
@@ -180,11 +185,10 @@ export default class Select extends React.Component {
                     onBlur={this.onBlur}
                     style={{ opacity: this.isFocus ? 1 : 0 }}
                 />
-                {/* <input name={name} type='hidden' value={this.value}/> */}
-                {loading && <i className='lime-spin'></i>}
+                {loading ? spin : arrow}
                 {
                     this.options &&
-                    <Dropdown // position fixed
+                    <Dropdown
                         show={show}
                         left={left}
                         top={top}
@@ -194,7 +198,7 @@ export default class Select extends React.Component {
                         <List
                             itemHeight={lineHeight}
                             items={this.options.map(o => ({ ...o, key: o.value }))}
-                            renderItem={this.renderItem}
+                            renderItem={this.renderSelectItem}
                         />
                     </Dropdown>
                 }

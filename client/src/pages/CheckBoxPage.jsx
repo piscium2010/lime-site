@@ -3,7 +3,8 @@ import Basic from '../examples/checkbox/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/checkbox/Basic.md.js'
 import PageHeader from '../components/PageHeader'
-import Checkbox from '@piscium2010/lime/Checkbox'
+import Checkbox from '../components/Checkbox'
+import checkboxMD from '../../md/components/Checkbox/Checkbox.md.js'
 import Markdown from '../components/Markdown'
 
 export default class CheckBoxPage extends React.Component {
@@ -20,7 +21,7 @@ export default class CheckBoxPage extends React.Component {
         const { marryme } = this.state
         const desc = (
             <div>
-                <p>Checkbos is a yes or no, agree or disagree, true of false, on or off question like</p>
+                <p>Checkbox is a yes or no, agree or disagree, true of false, on or off question like</p>
                 <p style={{ display: 'flex' }}>
                     <Checkbox name={'marry'} label='Would u marry me?' onChange={this.onChange} />
                     {marryme && <span>&nbsp;(*๓´╰╯`๓)♡ </span>}
@@ -39,6 +40,10 @@ export default class CheckBoxPage extends React.Component {
                 </section>
                 <section>
                     <h2>Build it yourself</h2>
+                    <div className='implement'>
+                        <h4>Checkbox.jsx</h4>
+                        <Markdown md={checkboxMD} />
+                    </div>
                 </section>
 
             </div>

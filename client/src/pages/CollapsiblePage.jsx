@@ -3,6 +3,7 @@ import Basic from '../examples/collapsible/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/collapsible/Basic.md.js'
 import PageHeader from '../components/PageHeader'
+import Table from '../components/Table'
 import Markdown from '../components/Markdown'
 
 export default class AccordiontPage extends React.Component {
@@ -18,8 +19,9 @@ export default class AccordiontPage extends React.Component {
                 </ExampleBlock>
                 </section>
                 
-                <h2>Build it yourself</h2>
-                <section className='implement'>
+                <h2>API</h2>
+                <section>
+                    <Table/>
                 </section>
             </div>
         )

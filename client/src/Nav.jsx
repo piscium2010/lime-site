@@ -34,7 +34,7 @@ export default class Nav extends React.Component {
     onScroll = evt => {
         if (evt.target === document) {
             const top = document.scrollingElement.scrollTop / 1
-            if (top > 50) {
+            if (top > 60) {
                 this.ref.current.classList.add('hide')
             } else if (top < 10) {
                 this.ref.current.classList.remove('hide')

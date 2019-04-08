@@ -7,23 +7,26 @@ export default class FloatMenu extends React.Component {
 
     constructor(props) {
         super(props);
+        this.ref = React.createRef()
         this.state = { show: false }
-        this.debouncedShowOrHideLayer = debounce(this.showOrHideLayer, 200)
+        this.debouncedShowOrHideLayer = debounce(this.showOrHideLayer, 300)
     }
 
     onBlurLayer = evt => {
-        this.debouncedShowOrHideLayer(false)
+        if (!this.ref.current.contains(evt.target)) {
+            this.debouncedShowOrHideLayer(false)
+        }
     }
 
     onClick = evt => {
-        this.debouncedShowOrHideLayer(false)
+        this.setState({show: !this.state.show})
         this.props.onClick && this.props.onClick(evt)
     }
 
     onMouseOverTitle = evt => {
         if (evt.target !== evt.currentTarget) return
         if (!this.props.children) return
-        const { children, placement } = this.props
+        const { placement } = this.props
         const { left, top, width, height } = evt.target.getBoundingClientRect()
         let x, y
         switch (placement) {
@@ -44,7 +47,7 @@ export default class FloatMenu extends React.Component {
     }
 
     showOrHideLayer = (show, left, top, width) => {
-        this.setState({ show, left, top, width })
+        this.setState({show, left, top, width})
     }
 
     componentWillUnmount() {
@@ -55,16 +58,19 @@ export default class FloatMenu extends React.Component {
         const { show, left, top, width } = this.state
         const { className = '', children, title, placement, ...rest } = this.props
         const arrow = <i className={\`fas fa-angle-\${placement}\`} style={FloatMenu.arrowStyle}></i>
-
         return (
             <li
                 {...rest}
+                ref={this.ref}
                 style={{ listStyle: 'none' }}
                 className={\`\${className}\`}
                 onMouseLeave={this.onMouseLeave}
                 onClick={this.onClick}
             >
-                <div className="lime-menu-item lime-hover-text" style={{height:50, lineHeight:'50px'}} onMouseOver={this.onMouseOverTitle}>
+                <div className="lime-menu-item lime-hover-text"
+                    style={{ height: 50, lineHeight: '50px' }}
+                    onMouseOver={this.onMouseOverTitle}
+                >
                     {title}
                     {children ? arrow : null}
                 </div>
