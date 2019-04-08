@@ -4,8 +4,9 @@ import '@piscium2010/lime/lime.css'
 export default class PropsTable extends React.Component {
     render() {
         const { data } = this.props
+        const sortByName = (a, b) => a.name > b.name ? 1 : -1
         return (
-            <table class="lime-table light">
+            <table className="lime-table light">
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -16,8 +17,8 @@ export default class PropsTable extends React.Component {
                 </thead>
                 <tbody>
                     {
-                        data.map(({ name, desc, type, deft = '' }) => (
-                            <tr>
+                        data.sort(sortByName).map(({ name, desc, type, deft = '' }, i) => (
+                            <tr key={i}>
                                 <td>{name}</td>
                                 <td colSpan="2">{desc}</td>
                                 <td>{type}</td>

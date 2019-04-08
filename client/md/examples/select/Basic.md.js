@@ -2,23 +2,33 @@ const md = `import React from 'react';
 import Select from '../../components/Select'
 import '@piscium2010/lime/lime.css'
 
-const options = []
-for (let i = 0; i < 20; i++) {
-    options.push({
-        value: \`\${i}\`,
-        text: \`\${i} Lorem ipsum dolor sit amet.\`
-    })
-}
+const options = [
+    { value: 'aquamarine', text: 'aquamarine' },
+    { value: 'bisque', text: 'bisque' },
+    { value: 'coral', text: 'coral' },
+    { value: 'darkcyan', text: 'darkcyan' },
+    { value: 'firebrick', text: 'firebrick' },
+    { value: 'greenyellow', text: 'greenyellow' },
+    { value: 'honeydew', text: 'honeydew' },
+    { value: 'indianred', text: 'indianred' },
+    { value: 'khaki', text: 'khaki' },
+    { value: 'lightsalmon', text: 'lightsalmon' },
+    { value: 'mistyrose', text: 'mistyrose' },
+    { value: 'olive', text: 'olive' },
+    { value: 'palegreen', text: 'palegreen' },
+    { value: 'royalblue', text: 'royalblue' },
+    { value: 'silver', text: 'silver' },
+    { value: 'thistle', text: 'thistle' },
+    { value: 'violet', text: 'violet' },
+    { value: 'wheat', text: 'wheat' },
+    { value: 'yellow', text: 'yellow' }
+]
 
 export default class Basic extends React.Component {
-    
-    constructor(props) {
-        super(props)
-        this.state = { value: ''}
-    }
+
+    state = { value: 'black' }
 
     handleChange = item => {
-        console.log(\`change\`,)
         this.setState({
             value: item.value
         })
@@ -26,14 +36,25 @@ export default class Basic extends React.Component {
 
     render() {
         return (
-            <div style={{ display:'flex' }}>
-                <Select 
-                    name='user' 
-                    options={options} 
+            <div style={{ display: 'flex' }}>
+                <Select
+                    name='user'
+                    options={options}
                     onChange={this.handleChange}
-                    style={{maxWidth: 400}}
+                    placeholder='select color'
+                    style={{ maxWidth: 400 }}
                 />
-                <span style={{lineHeight:'30px', padding: '0 15px'}}>{this.state.value}</span>
+                <div
+                    className='lime-raised'
+                    style={{
+                        width: 20,
+                        height: 20,
+                        background: this.state.value,
+                        borderRadius: '50%',
+                        border: '5px solid white',
+                        margin: '0 10px'
+                    }}>
+                </div>
             </div>
         )
     }

@@ -2,9 +2,8 @@ import React from 'react'
 import Basic from '../examples/list/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/list/Basic.md.js'
-import Thousands from '../examples/list/Thousands'
-import thousandsMD from '../../md/examples/list/Thousands.md.js'
 import PageHeader from '../components/PageHeader'
+import PropsTable from '../components/PropsTable'
 import Markdown from '../components/Markdown'
 
 export default class ListPage extends React.Component {
@@ -19,10 +18,15 @@ export default class ListPage extends React.Component {
                         <Basic />
                     </ExampleBlock>
                 </section>
-
-
-                <h2>Build it yourself</h2>
-                <section className='implement'>
+                <h2>API</h2>
+                <section>
+                    <PropsTable data={[
+                        { name: 'pageSize', desc: 'items per page', type: 'number', deft: '20' },
+                        { name: 'itemHeight', desc: 'height of item', type: 'number', deft: '30' },
+                        { name: 'items', desc: 'item object', type: '{key} & Object' },
+                        { name: 'renderItem', desc: 'item renderer', type: 'func(item) => element' }
+                    ]}
+                    />
                 </section>
             </div>
         )

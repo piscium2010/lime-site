@@ -58,7 +58,9 @@ select
 	filter
 	auto focus
 	divider
-	defaultSelectedKey
+	defaultValue
+
+	selected status
 	
 	display: none
 

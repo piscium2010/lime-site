@@ -3,6 +3,7 @@ import Basic from '../examples/ripple/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/ripple/Basic.md.js'
 import PageHeader from '../components/PageHeader'
+import PropsTable from '../components/PropsTable'
 import Markdown from '../components/Markdown'
 
 export default class RipplePage extends React.Component {
@@ -17,8 +18,12 @@ export default class RipplePage extends React.Component {
                         <Basic />
                     </ExampleBlock>
                 </section>
-                <h2>Build it yourself</h2>
-                <section className='implement'>
+                <h2>API</h2>
+                <section>
+                    <PropsTable data={[
+                        { name: 'dark', desc: 'dark style', type: 'bool', deft: '' },
+                    ]}
+                    />
                 </section>
             </div>
         )

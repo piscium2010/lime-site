@@ -8,7 +8,7 @@ import PageHeader from '../components/PageHeader'
 
 export default class TextFieldPage extends React.Component {
     render() {
-        const desc = <span>Human get bored when waiting girl friend and data loading, so give them something to see while waiting. </span>
+        const desc = <span>Typically used to capture a single line of text.</span>
         return (
             <div>
                 <PageHeader title='Text Field' desc={desc} />

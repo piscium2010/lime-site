@@ -65,7 +65,7 @@ export default class Basic extends React.Component {
     renderItem = (lyric, index) => {
         return (
             <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', height: '100%' }}>
-                <p style={{ padding: 5, margin: 0, color:'white' }}>{\`\${index}\`.padEnd(2)}. {lyric}</p>
+                <p style={{ padding: 5, margin: 0, color: 'white' }}>{\`\${index}\`.padEnd(2)}. {lyric.text}</p>
             </div>
         )
     }
@@ -74,10 +74,10 @@ export default class Basic extends React.Component {
         return (
             <div>
                 <List
-                    style={{backgroundColor:'rgba(0,0,0,.7)'}}
+                    style={{ backgroundColor: 'rgba(0,0,0,.6)' }}
                     pageSize={10}
                     itemHeight={40}
-                    items={lyrics}
+                    items={lyrics.map((l, i) => ({ text:l, key: i }))}
                     renderItem={this.renderItem}
                 />
             </div>

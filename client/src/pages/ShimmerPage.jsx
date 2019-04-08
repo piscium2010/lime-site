@@ -9,7 +9,7 @@ import '@piscium2010/lime/lime.css'
 
 export default class SpinPage extends React.Component {
     render() {
-        const desc = <span>Human get bored when waiting girl friend and data loading, so give them something to see while waiting. </span>
+        const desc = <span>Human get bored when waiting girl friend or data loading, so give them something to see while waiting. </span>
         return (
             <div>
                 <PageHeader title='Shimmer' desc={desc} />

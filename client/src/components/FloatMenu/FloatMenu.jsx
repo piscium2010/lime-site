@@ -3,7 +3,7 @@ import Layer from '@piscium2010/lime/Layer'
 import debounce from 'debounce'
 
 export default class FloatMenu extends React.Component {
-    static arrowStyle = { lineHeight: '50px', float: 'right', color: 'currentColor', fontSize: 'small', marginLeft: 5 }
+    static arrowStyle = { lineHeight: '53px', float: 'right', color: 'currentColor', fontSize: 'small', marginLeft: 5 }
 
     constructor(props) {
         super(props);

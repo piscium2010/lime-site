@@ -5,7 +5,7 @@ export default class Footer extends React.Component {
         return (
             <div className='footer'>
                 <div className="lime-active-text desc">
-                by piscium2010
+                    by piscium2010
                 </div>
             </div>
         )

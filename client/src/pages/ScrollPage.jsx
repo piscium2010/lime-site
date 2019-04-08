@@ -3,6 +3,7 @@ import Basic from '../examples/scroll/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/scroll/Basic.md.js'
 import PageHeader from '../components/PageHeader'
+import PropsTable from '../components/PropsTable'
 import Markdown from '../components/Markdown'
 
 export default class ScrollPage extends React.Component {
@@ -17,8 +18,14 @@ export default class ScrollPage extends React.Component {
                         <Basic />
                     </ExampleBlock>
                 </section>
-                <h2>Build it yourself</h2>
-                <section className='implement'>
+                <h2>API</h2>
+                <section>
+                    <PropsTable data={[
+                        { name: 'trackVertical', desc: 'if true, vertical thumb will display', type: 'bool', deft: 'true' },
+                        { name: 'height', desc: 'height of scroll', type: 'number', deft: '' },
+                        { name: 'onScroll', desc: 'triggered when scrolling', type: 'func' }
+                    ]}
+                    />
                 </section>
             </div>
         )

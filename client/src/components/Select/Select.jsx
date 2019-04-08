@@ -100,7 +100,7 @@ export default class Select extends React.Component {
             const { left, top, width, height } = this.node.getBoundingClientRect()
             this.setState({
                 left,
-                top: top + height,
+                top: top + height + 2,
                 width,
                 show: this.allowInput ? true : !this.state.show
             })
@@ -131,9 +131,10 @@ export default class Select extends React.Component {
             })
             onChange(item)
         }
-        const itemElement = this.props.renderItem(item, multi ? multiSelect : select)
+        const selected = multi ? Array.from(this.value).includes(item.value) : this.value === item.value
+        const itemElement = this.props.renderItem(item, multi ? multiSelect : select, selected)
         return (
-            <div style={{ lineHeight: `${lineHeight}px` }}>{itemElement}</div>
+            <div className={`${selected ? 'lime-active-text' : ''}`} style={{ lineHeight: `${lineHeight}px` }}>{itemElement}</div>
         )
     }
 
@@ -170,7 +171,8 @@ export default class Select extends React.Component {
             ...rest } = this.props
         const spin = <i className='lime-spin' style={spinStyle}></i>
         const arrow = <i className={`fas fa-angle-down`} style={{ ...arrowStyle, lineHeight: `${lineHeight}px` }}></i>
-        const displayText = <div className='lime-select-text' style={{ opacity: this.isFocus ? 0 : 1, lineHeight: `${lineHeight}px` }}>{this.text.join(',')}</div>
+        const showText = !this.isFocus && this.text != ''
+        const displayText = <div className='lime-select-text' style={{ opacity: showText ? 1 : 0, lineHeight: `${lineHeight}px` }}>{this.text.join(',')}</div>
 
         return (
             <div ref={this.ref} className={`lime-select-input ${className}`} style={style}>
@@ -183,7 +185,7 @@ export default class Select extends React.Component {
                     value={this.inputValue === undefined ? this.value : this.inputValue}
                     onChange={this.onChangeInput}
                     onBlur={this.onBlur}
-                    style={{ opacity: this.isFocus ? 1 : 0 }}
+                    style={{ opacity: showText ? 0 : 1 }}
                 />
                 {loading ? spin : arrow}
                 {
