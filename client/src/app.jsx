@@ -39,8 +39,8 @@ class App extends React.Component {
                             <Route path='/lime/shimmer' component={lazyLoadPage('ShimmerPage')} />
                             <Route path='/lime/toggle' component={lazyLoadPage('TogglePage')} />
                             <Route path='/lime/textField' component={lazyLoadPage('TextFieldPage')} />
+                            <Footer/>
                         </div>
-                        <Footer/>
                     </div>
                     <Route path='/lime/' component={Nav} />
                 </React.Fragment>

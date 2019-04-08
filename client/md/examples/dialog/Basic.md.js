@@ -1,5 +1,5 @@
 const md = `import React from 'react';
-import Dialog from '@piscium2010/lime/Dialog'
+import Dialog from '../../components/Dialog'
 import '@piscium2010/lime/lime.css'
 
 export default class Basic extends React.Component {

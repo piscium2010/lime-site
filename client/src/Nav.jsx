@@ -56,7 +56,7 @@ export default class Nav extends React.Component {
                 <div className='git-fixed-link'>
                     <GithubLink />
                 </div>
-                <div ref={this.ref} className='nav lime-card'>
+                <div ref={this.ref} className='nav lime-raised'>
                     <div ref={this.logoRef} className='lime-logo'>
                         <Link to='/'>
                             {"{Lime}"}

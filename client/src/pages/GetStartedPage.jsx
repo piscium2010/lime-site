@@ -15,7 +15,7 @@ export default class GetStartedPage extends React.Component {
     render() {
         return (
             <div className='home'>
-                <div className="lime-card card">
+                <div className="lime-raised card">
                     <div className='lime-logo'>
                         <span className='lime-logo-text'>{'{Lime}'}</span>
                     </div>

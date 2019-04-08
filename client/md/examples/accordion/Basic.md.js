@@ -5,11 +5,11 @@ const titleStyle = { margin: 0, cursor: 'pointer', padding: 15, background: '#ff
 const contentStyle = { margin: '0 5px', padding: 15, lineHeight: '1.2em', background: 'rgb(250,237,208)' }
 const Panel = ({ children, ...rest }) => (
     <Accordion.Panel
-        className='lime-card'
+        className='lime-raised'
         style={titleStyle}
         {...rest}
     >
-        <p className='lime-card' style={contentStyle}>
+        <p className='lime-raised' style={contentStyle}>
             {children}
         </p>
     </Accordion.Panel>

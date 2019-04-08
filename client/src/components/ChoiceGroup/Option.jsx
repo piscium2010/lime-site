@@ -13,7 +13,7 @@ export default class Option extends React.PureComponent {
     }
 
     render() {
-        const { value, activeValue, onClick, ...rest } = this.props
+        const { value, activeValue, onClick, onClickChoice, ...rest } = this.props
         const checked = value === activeValue
         const choiceClasses = classnames(`lime-choice`, {
             selected: checked

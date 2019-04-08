@@ -22,10 +22,10 @@ export default class CheckBoxPage extends React.Component {
         const desc = (
             <div>
                 <p>Checkbox is a yes or no, agree or disagree, true of false, on or off question like</p>
-                <p style={{ display: 'flex' }}>
+                <div style={{ display: 'flex' }}>
                     <Checkbox name={'marry'} label='Would u marry me?' onChange={this.onChange} />
                     {marryme && <span>&nbsp;(*๓´╰╯`๓)♡ </span>}
-                </p>
+                </div>
             </div>
         )
 

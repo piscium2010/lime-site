@@ -8,11 +8,11 @@ export default class Basic extends React.Component {
         const style = { cursor: 'pointer', display: 'inline-block', width:'50%', height:300, position: 'relative' }
         return (
             <section>
-                <div className='lime-card' style={style}>
+                <div className='lime-raised' style={style}>
                     Dark
                     <Ripple dark />
                 </div>
-                <div className='lime-card' style={{...style, background:'#9dd411', color:'white'}}>
+                <div className='lime-raised' style={{...style, background:'#9dd411', color:'white'}}>
                     Light
                     <Ripple />
                 </div>

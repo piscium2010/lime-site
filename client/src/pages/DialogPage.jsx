@@ -2,6 +2,7 @@ import React from 'react'
 import Basic from '../examples/dialog/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/dialog/Basic.md.js'
+import dialogMD from '../../md/components/Dialog/Dialog.md.js'
 import PageHeader from '../components/PageHeader'
 import Markdown from '../components/Markdown'
 
@@ -17,7 +18,11 @@ export default class AccordiontPage extends React.Component {
                     </ExampleBlock>
                 </section>
                 <h2>Build it yourself</h2>
-                <section className='implement'>
+                <section>
+                    <div className="implement">
+                        <h4>Dialog.jsx</h4>
+                        <Markdown md={dialogMD} />
+                    </div>
                 </section>
             </div>
         )

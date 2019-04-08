@@ -4,7 +4,7 @@ import Scroll from '@piscium2010/lime/Scroll'
 export default class Basic extends React.Component {
     render() {
         return (
-            <div className="lime-card" style={{ display: 'inline-block' }}>
+            <div className="lime-raised" style={{ display: 'inline-block' }}>
                 <Scroll style={{ height: 300, maxWidth: 450 }}>
                     <div style={{ padding: '10px 30px', lineHeight:'1.6em' }}>
                         <h4 style={{textAlign:'center'}}>A letter from Steve Jobs to his wife</h4>

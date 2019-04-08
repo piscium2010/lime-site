@@ -23,7 +23,7 @@ export default class Menu extends React.Component {
         const { activeK } = this.state
         let k = 0
         return (
-            <ul className='lime-card' style={{ width: 280, padding: 0 }}>
+            <ul className='lime-raised' style={{ width: 280, padding: 0 }}>
                 <Li k={k++} onClick={this.onClick} activeK={activeK} title={'Get Started'}></Li>
                 <Li k={k++} onClick={this.onClick} activeK={activeK} title={'Button'} ></Li>
                 <Li k={k++} onClick={this.onClick} activeK={activeK} title={'Card'} ></Li>

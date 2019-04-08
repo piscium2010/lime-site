@@ -10,7 +10,7 @@ export default class Basic extends React.Component {
         return (
             <div>
                 <h5>H</h5>
-                <p>
+                <section>
                     <ChoiceGroup name='gender' defaultValue='2' onChange={this.onChange}>
                         <ChoiceGroup.Option value='1'>
                             Male
@@ -19,12 +19,12 @@ export default class Basic extends React.Component {
                             Female
                         </ChoiceGroup.Option>
                     </ChoiceGroup>
-                </p>
+                </section>
                 <p style={{fontSize:'smaller'}}>
                     *The first time i know that facebook have 51 gender options. It touch my soul and make wonder what a great company it is.
                 </p>
                 <h5>V</h5>
-                <p>
+                <section>
                     <ChoiceGroup name='marriage' style={{ display: 'inline-flex', flexDirection: 'column' }} >
                         <ChoiceGroup.Option value='3'> 
                             Single
@@ -33,7 +33,7 @@ export default class Basic extends React.Component {
                             Married <span style={{color:'#cdcdcd'}}>but available</span>
                         </ChoiceGroup.Option>
                     </ChoiceGroup>
-                </p>
+                </section>
             </div>
         )
     }

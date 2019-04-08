@@ -27,8 +27,8 @@ export default class ButtonPage extends React.Component {
                         <Disabled />
                     </ExampleBlock>
                 </section>
+                <h2>Build it yourself</h2>
                 <section>
-                    <h2>Build it yourself</h2>
                     <div className="implement">
                         <h4>Button.jsx</h4>
                         <Markdown md={buttonMD} />

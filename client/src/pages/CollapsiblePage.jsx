@@ -3,7 +3,7 @@ import Basic from '../examples/collapsible/Basic'
 import ExampleBlock from '../components/ExampleBlock'
 import exampleMD from '../../md/examples/collapsible/Basic.md.js'
 import PageHeader from '../components/PageHeader'
-import Table from '../components/Table'
+import PropsTable from '../components/PropsTable'
 import Markdown from '../components/Markdown'
 
 export default class AccordiontPage extends React.Component {
@@ -15,13 +15,16 @@ export default class AccordiontPage extends React.Component {
                 <section>
                     <h2>Usage</h2>
                     <ExampleBlock md={exampleMD}>
-                    <Basic />
-                </ExampleBlock>
+                        <Basic />
+                    </ExampleBlock>
                 </section>
-                
                 <h2>API</h2>
                 <section>
-                    <Table/>
+                    <PropsTable data={[
+                        { name: 'defaultExpand', desc: 'initial expand status', type: 'bool', deft: 'false' },
+                        { name: 'expand', desc: 'expand status', type: 'bool' }
+                    ]}
+                    />
                 </section>
             </div>
         )

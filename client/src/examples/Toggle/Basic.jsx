@@ -11,7 +11,7 @@ export default class Basic extends React.Component {
     }
     render() {
         return (
-            <div className='lime-card' style={{ maxWidth: 500, borderRadius: 5 }}>
+            <div className='lime-raised' style={{ maxWidth: 500, borderRadius: 5 }}>
                 <div style={itemStyle}><span>Airplane</span><Toggle onChange={this.onChange} name='airplane' /></div>
                 <hr style={ruleStyle} />
                 <div style={itemStyle}><span>GPS Services</span><Toggle onChange={this.onChange} name='gps' defaultChecked={true} /></div>

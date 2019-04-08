@@ -16,7 +16,7 @@ const Li = ({ title, to, children, ...rest }) => {
 export default class Menu extends React.Component {
     render() {
         return (
-            <ul className='lime-card' style={{ width: 280, padding: 0, width: '100%', display: 'flex' }}>
+            <ul className='lime-raised' style={{ width: 280, padding: 0, width: '100%', display: 'flex' }}>
                 <Li title={'Home'}></Li>
                 <Li title={'Language'} ></Li>
                 <Li title={'Components'} placement='down'>

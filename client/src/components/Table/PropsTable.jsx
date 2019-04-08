@@ -1,15 +1,13 @@
 import React from 'react'
-import '@piscium2010/lime/lime.css'
+import './node_modules/@piscium2010/lime/lime.css'
 
 export default class Table extends React.Component {
     render() {
-        // const { text, size } = this.props
-        // const { show } = this.state
         return (
             <table class="lime-table light">
                 <thead>
                     <tr>
-                        <th scope="col">Property</th>
+                        <th scope="col">Name</th>
                         <th scope="col" colSpan="2">Desc</th>
                         <th scope="col">Type</th>
                         <th scope="col">Default</th>
