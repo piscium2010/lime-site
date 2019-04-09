@@ -6,10 +6,7 @@ import { cb as theme } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default class Markdown extends React.Component {
 
-  // id = `md-${Date.now()}-${Math.floor(Math.random() * 1000)}`
-
   onClick = evt => {
-    //const str = document.getElementById(this.id).textContent
     copyToClipBoard(this.props.md)
   }
 

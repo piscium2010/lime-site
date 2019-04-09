@@ -19,18 +19,23 @@ const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) =
 }
 
 export default class SideNav extends React.Component {
-    constructor(props) {
-        super(props)
-        this.logoTextRef = React.createRef()
-        this.state = {
-            activeK: -1
+    logoTextRef = React.createRef()
+
+    get activeK() {
+        let activeK = -1
+        const search = window.location.search
+        const match = search.match(/activeK=\d+/)
+        if(match && match.length > 0) {
+            activeK = match[0].match(/\d+/)[0]
         }
+        return activeK
     }
 
-    onClick = k => { this.setState({ activeK: k }) }
+    onClick = k => { this.forceUpdate() }
 
     render() {
-        const { activeK } = this.state
+        let k = 0
+        const activeK = this.activeK
         return (
             <div className='side-nav'>
                 <div className='lime-logo'>
@@ -42,29 +47,29 @@ export default class SideNav extends React.Component {
                     <div className='mask'></div>
                     <div className='top shadow'></div>
                     <ul>
-                        <Li k={2} activeK={activeK} onClick={this.onClick} title={'Accordian'} to='/lime/accordion'></Li>
-                        <Li k={3} activeK={activeK} onClick={this.onClick} title={'Button'} to='/lime/button'></Li>
-                        <Li k={4} activeK={activeK} onClick={this.onClick} title={'Card'} to='/lime/card'></Li>
-                        <Li k={51} activeK={activeK} onClick={this.onClick} title={'Checkbox'} to='/lime/checkbox'></Li>
-                        <Li k={5} activeK={activeK} onClick={this.onClick} title={'ChoiceGroup'} to='/lime/choiceGroup'></Li>
-                        <Li k={6} activeK={activeK} onClick={this.onClick} title={'Collapsible'} to='/lime/collapsible'></Li>
-                        <Li k={7} activeK={activeK} onClick={this.onClick} title={'Dialog'} to='dialog'></Li>
-                        <Li k={8} activeK={activeK} onClick={this.onClick} title={'Layer'} to='/lime/layer'></Li>
-                        <Li k={9} activeK={activeK} onClick={this.onClick} title={'List'} to='/lime/list'></Li>
-                        <Li k={11} activeK={activeK} title={'Menu'} defaultExpand>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Accordian'} to={`/lime/accordion?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Button'} to={`/lime/button?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Card'} to={`/lime/card?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Checkbox'} to={`/lime/checkbox?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'ChoiceGroup'} to={`/lime/choiceGroup?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Collapsible'} to={`/lime/collapsible?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Dialog'} to={`/lime/dialog?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Layer'} to={`/lime/layer?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'List'} to={`/lime/list?activeK=${k++}`}></Li>
+                        <Li k={k++} activeK={activeK} title={'Menu'} defaultExpand>
                             <ul>
-                                <Li k={12} activeK={activeK} onClick={this.onClick} title={'Inline'} to='/lime/menu/inlineMenu'></Li>
-                                <Li k={13} activeK={activeK} onClick={this.onClick} title={'Float'} to='/lime/menu/floatMenu'></Li>
+                                <Li k={k} activeK={activeK} onClick={this.onClick} title={'Inline'} to={`/lime/menu/inlineMenu?activeK=${k++}`}></Li>
+                                <Li k={k} activeK={activeK} onClick={this.onClick} title={'Float'} to={`/lime/menu/floatMenu?activeK=${k++}`}></Li>
                             </ul>
                         </Li>
-                        <Li k={14} activeK={activeK} onClick={this.onClick} title={'Ripple'} to='/lime/ripple'></Li>
-                        <Li k={18} activeK={activeK} onClick={this.onClick} title={'Scroll'} to='/lime/scroll'></Li>
-                        <Li k={15} activeK={activeK} onClick={this.onClick} title={'Select'} to='/lime/select'></Li>
-                        <Li k={16} activeK={activeK} onClick={this.onClick} title={'Search'} to='/lime/search'></Li>
-                        <Li k={17} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to='/lime/shimmer'></Li>
-                        <Li k={19} activeK={activeK} onClick={this.onClick} title={'Spin'} to='/lime/spin'></Li>
-                        <Li k={141} activeK={activeK} onClick={this.onClick} title={'TextField'} to='/lime/textField'></Li>
-                        <Li k={142} activeK={activeK} onClick={this.onClick} title={'Toggle'} to='/lime/toggle'></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Ripple'} to={`/lime/ripple?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Scroll'} to={`/lime/scroll?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Select'} to={`/lime/select?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Search'} to={`/lime/search?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Shimmer'} to={`/lime/shimmer?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Spin'} to={`/lime/spin?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'TextField'} to={`/lime/textField?activeK=${k++}`}></Li>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Toggle'} to={`/lime/toggle?activeK=${k++}`}></Li>
                         <div className='placeholder'></div>
                     </ul>
                 </Scroll>

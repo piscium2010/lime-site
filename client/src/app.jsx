@@ -77,7 +77,7 @@ function lazyLoadPage(componentName) {
                 alignItems: 'center'
             }
             const { loading, component: C } = this.state
-            return C ? <C /> : <div style={style}><Spin show={loading} threshold={3000} /></div>
+            return C ? <C {...this.props}/> : <div style={style}><Spin show={loading} threshold={1000} /></div>
         }
     }
 }
