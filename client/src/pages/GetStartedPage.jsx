@@ -9,7 +9,7 @@ export default class GetStartedPage extends React.Component {
     onClick = evt => {
         setTimeout(() => {
             this.props.history.push('/lime')
-        }, 300);
+        }, 500);
     }
 
     render() {
@@ -20,7 +20,7 @@ export default class GetStartedPage extends React.Component {
                         <span className='lime-logo-text'>{'{Lime}'}</span>
                     </div>
                     <p className='desc'>
-                        An extremly light weight react UI kit used for building your own UI component
+                        An extremly light weight react UI parts used for building your own UI component
                     </p>
                     <div className='lime-flex-center start'>
                         <Button className='lime-button primary' onClick={this.onClick}>Get Started</Button>

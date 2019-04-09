@@ -9,7 +9,7 @@ export default class Button extends React.Component {
         return (
             <button {...rest} style={style}>
                 {children}
-                <Ripple /> {/*parent be position:relative, overflow: hidden*/}
+                <Ripple /> {/*parent be position:relative*/}
             </button>
         )
     }

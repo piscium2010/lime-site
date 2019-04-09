@@ -14,7 +14,7 @@ const Li = ({ title, to, children, k, activeK, onClick = () => { }, ...rest }) =
         </List>
     )
     return (
-        to ? <Link to={to} onClick={() => onClick(k)}>{menuItem}</Link> : menuItem
+        to ? <Link to={to} onClick={onClick}>{menuItem}</Link> : menuItem
     )
 }
 
@@ -31,7 +31,10 @@ export default class SideNav extends React.Component {
         return activeK
     }
 
-    onClick = k => { this.forceUpdate() }
+    onClick = () => { 
+        window.scroll(0,0)
+        this.forceUpdate() 
+    }
 
     render() {
         let k = 0
@@ -43,7 +46,7 @@ export default class SideNav extends React.Component {
                         <Link to='/'>{'{Lime}'}</Link>
                     </span>
                 </div>
-                <Scroll style={{ height: window.innerHeight - 70 - 10, paddingBottom: 10 }} >
+                <Scroll style={{ height: 800 }} >
                     <div className='mask'></div>
                     <div className='top shadow'></div>
                     <ul>
