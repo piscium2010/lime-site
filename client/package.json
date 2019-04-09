@@ -1,8 +1,8 @@
 {
     "name": "lime-site",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "",
-    "main": "webpack.config.js",
+    "main": "",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "copyfiles:watch": "babel ../../lime/dist --watch --out-dir node_modules/@piscium2010/lime --copy-files ",
@@ -19,7 +19,7 @@
     "license": "ISC",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.7.2",
-        "@piscium2010/lime": "^2.0.3",
+        "@piscium2010/lime": "^2.0.5",
         "classnames": "^2.2.6",
         "debounce": "^1.2.0",
         "react": "^16.8.2",
