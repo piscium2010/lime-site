@@ -1,4 +1,5 @@
 # lime-site
+
 vendor - css
 
 //to do
@@ -106,6 +107,7 @@ create react webpack
 
 t
 scroll to top smoothly
+react syntax highlight in production mode
 
 bg color 232 234 237
 
