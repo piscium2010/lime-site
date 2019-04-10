@@ -20,7 +20,7 @@ export default class Basic extends React.Component {
                         </ChoiceGroup.Option>
                     </ChoiceGroup>
                     <p style={{ fontSize: 'smaller' }}>
-                        *The first time i know that facebook have 51 gender options. It touch my soul and make wonder what a great company it is.
+                        *The first time i know that facebook have 51 gender options. It touches my soul and makes me wonder what a great company it is.
                     </p>
                     <h5>V</h5>
                     <ChoiceGroup name='marriage' style={{ display: 'inline-flex', flexDirection: 'column' }} >

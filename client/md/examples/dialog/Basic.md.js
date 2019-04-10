@@ -14,11 +14,14 @@ export default class Basic extends React.Component {
         return (
             <React.Fragment>
                 <p>
+                    <h4>Modal</h4>
                     <button className='lime-button' onClick={() => this.open(1)}>Play</button>
                 </p>
                 <p>
-                    <button className='lime-button' onClick={() => this.open(2)}>Modal</button>
+                    <h4>Normal</h4>
+                    <button className='lime-button' onClick={() => this.open(2)}>Accept</button>
                 </p>
+
                 <Dialog show={activeId === 1} >
                     <h3 style={{ color: '#E10050' }}>FBI WARNING</h3>
                     <p style={{ lineHeight: '1.2em', maxWidth: 600 }}>

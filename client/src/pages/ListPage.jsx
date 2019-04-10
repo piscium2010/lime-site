@@ -14,7 +14,7 @@ export default class ListPage extends React.Component {
                 <PageHeader title='List' desc={desc} />
                 <h2>Usage</h2>
                 <section>
-                    <ExampleBlock md={exampleMD} title={'Lyrics of Black Sea'}>
+                    <ExampleBlock md={exampleMD} title={''}>
                         <Basic />
                     </ExampleBlock>
                 </section>

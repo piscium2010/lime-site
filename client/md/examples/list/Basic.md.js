@@ -2,85 +2,61 @@ const md = `import React from 'react';
 import List from '@piscium2010/lime/List'
 import '@piscium2010/lime/lime.css'
 
-const lyrics = [
-    \`Come down to the Black Sea swimming with me\`,
-    \`ah-oh\`,
-    \`Go down with me\`,
-    \`fall with me\`,
-    \`lets make worth it\`,
-    \`ah-oh\`,
-    \`A thousand nights have passed\`,
-    \`change doesen't happen overnight\`,
-    \`Not visible at first\`,
-    \`It's important to hold on\`,
-    \`Oh, oh, oh, oh\`,
-    \`inject your advice to me\`,
-    \`Oh, oh, oh, oh\`,
-    \`incinerate our shackles\`,
-    \`Come down to the Black Sea swimming with me\`,
-    \`ah-oh\`,
-    \`Go down with me\`,
-    \`fall with me\`,
-    \`lets make worth it\`,
-    \`ah-oh\`,
-    \`You rise, I fall,\`,
-    \`I stand, you crawl\`,
-    \`You twist, I turn,\`,
-    \`who's the first to burn\`,
-    \`You sit and stay,\`,
-    \`I don't to obey\`,
-    \`Where do we land in the Black Sea\`,
-    \`Oh, oh, oh, oh in the Black Sea\`,
-    \`Where do we land in the Black Sea\`,
-    \`You're giving up, I'm tired\`,
-    \`The tug of War that we're playing\`,
-    \`I'm not giving up in truing to tell you\`,
-    \`Oh, oh, oh, oh inject your advice to me\`,
-    \`Oh, oh, oh, oh incinerate our shackles\`,
-    \`Come down to the Black Sea swimming with me ah-oh\`,
-    \`Go down with me fall with me lets make worth it ah-oh\`,
-    \`You rise, I fall, I stand, you crawl\`,
-    \`You twist, I turn, who's the first to burn\`,
-    \`You sit and stay, I don't to obey\`,
-    \`Where do we land in the Black Sea\`,
-    \`Oh, oh, oh, oh in the Black Sea\`,
-    \`Where do we land in the Black Sea\`,
-    \`Grip your hands tired of what's your worth\`,
-    \`Watch yourself beg hanging on to Earth\`,
-    \`Love, War, Pain, Life everything's the same to me\`,
-    \`So come down to the Black Sea swimming with me ah-oh\`,
-    \`Go down with me fall with me lets make worth it ah-oh\`,
-    \`Come down to the Black Sea swimming with me ah-oh\`,
-    \`Go down with me fall with me lets make worth it ah-oh\`,
-    \`You rise, I fall, I stand, you crawl\`,
-    \`You twist, I turn, who's the first to burn\`,
-    \`You sit and stay, I don't to obey\`,
-    \`Where do we land in the Black Sea\`,
-    \`Oh, oh, oh, oh in the Black Sea\`,
-    \`Where do we land in the Black Sea\`
+const poetry = [
+    <span style={{fontWeight:'bold'}}>The Road Not Taken</span>,
+    \`- by Robert Frost\`,
+    \`\`,
+    \`Two roads diverged in a yellow wood,\`,
+    \`And sorry I could not travel both\`,
+    \`And be one traveler, long I stood\`,
+    \`And looked down one as far as I could\`,
+    \`To where it bent in the undergrowth;\`,
+    \`\`,
+    \`Then took the other, as just as fair,\`,
+    \`And having perhaps the better claim,\`,
+    \`Because it was grassy and wanted wear;\`,
+    \`Though as for that the passing there\`,
+    \`Had worn them really about the same,\`,
+    \`\`,
+    \`And both that morning equally lay\`,
+    \`In leaves no step had trodden black.\`,
+    \`Oh, I kept the first for another day!\`,
+    \`Yet knowing how way leads on to way,\`,
+    \`I doubted if I should ever come back.\`,
+    \`\`,
+    \`I shall be telling this with a sigh\`,
+    \`Somewhere ages and ages hence:\`,
+    \`Two roads diverged in a wood, and I—\`,
+    \`I took the one less traveled by,\`,
+    \`And that has made all the difference.\`,
 ]
+
+
+const style = { // from https://leaverou.github.io/css3patterns/#lined-paper
+    backgroundColor: 'white',
+    backgroundImage: 'linear-gradient(90deg, transparent 20px, #abced4 20px, #abced4 21px, transparent 23px), linear-gradient(#eee .1em, transparent .1em)',
+    backgroundSize: '100% 35px'
+}
 
 export default class Basic extends React.Component {
 
-    renderItem = (lyric, index) => {
+    renderItem = (item, index) => {
         return (
-            <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', height: '100%' }}>
-                <p style={{ padding: 5, margin: 0, color: 'white' }}>{\`\${index}\`.padEnd(2)}. {lyric.text}</p>
+            <div style={{ height: '100%' }}>
+                <p style={{ margin: '15px 0 0 30px' }}>{item.text}</p>
             </div>
         )
     }
 
     render() {
         return (
-            <div>
-                <List
-                    style={{ backgroundColor: 'rgba(0,0,0,.6)' }}
-                    pageSize={10}
-                    itemHeight={40}
-                    items={lyrics.map((l, i) => ({ text:l, key: i }))}
-                    renderItem={this.renderItem}
-                />
-            </div>
+            <List
+                style={style}
+                pageSize={10}
+                itemHeight={35}
+                items={poetry.map((text, index) => ({ text, key: index }))}
+                renderItem={this.renderItem}
+            />
         )
     }
 }`
