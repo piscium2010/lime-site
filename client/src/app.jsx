@@ -21,6 +21,7 @@ class App extends React.Component {
                         <React.Fragment>
                             <div className='main'>
                                 <div className="main-content">
+                                    <Route path='/lime/quickStart' component={lazyLoadPage('QuickStartPage')} />
                                     <Route path='/lime/button' component={lazyLoadPage('ButtonPage')} />
                                     <Route path='/lime/card' component={lazyLoadPage('CardPage')} />
                                     <Route path='/lime/accordion' component={lazyLoadPage('AccordionPage')} />

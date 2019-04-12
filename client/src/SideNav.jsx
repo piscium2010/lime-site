@@ -50,6 +50,7 @@ export default class SideNav extends React.Component {
                     <div className='mask'></div>
                     <div className='top shadow'></div>
                     <ul>
+                        <Li k={k} activeK={activeK} onClick={this.onClick} title={'Quick Start'} to={`/lime/quickStart?activeK=${k++}`}></Li>
                         <Li k={k} activeK={activeK} onClick={this.onClick} title={'Accordian'} to={`/lime/accordion?activeK=${k++}`}></Li>
                         <Li k={k} activeK={activeK} onClick={this.onClick} title={'Button'} to={`/lime/button?activeK=${k++}`}></Li>
                         <Li k={k} activeK={activeK} onClick={this.onClick} title={'Card'} to={`/lime/card?activeK=${k++}`}></Li>
