@@ -19,7 +19,7 @@
     "license": "ISC",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.7.2",
-        "@piscium2010/lime": "^2.0.5",
+        "@piscium2010/lime": "^2.0.6",
         "classnames": "^2.2.6",
         "debounce": "^1.2.0",
         "react": "^16.8.2",
