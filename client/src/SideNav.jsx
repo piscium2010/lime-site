@@ -46,7 +46,7 @@ export default class SideNav extends React.Component {
                         <Link to='/'>{'{Lime}'}</Link>
                     </span>
                 </div>
-                <Scroll style={{ height: 800 }} >
+                <Scroll style={{ height: '100vh' }} >
                     <div className='mask'></div>
                     <div className='top shadow'></div>
                     <ul>

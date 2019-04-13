@@ -9,7 +9,6 @@ import basicMD from '../../md/examples/button/Basic.md.js'
 import ExampleBlock from '../components/ExampleBlock'
 import buttonMD from '../../md/components/Button/Button.md.js'
 import Markdown from '../components/Markdown'
-import PageHeader from '../components/PageHeader'
 
 export default class ButtonPage extends React.Component {
     render() {

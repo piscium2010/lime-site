@@ -22,13 +22,14 @@ const cmdStyle = {
     color: 'rgb(194,118,40)'
 }
 
+const gitUrl = 'https://github.com/piscium2010/hello-lime.git'
+
 export default class QuickStartPage extends React.Component {
     onClick = evt => {
         copyToClipBoard(`git clone ${gitUrl}`)
-      }
+    }
 
     render() {
-        const gitUrl = 'https://github.com/piscium2010/hello-lime.git'
         return (
             <div>
                 <PageHeader title='Quick Start' desc={`A boilterplate is available at github. Just clone and start your lime journey in minutes.`} />
