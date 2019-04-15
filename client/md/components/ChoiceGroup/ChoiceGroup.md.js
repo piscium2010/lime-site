@@ -1,5 +1,5 @@
-const md = `import * as classnames from 'classnames'
-import * as React from 'react'
+const md = `import React from 'react'
+import classnames from 'classnames'
 import ChoiceOption from './Option'
 import '@piscium2010/lime/lime.css'
 

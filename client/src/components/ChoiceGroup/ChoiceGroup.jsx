@@ -1,5 +1,5 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import React from 'react'
+import classnames from 'classnames'
 import ChoiceOption from './Option'
 import '@piscium2010/lime/lime.css'
 

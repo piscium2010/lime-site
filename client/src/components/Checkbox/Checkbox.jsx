@@ -1,5 +1,5 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import React from 'react'
+import classnames from 'classnames'
 import '@piscium2010/lime/lime.css'
 
 export default class Checkbox extends React.PureComponent{
