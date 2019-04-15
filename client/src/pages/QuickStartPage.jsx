@@ -2,6 +2,7 @@ import React from 'react';
 import copyToClipBoard from '../../util/copyToClipBoard'
 import Button from '../components/Button'
 import PageHeader from '../components/PageHeader'
+import MessageBox from '../components/MessageBox'
 
 const preStyle = {
     background: 'black',
@@ -27,6 +28,7 @@ const gitUrl = 'https://github.com/piscium2010/hello-lime.git'
 export default class QuickStartPage extends React.Component {
     onClick = evt => {
         copyToClipBoard(`git clone ${gitUrl}`)
+        MessageBox.show('Code Copied')
     }
 
     render() {

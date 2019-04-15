@@ -1,13 +1,15 @@
 import React from 'react'
 import copyToClipBoard from '../../../util/copyToClipBoard'
 import Button from '../Button'
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { cb as theme } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter"
+import { cb as theme } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import MessageBox from '../MessageBox'
 
 export default class Markdown extends React.Component {
 
   onClick = evt => {
     copyToClipBoard(this.props.md)
+    MessageBox.show('Code Copied')
   }
 
   render() {

@@ -1,7 +1,10 @@
-//@primaryColor: #a0d911;
 @primaryColor: #9dd411;
 @bodyBackground: #f9f9f9;
 @sideNavWidth: 280px;
+@keyframes bounceIn {
+    from { transform: scale(.6); opacity: .6;}
+    to { transform: scale(1); opacity: 1;}
+}
 
 .code-section(){
     background-color: #fff;
@@ -233,6 +236,10 @@ section {
         border-radius: 0px !important;
         margin: 0 !important;
     }
+}
+
+.message-box {
+    animation: bounceIn .2s cubic-bezier(.24, .89, 0.76, 1.28) forwards;
 }
 
 .nav {
