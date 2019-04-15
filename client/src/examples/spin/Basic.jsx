@@ -6,12 +6,7 @@ export default class Basic extends React.Component {
     render() {
         return (
             <div>
-                <p>
-                    <Spin size={20} show/>
-                </p>
-                <p>
-                    <Spin text='Loading' show />
-                </p>
+                <Spin size={20} show/>
             </div>
         )
     }
