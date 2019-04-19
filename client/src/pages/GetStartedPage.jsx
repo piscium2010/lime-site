@@ -9,7 +9,7 @@ export default class GetStartedPage extends React.Component {
     onClick = evt => {
         setTimeout(() => {
             this.props.history.push('/lime/quickStart?activeK=0')
-        }, 500);
+        }, 800);
     }
 
     render() {
