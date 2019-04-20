@@ -32,7 +32,7 @@ export default class SideNav extends React.Component {
     }
 
     onClick = () => { 
-        window.scroll(0,0)
+        // window.scroll(0,0)
         this.forceUpdate() 
     }
 

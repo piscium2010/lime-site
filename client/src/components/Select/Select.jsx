@@ -149,7 +149,7 @@ export default class Select extends React.Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.onWindowScroll)
+        window.removeEventListener('scroll', this.onWindowScroll, true)
     }
 
     componentWillReceiveProps() {
@@ -165,6 +165,7 @@ export default class Select extends React.Component {
             loading,
             name = '',
             options,
+            renderItem,
             style,
             multi,
             onChangeInput,
