@@ -26,6 +26,10 @@ export default class Loading extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        window.clearTimeout(this.timer)
+    }
+
     render() {
         const { text, size } = this.props
         const { show } = this.state

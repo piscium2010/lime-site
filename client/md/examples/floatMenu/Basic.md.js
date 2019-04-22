@@ -3,8 +3,6 @@ import FloatMenu from '../../components/FloatMenu'
 import { Link } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.css'
 
-console.log(\`List\`, FloatMenu)
-
 const Li = ({ title, to, children, ...rest }) => {
     return (
         to
