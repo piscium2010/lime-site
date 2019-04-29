@@ -43,7 +43,7 @@ export default class QuickStartPage extends React.Component {
                         </code>
                     </pre>
                     <div className='copy'>
-                        <Button className='lime-button primary' onClick={this.onClick}>Copy</Button>
+                        <Button className='lime-button primary' style={{margin: 0}} onClick={this.onClick}>Copy</Button>
                     </div>
                 </section>
                 <h2>Hello Lime</h2>

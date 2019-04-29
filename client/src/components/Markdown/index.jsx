@@ -17,7 +17,7 @@ export default class Markdown extends React.Component {
       <div className='markdown' style={{ position: 'relative' }}>
         <SyntaxHighlighter language='jsx' style={theme}>{this.props.md}</SyntaxHighlighter>
         <div className='copy'>
-            <Button className='lime-button primary' onClick={this.onClick}>Copy</Button>
+            <Button className='lime-button primary' style={{margin: 0}} onClick={this.onClick}>Copy</Button>
         </div>
       </div>
     )

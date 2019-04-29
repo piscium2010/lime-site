@@ -16,7 +16,7 @@ const containerStyle = {
     margin: 15,
     padding: '14px 16px',
     background: '#323232',
-    color: 'rgba(255,255,255.7)',
+    color: 'rgba(255,255,255,.7)',
     fontSize: 14,
     minWidth: 200
 }
@@ -30,7 +30,7 @@ export default class MessageBox extends React.Component {
         setTimeout(() => {
             ReactDOM.unmountComponentAtNode(node)
             document.body.removeChild(node)
-        }, duration);
+        }, duration)
     }
 
     render() {
