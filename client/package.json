@@ -7,10 +7,13 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "copyfiles:watch": "babel ../../lime/dist --watch --out-dir node_modules/@piscium2010/lime --copy-files ",
         "copyfiles": "babel ../../lime/dist --out-dir node_modules/@piscium2010/lime --copy-files ",
-        "devServer": "webpack --config webpack.dev.js && webpack-dev-server --config webpack.dev.js --open",
+        "devServer": "webpack-dev-server --config webpack.dev.js",
         "webpack:prod": "webpack -p --config webpack.prod.js",
+        "webpack:dev": "webpack --config webpack.dev.js --env.NODE_ENV=local",
         "start": "npm run devServer",
         "build": "npm run webpack:prod",
+        "build:dev": "npm run webpack:dev",
+        "build:md": "node util/makeMD.js",
         "xs:start": "npm-run-all --parallel copyfiles:watch devServer",
         "xs:build": "NODE_ENV=production npm-run-all --parallel copyfiles webpack:prod"
     },
@@ -19,7 +22,7 @@
     "license": "ISC",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.7.2",
-        "@piscium2010/lime": "^2.0.6",
+        "@piscium2010/lime": "^2.3.8",
         "classnames": "^2.2.6",
         "debounce": "^1.2.0",
         "react": "^16.8.2",

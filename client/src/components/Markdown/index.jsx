@@ -1,9 +1,11 @@
 import React from 'react'
 import copyToClipBoard from '../../../util/copyToClipBoard'
 import Button from '../Button'
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter"
-import { cb as theme } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import SyntaxHighlighter from "react-syntax-highlighter/dist/esm/prism-light"
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx'
+import theme from 'react-syntax-highlighter/dist/esm/styles/prism/duotone-light'
 import MessageBox from '../MessageBox'
+SyntaxHighlighter.registerLanguage('jsx', jsx)
 
 export default class Markdown extends React.Component {
 

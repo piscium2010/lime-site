@@ -9,9 +9,10 @@ const path = require('path');
 module.exports = merge(common, {
     mode: 'production',
     output: {
-        publicPath: '/',
+        publicPath: './',
         filename: '[name].[hash].bundle.js',
-        path: path.resolve(__dirname, '../server/src/main/resources/static')
+        // path: path.resolve(__dirname, '../server/src/main/resources/static')
+        path: path.resolve(__dirname, 'public')
     },
     module: {
         rules: [
@@ -32,6 +33,7 @@ module.exports = merge(common, {
         ]
     },
     optimization: {
+        minimize: true,
         minimizer: [
             new TerserJSPlugin(),
             new OptimizeCSSAssetsPlugin({})

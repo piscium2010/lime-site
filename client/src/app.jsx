@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import ReactDOM from 'react-dom'
 import GetStartedPage from './pages/GetStartedPage'
 import Nav from './Nav'
@@ -14,11 +14,11 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <React.Fragment>
-                    <Route path='/' exact component={GetStartedPage} />
-                    <Route path='/lime/' component={SideNav} />
+                <Switch>
+                    <Route path='/lime/' exact component={GetStartedPage} />
                     <Route path='/lime/' component={() => (
                         <React.Fragment>
+                            <Route path='/lime/' component={SideNav} />
                             <div className='main'>
                                 <div className="main-content">
                                     <Route path='/lime/quickStart' component={lazyLoadPage('QuickStartPage')} />
@@ -45,10 +45,10 @@ class App extends React.Component {
                                     <Footer />
                                 </div>
                             </div>
+                            <Route path='/lime/' strict component={Nav} />
                         </React.Fragment>
                     )} />
-                    <Route path='/lime/' component={Nav} />
-                </React.Fragment>
+                </Switch>
             </Router >
         )
     }

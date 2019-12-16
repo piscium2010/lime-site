@@ -189,22 +189,19 @@ export default class Select extends React.Component {
                     style={{ opacity: showText ? 0 : 1 }}
                 />
                 {loading ? spin : arrow}
-                {
-                    this.options &&
-                    <Dropdown
-                        show={show}
-                        left={left}
-                        top={top}
-                        width={width}
-                        onBlur={this.onBlurDropdown}
-                    >
-                        <List
-                            itemHeight={lineHeight}
-                            items={this.options.map(o => ({ ...o, key: o.value }))}
-                            renderItem={this.renderSelectItem}
-                        />
-                    </Dropdown>
-                }
+                <Dropdown
+                    show={show}
+                    left={left}
+                    top={top}
+                    style={{ width: width }}
+                    onBlur={this.onBlurDropdown}
+                >
+                    <List
+                        itemHeight={lineHeight}
+                        items={this.options.map(o => ({ ...o, key: o.value }))}
+                        renderItem={this.renderSelectItem}
+                    />
+                </Dropdown>
             </div>
         )
     }

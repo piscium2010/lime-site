@@ -17,6 +17,7 @@ module.exports = merge(common, {
         historyApiFallback: true,
         hot: true
     },
+    
     module: {
         rules: [
             {

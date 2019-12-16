@@ -40,6 +40,6 @@ function rmDir(dirPath, removeSelf = false) {
     if (removeSelf) { fs.rmdirSync(dirPath) }
 }
 
-rmDir('../md')
-makeMD('../src/components/')
-makeMD('../src/examples/')
+rmDir(path.join(__dirname, '../md'))
+makeMD(path.join(__dirname, '../src/components/'))
+makeMD(path.join(__dirname, '../src/examples/'))
