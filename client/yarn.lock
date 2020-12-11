@@ -325,9 +325,10 @@
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz#1498c3eb78ee7c78c5488418707de90aaf58d5d7"
 
-"@piscium2010/lime@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.0.3.tgz#0de6802982c0b20be9d90ce36166901ae98da463"
+"@piscium2010/lime@^2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.3.8.tgz#abbd44a06383cc81e567176ef599774a34dae174"
+  integrity sha512-uEajgjGZoCKEkOTCGRJzREhFEqWW8S95tTFYeIbVhOwj0bWhS39Cg5OJzAu/M44DaQCH7gK2cJxdddKRDKQ9EA==
   dependencies:
     classnames "^2.2.6"
     debounce "^1.2.0"
@@ -2708,8 +2709,9 @@ inherits@2.0.1:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
 
 ini@^1.3.4, ini@~1.3.0:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.7.tgz#a09363e1911972ea16d7a8851005d84cf09a9a84"
+  integrity sha512-iKpRpXP+CrP2jyrxvg1kMUpXDyRUFDWurxbnVT1vQPx+Wz9uCYsMIqYuSBLV+PAaZG/d7kRLKRFc9oDMsH+mFQ==
 
 internal-ip@^3.0.1:
   version "3.0.1"
