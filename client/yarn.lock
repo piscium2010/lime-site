@@ -325,9 +325,10 @@
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz#1498c3eb78ee7c78c5488418707de90aaf58d5d7"
 
-"@piscium2010/lime@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.0.3.tgz#0de6802982c0b20be9d90ce36166901ae98da463"
+"@piscium2010/lime@^2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.3.8.tgz#abbd44a06383cc81e567176ef599774a34dae174"
+  integrity sha512-uEajgjGZoCKEkOTCGRJzREhFEqWW8S95tTFYeIbVhOwj0bWhS39Cg5OJzAu/M44DaQCH7gK2cJxdddKRDKQ9EA==
   dependencies:
     classnames "^2.2.6"
     debounce "^1.2.0"
@@ -3950,8 +3951,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
