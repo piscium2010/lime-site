@@ -325,9 +325,10 @@
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz#1498c3eb78ee7c78c5488418707de90aaf58d5d7"
 
-"@piscium2010/lime@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.0.3.tgz#0de6802982c0b20be9d90ce36166901ae98da463"
+"@piscium2010/lime@^2.3.8":
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@piscium2010/lime/-/lime-2.3.8.tgz#abbd44a06383cc81e567176ef599774a34dae174"
+  integrity sha512-uEajgjGZoCKEkOTCGRJzREhFEqWW8S95tTFYeIbVhOwj0bWhS39Cg5OJzAu/M44DaQCH7gK2cJxdddKRDKQ9EA==
   dependencies:
     classnames "^2.2.6"
     debounce "^1.2.0"
@@ -1594,8 +1595,9 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.0.1"
